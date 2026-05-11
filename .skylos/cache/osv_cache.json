@@ -1,0 +1,17 @@
+{
+  "npm:@emailjs/browser:4.4.1": [],
+  "npm:lucide-react:1.14.0": [],
+  "npm:next:16.2.4": [],
+  "npm:react:19.2.4": [],
+  "npm:react-dom:19.2.4": [],
+  "npm:swiper:12.1.4": [],
+  "npm:@tailwindcss/postcss:4": [],
+  "npm:@types/node:20": [],
+  "npm:@types/react:19": [],
+  "npm:@types/react-dom:19": [],
+  "npm:eslint:9": [],
+  "npm:eslint-config-next:16.2.4": [],
+  "npm:tailwindcss:4": [],
+  "npm:typescript:5": [],
+  "_ts": 1778411366.3508677
+}

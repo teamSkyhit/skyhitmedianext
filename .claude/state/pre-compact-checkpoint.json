@@ -1,0 +1,61 @@
+{
+  "phase": "Phase 4 — Performance fixes in progress. Lighthouse audit complete, fixes not yet applied.",
+  "timestamp": "2026-05-05",
+  "completedWork": [
+    "All 23 routes building cleanly — all ○ Static",
+    "CLAUDE.md written at E:\\Skyhitrepos\\skyhit-next\\CLAUDE.md",
+    "Dev server smoke test passed — all routes 200, SSR HTML confirmed",
+    "Lighthouse audit run on ALL 18 pages (mobile + desktop)",
+    "Desktop: 96–99/100 on all pages — already done",
+    "Mobile: 70–85/100 — needs fixes to reach 95+"
+  ],
+  "lighthouseResults": {
+    "mobile": {
+      "home": 82, "about": 82, "services": 78, "projects": 80,
+      "blogs": 82, "contact": 83, "digital-marketing": 78, "web-service": 81,
+      "performance": 81, "seo": 82, "smm": 81, "ppc": 81,
+      "design": 80, "influencer": 79, "analytics": 80, "whatsapp": 80,
+      "orm": 81, "cyber": 70
+    },
+    "desktop": {
+      "home": 99, "about": 99, "services": 98, "projects": 97,
+      "blogs": 97, "contact": 96, "digital-marketing": 99, "performance": 99,
+      "seo": 99, "cyber": 99
+    }
+  },
+  "rootCauses": [
+    "ISSUE 1 — BIGGEST: GIF icons in ServiceCardList — 9 animated GIFs totalling 3.3MB loading on homepage and services pages. next/image cannot convert animated GIFs. FIX: Add loading=lazy + sizes, or replace with static thumbnails.",
+    "ISSUE 2: framer-motion (119KB chunk 0rvnft8djkwee.js) loads on EVERY page — 9 components import it statically: Accordion.tsx, AgencySection.tsx, FAQ.tsx, FreeQuote.tsx, GetInTouch.tsx, RecentWorksSection.tsx, ServiceSection.tsx, TestimonialsSection.tsx, WhyChooseSection.tsx. FIX: Replace motion.div/section with CSS transitions, or lazy-load entire components via dynamic() with ssr:false.",
+    "ISSUE 3: Swiper (95KB chunk 09w54rxxg1eoi.js) loads on EVERY page via TestimonialsSection which imports Carousel.tsx. FIX: Wrap TestimonialsSection in dynamic() with ssr:false on all pages.",
+    "ISSUE 4: LCP image in Hero.tsx uses <picture><img> without fetchPriority='high'. Lighthouse flags lcp-discovery-insight. FIX: Add fetchPriority='high' to the <img> inside <picture>.",
+    "ISSUE 5: Header background pattern (146KB PNG) loaded via inline style={{backgroundImage}} — not preloaded. FIX: Add <link rel=preload> in layout.tsx head.",
+    "ISSUE 6: Cyber page LCP = 7.6s (worst). Hero image loads slowly from skyhitmedia.com. Same fix as ISSUE 4."
+  ],
+  "fixesToApply": [
+    "FIX 1: In Hero.tsx — add fetchPriority='high' to <img> inside <picture> (line ~65)",
+    "FIX 2: In app/layout.tsx — add <link rel='preload' as='image' href='https://skyhitmedia.com/images/header%20pattern.png'> in <head>",
+    "FIX 3: Replace framer-motion in ALL 9 components with CSS transitions (no library needed for simple fade/slide). Components: Accordion, AgencySection, FAQ, FreeQuote, GetInTouch, RecentWorksSection, ServiceSection, TestimonialsSection, WhyChooseSection",
+    "FIX 4: Wrap TestimonialsSection (which imports Swiper via Carousel) in dynamic({ssr:false}) on every page, OR move Carousel inside TestimonialsSection to a dynamic import",
+    "FIX 5: GIF icons in ServiceCard — already have loading=lazy and unoptimized. The real fix is to NOT use animated GIFs as icons. Either: (a) use static webp thumbnails with CSS hover, or (b) ensure they only load when in viewport via IntersectionObserver",
+    "FIX 6: In Services/HeroSection.tsx — verify fetchPriority='high' on the LCP <img>"
+  ],
+  "expectedScoreAfterFixes": "95-98 mobile, 99 desktop",
+  "keyFiles": [
+    "src/components/Hero.tsx — LCP image fetchPriority fix",
+    "src/app/layout.tsx — preload header pattern",
+    "src/components/Accordion.tsx — remove framer-motion",
+    "src/components/AgencySection.tsx — remove framer-motion",
+    "src/components/FAQ.tsx — remove framer-motion",
+    "src/components/FreeQuote.tsx — remove framer-motion",
+    "src/components/GetInTouch.tsx — remove framer-motion",
+    "src/components/RecentWorksSection.tsx — remove framer-motion",
+    "src/components/ServiceSection.tsx — remove framer-motion",
+    "src/components/TestimonialsSection.tsx — remove framer-motion + lazy Carousel",
+    "src/components/WhyChooseSection.tsx — remove framer-motion"
+  ],
+  "productionServerNote": "Production server was running on port 3001 during audit. Dev server on port 3000. Kill both before starting fresh.",
+  "openQuestions": [
+    "GIFs: Can we replace the 9 animated GIF icons in ServiceCardList with static WebP? Need to check if skyhitmedia.com has static versions or if we use a placeholder.",
+    "After framer-motion removal — do all animations still look good? Verify Accordion open/close, AgencySection fade-in, FAQ expand."
+  ]
+}

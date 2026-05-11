@@ -1,26 +1,83 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* ── Custom theme (migrated from Vite tailwind.config.js) ── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Font families */
+  --font-headline: "Playfair Display", serif;
+  --font-base: "Orbitron", sans-serif;
+  --font-content: "Montserrat", sans-serif;
+
+  /* Brand colors */
+  --color-primary: #5F6B70;
+  --color-secondary: #BE7F51;
+  --color-champagne-500: #dcbe9e;
+
+  /* Keyframes */
+  --animate-infinite-scroll: infinite-scroll 15s linear infinite;
+  --animate-wave: wave 2s infinite ease-in-out;
+  --animate-marquee: marquee linear infinite;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes infinite-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes wave {
+  0%   { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(2.5); }
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Base styles ── */
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* ── Utilities ── */
+.clip-path-triangle {
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+.animate-marquee {
+  animation: marquee linear infinite;
+}
+
+/* ── Hero height ── */
+.hero {
+  height: 350px;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    height: 100vh;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ── Third-party overrides ── */
+.swiper-pagination-bullet-active {
+  background-color: #BE7F51 !important;
+}
+
+.follow-btn--vertical {
+  background-color: #BE7F51 !important;
 }

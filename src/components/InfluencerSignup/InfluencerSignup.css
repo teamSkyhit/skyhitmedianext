@@ -1,0 +1,149 @@
+.influencer-wrapper {
+  min-height: 100vh;
+  background: #f7f7f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+
+.influencer-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  gap: 60px;
+  margin-top: 100px;
+  align-items: center;
+}
+
+
+/* FORM CARD */
+.signup-card {
+  flex: 1;
+  background: #fff;
+  border-radius: 18px;
+  padding: 35px;
+  border: 1px solid #ddd;
+}
+
+
+.signup-card h2 {
+  margin-bottom: 15px;
+  color: #be7f51;
+  font-size: 25px;
+  font-weight: 500;
+
+
+}
+
+
+.mandatory {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+
+.signup-card form input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+
+.signup-card button {
+  width: 100%;
+  padding: 12px;
+  background: #be7f51;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
+.signup-card button:hover {
+  background: #c87f4a;
+}
+
+
+/* WELCOME SECTION */
+.welcome-section {
+  flex: 1;
+}
+
+
+.welcome-section h1 {
+  font-size: 44px;
+  margin-bottom: 20px;
+  color: #be7f51;
+}
+
+
+.welcome-box {
+  border: 1px solid #be7f51;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+
+.welcome-box h3 {
+  margin-bottom: 15px;
+}
+
+
+
+
+.welcome-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+
+.welcome-box p {
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+.welcome-box li {
+  font-size: 18px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+
+
+.welcome-box span {
+  color: #be7f51;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .influencer-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+
+  .welcome-section h1 {
+    font-size: 34px;
+  }
+}
+
+
+@media (max-width:468px) {
+    .influencer-container {
+        margin-top: 40px;
+    }
+    .welcome-section h1 {
+        text-align: center;
+        font-size: 34px;
+        margin-top: 15px;
+    }
+}

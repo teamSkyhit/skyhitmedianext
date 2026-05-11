@@ -1,0 +1,26 @@
+import type { Metadata } from "next";
+import dynamic from "next/dynamic";
+
+const InfluencerSignup = dynamic(() => import("@/components/InfluencerSignup/InfluencerSignup"));
+const ClientSection = dynamic(() => import("@/components/ClientSection"));
+
+export const metadata: Metadata = {
+  title: "Join the Skyhit Creator Community | Influencer Registration",
+  description:
+    "Join Skyhit Media's influencer network to access paid brand campaigns, fair payouts, and transparent influencer collaborations across India.",
+  openGraph: {
+    title: "Join the Skyhit Creator Community",
+    description:
+      "Join Skyhit Media's influencer network to access paid brand campaigns, fair payouts, and transparent influencer collaborations across India.",
+  },
+  alternates: { canonical: "https://skyhitmedia.com/influencer-registration" },
+};
+
+export default function InfluencerSignupPage() {
+  return (
+    <>
+      <InfluencerSignup />
+      <ClientSection />
+    </>
+  );
+}
