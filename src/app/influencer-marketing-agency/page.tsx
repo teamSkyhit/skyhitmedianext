@@ -138,15 +138,38 @@ const faqs = [
       sections: [
         {
           headings: [""],
-          texts: ["In today's world, influencer marketing is one of the best ways to help your brand reach the right people. At Skyhit Media, we are a top <b>Influencer Marketing Agency</b> dedicated to helping brands like yours connect with influencers who can boost your online presence and grow your business."],
+          texts: ["In today’s world, influencer marketing is one of the best ways to help your brand reach the right people. At Skyhit Media, we are a top <b>Influencer Marketing Agency</b> dedicated to helping brands like yours connect with influencers who can boost your online presence and grow your business.<br></br>", "Whether you want to get noticed on Instagram, YouTube, or TikTok, our team creates custom strategies to ensure your brand works with the best influencers for your goals.<br></br>"]
+
         },
         {
           headings: ["What is Influencer Marketing?", ""],
-          texts: ["<b>Influencer marketing</b> is when brands partner with popular social media figures—who have large and engaged followers—to promote their products or services. As a leading <b>Influencer Marketing Agency,</b> we know how to create campaigns that work, connecting brands to the right influencers to reach their target audiences."],
+          texts: ["<b>Influencer marketing</b> is when brands partner with popular social media figures—who have large and engaged followers—to promote their products or services. As a leading <b>Influencer Marketing Agency,</b> we know how to create campaigns that work, connecting brands to the right influencers to reach their target audiences.<br></br>", "Influencers are trusted by their followers, making their recommendations much more effective than traditional ads. By working with the right influencer agency, you get the chance to showcase your brand in a natural and engaging way.<br></br>"],
+        },
+        {
+          headings: ["Why Choose Skyhit Media as Your Influencer Marketing Agency?", ""],
+          texts: ["<b>Experienced and Strategic: </b> Skyhit Media is one of the best <b>Influencer Marketing Agencies</b> in India. We take the time to research your target audience and select influencers who match your brand. We ensure that your campaign on platforms like Instagram, YouTube, or others hits the mark.<br></br>", "<b>Access to a Wide Range of Influencers:</b> Our <b>influencer marketing services</b> connect you with influencers in various industries. Whether you’re in fashion, tech, beauty, or lifestyle, we help you find the perfect match for your brand. <br></br>", "<b>Effective Social Media Campaigns:</b> Social media is the key to connecting with people today. Our <b>Instagram influencer marketing</b> campaigns help you engage your audience, while YouTube influencer marketing helps you reach a wider group. We understand how each platform works and tailor your campaign accordingly.<br></br>", "<b>Transparent Results: </b> We believe in being clear about how your campaigns are performing. <a href='/' ><b>Skyhit Media</b></a> provides reports with detailed metrics like engagement, views, and clicks. This ensures we can keep improving the campaign and achieve the best results.<br></br>", "<b>Affordable Solutions: </b> Whether you’re a small business or a large brand, we offer flexible packages that fit your needs. Our <b>influencer marketing services</b> are designed to get the most value from your budget, delivering strong results with cost-effective strategies.<br></br>"],
+        },
+        {
+          headings: ["How We Work with Influencers", ""],
+          texts: ["At Skyhit Media, we work across all major platforms to ensure your brand is noticed. Here’s how we make it happen: <br></br>"],
+          list: ["<b>Instagram Influencer Marketing:</b> We help you reach a large audience on Instagram with eye-catching posts and stories from top influencers.<br></br>", "<b>YouTube Influencer Marketing:</b> YouTube is a great platform for reaching many potential customers. We work with the best YouTube influencers to give your brand credibility and reach.<br></br>", "<b>TikTok Influencer Marketing:</b> TikTok is growing quickly, and we use this platform to connect with younger, active audiences through the best influencers.<br></br>", "<b>Facebook & Twitter Marketing:</b> These platforms still play an important role in building your brand’s presence, and we ensure your influencer campaigns reach the right people."]
+        },
+        {
+          headings: ["Why Should You Work with an Influencer Marketing Agency?", ""],
+          list: ["<b>Reach the Right Audience:</b> With our <b>influencer marketing agency,</b> your brand will be introduced to an audience that is most likely to connect with your products or services. We help make sure your campaign is seen by the people who matter most.<br></br>", "<b>Build Trust and Awareness:</b>Working with trusted influencers boosts your brand’s credibility. People tend to trust recommendations from influencers more than regular ads, which helps build your brand’s reputation.<br></br>", "<b>Affordable and Effective: </b>Compared to traditional <a href='https://en.wikipedia.org/wiki/Advertising' target=_'blanket'><b>advertising</b></a>, influencer marketing can be more affordable and deliver better results. Our <b>top influencer marketing agencies</b> help you make the most of your marketing budget.<br></br>", "<b>Long-Term Partnerships: </b>With influencer marketing, building long-lasting relationships with influencers can benefit your brand for years to come. It’s not just about one campaign; it’s about creating ongoing partnerships for continued success."],
+        },
+        {
+          headings: ["Partner with the Best Influencer Marketing Agency", ""],
+          texts: ["Skyhit Media is a leading <b>influencer marketing agency</b> in India, offering services that meet the changing needs of modern marketing. Whether you’re looking for <b>Instagram influencer marketing,</b> <b>YouTube influencer marketing,</b> or a full influencer strategy, we’re here to help.<br></br>", "Let us help you grow your brand with influencer marketing that really works. Contact us today to find out how our <b>influencer marketing services</b> can help your business succeed!"],
+        },
+        {
+          headings: ["Services We Offer", ""],
+          list: ["<a href='/best-digital-marketing-agency' ><b>Best Digital Marketing Agency</b></a>", "<a href='/website-design-and-development-services' ><b>Website Design & Development Services</b></a>", "<a href='/Performance-marketing-agency' ><b>Performance Marketing Agency</b></a>", "<a href='/search-engine-optimization-agency' ><b>Search Engine Optimization Agency</b></a>", "<a href='/social-media-marketing-agency' ><b>Social Media Marketing Agency</b></a>", "<a href='/pay-per-click-advertising-agency' ><b>Pay Per Click Advertising Agency</b></a>", "<a href='/branding-and-graphic-design-agency' ><b>Branding and Graphic Design Agency</b></a>", "<a href='/analytics-and-reporting-agency' ><b>Analytics and Reporting Agency</b></a>", "<a href='/whatsapp-marketing-agency' ><b>WhatsApp Marketing Agency</b></a>", "<a href='/online-reputation-management-agency' ><b>Online Reputation Management Agency</b></a>", "<a href='/cyber-security-services' ><b>Cyber Security Services</b></a>"],
         },
       ],
     },
   },
+
 ];
 
 export const metadata: Metadata = {

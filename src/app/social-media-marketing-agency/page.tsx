@@ -138,15 +138,50 @@ const faqs = [
       sections: [
         {
           headings: [""],
-          texts: ["In today's digital landscape, businesses need a strong online presence to stay ahead of the competition. Skyhit Media, a leading <b>Social Media Marketing Agency,</b> provides top-notch solutions to help businesses enhance their brand visibility, engage with their audience, and drive conversions."],
+          texts: ["In today's digital landscape, businesses need a strong online presence to stay ahead of the competition. Skyhit Media, a leading <b>Social Media Marketing Agency,</b> provides top-notch solutions to help businesses enhance their brand visibility, engage with their audience, and drive conversions. As one of the <b>best social media marketing agencies,</b> we specialize in crafting tailored strategies to meet your business goals.<br></br>"]
+
         },
         {
           headings: ["Why Choose Skyhit Media as Your Social Media Marketing Agency?", ""],
-          texts: ["As a trusted social media marketing agency in Hyderabad, Skyhit Media has worked with various brands to develop effective social media strategies."],
+          texts: ["As a trusted social media marketing agency in Hyderabad, Skyhit Media has worked with various brands to develop effective social media strategies. Whether you’re searching for a social media marketing agency near me or looking for the best social media marketing agency, we offer expert services to boost your brand's online presence.<br></br>"],
+        },
+        {
+          headings: ["Our Expertise in Social Media Marketing", ""],
+          texts: ["We are among the top social media marketing companies, delivering data-driven strategies to maximize engagement and growth. With expertise in both digital marketing and social media marketing, we ensure your brand gets the visibility it deserves.<br></br>"],
+        },
+        {
+          headings: ["Our Services Include:", ""],
+          list: ["<b>Social Media Strategy Development:</b> We create personalized social media plans to align with your business objectives.<br></br>", "<b>Content Creation & Marketing:</b> Engaging content tailored to your brand’s voice, including posts, videos, and graphics.<br></br>", "<b>Social Media Advertising:</b> We are one of the leading social media advertising agencies, running targeted ad campaigns to increase reach and conversions.<br></br>", "<b>Social Media Management:</b> Complete management of your social media accounts to maintain engagement and consistency.<br></br>", "<b>Influencer Marketing:</b> Partnering with top influencers to boost brand credibility and audience trust.<br></br>", "<b>Analytics & Performance Tracking:</b> Monitoring and optimizing campaigns for maximum effectiveness.<br></br>"]
+        },
+        {
+          headings: ["The Importance of Social Media Marketing", ""],
+          texts: ["Social media has become an essential tool for businesses of all sizes. As one of the <b>top social media marketing companies,</b> Skyhit Media helps brands leverage the power of social media platforms like Facebook, Instagram, Twitter, LinkedIn, and more.<br></br>"],
+        },
+        {
+          headings: ["Benefits of Choosing Our Social Media Marketing Services:", ""],
+          list: ["<b>Increased Brand Awareness:</b> Reach a larger audience and establish your brand’s presence.<br></br>", "<b>Higher Engagement Rates:</b> Build stronger relationships with customers through interactive content.<br></br>", "<b>Better Lead Generation:</b>  Convert social media followers into potential customers.<br></br>", "<b>Improved ROI:</b>  Our targeted strategies ensure you get the best return on your marketing investment.<br></br>"],
+        },
+        {
+          headings: ["Why Skyhit Media Stands Out?", ""],
+          texts: ["As a <b>top social media marketing company,</b> we differentiate ourselves with:<br></br>",],
+          list: ["<b>Customized Marketing Strategies:</b> Every business is unique, and we tailor our approach accordingly.<br></br>", "<b>Data-Driven Approach:</b>  Our campaigns are backed by insights and <a href='https://en.wikipedia.org/wiki/Analytics' target='_blanket' ><b>analytics</b></a> to drive optimal results.<br></br>", "<b>Expert Team:</b>  Our team consists of experienced professionals specializing in <b>digital marketing and social media marketing.</b><br></br>", "<b>Proven Results:</b>  We have a track record of helping brands achieve significant growth.<br></br>"]
+        },
+        {
+          headings: ["Elevate Your Brand with Skyhit Media", ""],
+          texts: ["If you are looking for the <b>best social media marketing agency</b> to handle your online presence, Skyhit Media is your go-to partner. As one of the <b>best social media marketing agencies,</b> we offer innovative solutions that align with your business objectives. .<br></br>"],
+        },
+        {
+          headings: ["Get Started Today!", ""],
+          texts: ["Whether you are a startup or an established brand, Skyhit Media, a <b>social media marketing agency in Hyderabad,</b> is here to help you navigate the ever-changing digital landscape. Contact us today to enhance your brand’s online reach with our <b>social media marketing services.</b>"],
+        },
+        {
+          headings: ["Services We Offer", ""],
+          list: ["<a href='/best-digital-marketing-agency' ><b>Best Digital Marketing Agency</b></a>", "<a href='/website-design-and-development-services' ><b>Website Design & Development Services</b></a>", "<a href='/Performance-marketing-agency' ><b>Performance Marketing Agency</b></a>", "<a href='/search-engine-optimization-agency' ><b>Search Engine Optimization Agency</b></a>", "<a href='/pay-per-click-advertising-agency' ><b>Pay Per Click Advertising Agency</b></a>", "<a href='/branding-and-graphic-design-agency' ><b>Branding and Graphic Design Agency</b></a>", "<a href='/influencer-marketing-agency' ><b>Influencer Marketing Agency</b></a>", "<a href='/analytics-and-reporting-agency' ><b>Analytics and Reporting Agency</b></a>", "<a href='/whatsapp-marketing-agency' ><b>WhatsApp Marketing Agency</b></a>", "<a href='/online-reputation-management-agency' ><b>Online Reputation Management Agency</b></a>", "<a href='/cyber-security-services' ><b>Cyber Security Services</b></a>"],
         },
       ],
     },
   },
+
 ];
 
 export const metadata: Metadata = {

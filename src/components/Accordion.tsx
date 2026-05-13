@@ -42,7 +42,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
 
   return (
     <div
-      className={`bg-[#4A555A] border-[2px] my-[20px] border-secondary shadow-md transition-all duration-300 ${
+      className={`bg-[var(--color-primary)] border-[2px] my-[20px] border-secondary shadow-md transition-all duration-300 ${
         isOpen ? "rounded-t-lg rounded-b-md" : "rounded-lg"
       }`}
     >
@@ -51,11 +51,11 @@ const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
       >
-        {title}
+        <span className="font-headline">{title}</span>
         <span className={`transform transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}>▼</span>
       </button>
       {isOpen && (
-        <div className="px-6 py-4 bg-white text-gray-600 text-base border-t-[1px] border-secondary animate-[fadeIn_0.2s_ease]">
+        <div className="px-6 py-4 bg-white text-gray-600 text-base border-t-[1px] border-secondary animate-[fadeIn_0.2s_ease] font-content">
           {renderFormattedContent(content)}
         </div>
       )}

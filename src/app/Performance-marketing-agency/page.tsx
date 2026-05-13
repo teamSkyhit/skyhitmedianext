@@ -138,15 +138,48 @@ const faqs = [
       sections: [
         {
           headings: [""],
-          texts: ["Welcome to SkyHit Media, your trusted <b>performance marketing agency </b>offering high-quality digital marketing services to boost your business's online presence. As one of the <b>best performance marketing agencies, </b>we specialize in driving measurable results through targeted campaigns and data-driven strategies."],
+          texts: ["Welcome to SkyHit Media, your trusted <b>performance marketing agency </b>offering high-quality digital marketing services to boost your business's online presence. As one of the <b>best performance marketing agencies, </b>we specialize in driving measurable results through targeted campaigns and data-driven strategies. Whether you're a startup or an established business, we can help you achieve your marketing goals efficiently.<br><br>", "Our expert team helps businesses scale their advertising efforts with <b>performance marketing ads</b> that bring direct value to their operations. By focusing on performance, we align marketing strategies with your business goals, ensuring you only pay for successful conversions, making your marketing spend more efficient."]
+
         },
         {
           headings: ["What is a Performance Marketing Agency?", ""],
           texts: ["When searching for <b>performance marketing companies,</b> you want to ensure you partner with a team that understands your business needs. <a href='/'><b>SkyHit Media</b></a> stands out as one of the <b>best performance marketing agencies</b>in the industry due to our commitment to delivering results that matter."],
         },
+        {
+          headings: ["Why Choose SkyHit Media – The Best Performance Marketing Agency?"],
+          texts: ["When searching for performance marketing companies, you want to ensure you partner with a team that understands your business needs. SkyHit Media stands out as one of the best performance marketing agencies in the industry due to our commitment to delivering results that matter.<br><br>", "Here’s why we are the best choice for performance marketing:<br><br>"],
+          list: ["<b>Expertise:</b> Our team of certified digital marketing experts knows how to tailor <b>performance marketing services</b> to meet the unique needs of every business.<br></br>", "<b>Data-Driven Approach:</b> We focus on data analytics to create highly optimized campaigns. This allows us to ensure that every decision is backed by data and provides measurable results.<br></br>", "<b>Targeted Campaigns:</b> Whether you need <b>performance marketing ads</b> on Google, Facebook, or other platforms, we ensure that every campaign targets the right audience, at the right time, for the best results.<br></br>", "<b>Transparency:</b> We provide full transparency in our services, showing you exactly how your budget is being spent and the results you’re getting from each campaign.<br></br>"]
+        },
+        {
+          headings: ["Our Performance Marketing Services", ""],
+          texts: ["At SkyHit Media, we offer a comprehensive range of <b>performance marketing services</b> that cater to your specific business needs. These services include:<br></br>"],
+          list: ["<b>PPC Campaigns:</b> Pay-per-click (PPC) campaigns on platforms like Google Ads and Bing Ads are at the core of our <b>performance marketing agency</b> offerings. Our expert team designs PPC campaigns that are cost-effective and results-driven.<br></br>", "<b>Social Media Advertising:</b> We create <b>performance marketing ads</b> that stand out on platforms like Facebook, Instagram, LinkedIn, and Twitter. We focus on generating clicks and conversions through targeted ad strategies. <br></br>", "<b>Affiliate Marketing:</b> Our <a href='https://en.wikipedia.org/wiki/Affiliate_marketing' target=_'blanket' ><b>affiliate marketing</b></a> programs allow businesses to only pay for successful conversions, helping you scale efficiently and reduce risk. <br></br>", "<b>Conversion Rate Optimization (CRO):</b> We improve the conversion rate on your website through data-driven techniques that maximize the impact of each visitor. <br></br>", "<b>Email Marketing:</b> We design targeted email campaigns that not only drive engagement but also lead to conversions. Our performance-based approach helps you get the most out of your email marketing efforts.<br></br>", "<b>SEO (Search Engine Optimization):</b> While we specialize in <b>performance marketing</b> ads, we also offer SEO services that help improve organic search rankings and drive more qualified traffic to your site.<br></br>"]
+        },
+        {
+          headings: ["The Benefits of Choosing a Performance Marketing Agency in India", ""],
+          texts: ["India has become a global hub for digital marketing, and at SkyHit Media, we’re proud to be one of the leading <b>performance marketing agencies</b> in the country. By choosing our <b>performance marketing agency in India,</b> you’ll benefit from:<br></br>"],
+          list: ["<b>Cost-Effective Services:</b> India offers competitive pricing without compromising on quality, which means you can get top-notch <b>performance marketing services</b> at a fraction of the cost compared to agencies in other countries.<br></br>", "<b>Skilled Experts:</b> India is home to some of the most talented and experienced digital marketers, and our team is equipped with the knowledge to drive the best results.<br></br>", "<b>Global Reach with Local Insights:</b> We have a deep understanding of both local and international markets, allowing us to create campaigns that resonate with your target audience."]
+        },
+        {
+          headings: ["SkyHit Media – The Best Marketing Agency in Hyderabad", ""],
+          texts: ["Located in Hyderabad, SkyHit Media is recognized as one of the best marketing agencies in Hyderabad. Our expertise in performance marketing and our commitment to delivering measurable results make us a top choice for businesses looking to grow in the digital space. Whether you are targeting a local market or looking to expand globally, we provide custom solutions tailored to your needs.<br></br"],
+        },
+        {
+          headings: ["Why Performance Marketing?", ""],
+          texts: ["The digital marketing landscape has evolved, and traditional methods may not always deliver the best results. <b>Performance marketing agencies</b> focus on direct, measurable outcomes, which means you only pay for the results you want. It’s a win-win situation that guarantees value for your marketing budget.<br></br>", "By choosing SkyHit Media as your <b>performance marketing agency,</b> you can trust that your campaigns are in the hands of experts who are dedicated to delivering results that matter.<br></br>"],
+        },
+        {
+          headings: ["Get Started with SkyHit Media – The Leading Performance Marketing Agency", ""],
+          texts: ["Ready to take your digital marketing to the next level? Contact SkyHit Media today to get started with the <b>best performance marketing services</b> available. Let us help you achieve your business goals with strategies that drive real results.<br></br>", "If you're looking for a <b>performance marketing agency</b> that values transparency, efficiency, and effectiveness, SkyHit Media is your perfect partner. Join our list of satisfied clients and experience why we’re one of the <b>best performance marketing agencies</b> around."],
+        },
+        {
+          headings: ["Services We Offer", ""],
+          list: ["<a href='/best-digital-marketing-agency' ><b>Best Digital Marketing Agency</b></a>", "<a href='/website-design-and-development-services' ><b>Website Design & Development Services</b></a>", "<a href='/search-engine-optimization-agency' ><b>Search Engine Optimization Agency</b></a>", "<a href='/social-media-marketing-agency' ><b>Social Media Marketing Agency</b></a>", "<a href='/pay-per-click-advertising-agency' ><b>Pay Per Click Advertising Agency</b></a>", "<a href='/branding-and-graphic-design-agency' ><b>Branding and Graphic Design Agency</b></a>", "<a href='/influencer-marketing-agency' ><b>Influencer Marketing Agency</b></a>", "<a href='/analytics-and-reporting-agency' ><b>Analytics and Reporting Agency</b></a>", "<a href='/whatsapp-marketing-agency' ><b>WhatsApp Marketing Agency</b></a>", "<a href='/online-reputation-management-agency' ><b>Online Reputation Management Agency</b></a>", "<a href='/cyber-security-services' ><b>Cyber Security Services</b></a>"],
+        },
       ],
     },
   },
+
 ];
 
 export const metadata: Metadata = {

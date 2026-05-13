@@ -153,13 +153,43 @@ const faqs = [
       sections: [
         {
           headings: [""],
-          texts: [
-            "In today's digital world, businesses need a strong online presence to succeed. If you're looking for the <b>best digital marketing agency</b> to help you grow, you're in the right place! Our <b>best digital marketing agency</b> offers a variety of services that can transform your online presence, boost your visibility, and increase your sales.<br><br>Whether you're just starting or looking to optimize your current digital marketing strategies, we are here to help. As the <b>best digital marketing agency</b>, we pride ourselves on being a one-stop solution for all your marketing needs.",
-          ],
+          texts: ["In today’s digital world, businesses need a strong online presence to succeed. If you’re looking for the <b>best digital marketing agency</b> to help you grow, you’re in the right place! Our <b>best digital marketing agency</b> offers a variety of services that can transform your online presence, boost your visibility, and increase your sales.<br><br>Whether you’re just starting or looking to optimize your current digital marketing strategies, we are here to help. As the <b>best digital marketing agency</b>, we pride ourselves on being a one-stop solution for all your marketing needs."]
+
+        },
+        {
+          headings: ["Best Digital Marketing Services for Your Business", ""],
+          texts: ["What sets us apart as the <b>best digital marketing agency</b> is our comprehensive range of services. We specialize in a variety of areas that are essential to your business’s growth:<br></br>"],
+          list: ["<b>Search Engine Optimization (SEO): </b> Our <b>best <a href='/search-engine-optimization'><b>search engine optimization</b></a> agency</b> will optimize your website to rank higher on search engines, bringing in organic traffic and helping your business get noticed by the right audience.<br></br>", "<b>Pay-Per-Click Advertising (PPC): </b> Our team uses targeted PPC strategies to drive qualified leads and ensure you get the best ROI on your digital ad spend.<br></br>", "<b>Social Media Marketing: </b> As a <b>top digital marketing agency</b>, we know how important social media is in building a brand. We manage your accounts across platforms, engage with your audience, and boost your visibility with creative campaigns.<br></br>", "<b>E-commerce Marketing: </b> If you run an online store, we are the <b>best ecommerce marketing agency</b> for you. From setting up and optimizing your e-commerce platform to driving traffic and increasing conversions, our strategies are tailored to meet your unique business needs."]
+        },
+        {
+          headings: ["Local and Global Reach: The Best Digital Marketing Agency Near Me", ""],
+          texts: ["When it comes to choosing the <b>best digital marketing agency near me</b>, you want a team that understands local trends, culture, and consumer behavior. At our <b>best digital marketing agency</b>, we focus on both local and global marketing strategies to help your business thrive in any market. Whether you need a <b>best digital marketing company near me</b> or a team that can help you expand globally, we offer solutions tailored to your needs.<br></br>", "Looking for <b>internet marketing service near me</b>? We are local experts who can help you get started on the right path. We understand how local businesses work and can create strategies that make a real difference in your community."],
+        },
+        {
+          headings: ["Why We Are the Best Digital Marketing Agency", ""],
+          texts: ["As the <b>best digital marketing agency</b>, we are proud of the results we achieve for our clients. We focus on driving real, measurable results and offer a range of services designed to increase traffic, improve conversions, and help your business stand out.<br></br>"],
+          list: ["<b>Expertise: </b> Our team consists of experienced professionals who are specialists in various aspects of digital marketing. From <a href='https://en.wikipedia.org/wiki/Search_engine_optimization' target='_blank'><b>SEO</b></a> to social media and PPC, we have the expertise to deliver exceptional results.<br></br>", "<b>Customized Strategies: </b> We understand that every business is unique. As a <b>top digital marketing agency</b>, we create personalized strategies that align with your goals, target audience, and industry.<br></br>", "<b>Transparency: </b> We believe in keeping our clients in the loop. You’ll always know where your money is going and how your campaigns are performing.",]
+        },
+        {
+          headings: ["The Best Digital Marketing Agency in the World", ""],
+          texts: ["Looking for the <b>best digital marketing agency</b> in the world? While our services are tailored to meet the needs of local businesses, we also have the experience and expertise to help businesses succeed on a global scale. Our innovative digital marketing strategies are effective in any market, making us the <b>best digital marketing company in the world</b> for businesses seeking international success.", "With a strong focus on results and a customer-centric approach, our <b>best digital marketing agency</b> delivers campaigns that help you stand out in a competitive market. We take pride in being one of the <b>top digital advertising agencies</b>, ensuring your business gets the best exposure and traffic possible"],
+        },
+        {
+          headings: ["Why Choose Us as Your Digital Marketing Partner?", ""],
+          texts: ["The key to success in today’s digital age is partnering with a <b>best marketing agency near me</b> that can help you navigate the complexities of the online world. Whether you're looking for a <b>best digital marketing agency near me</b> or an experienced team to take your brand to new heights globally, we offer the perfect blend of local knowledge and international expertise.", "We take a hands-on approach to each project, working closely with our clients to ensure their objectives are met. From improving your website’s SEO to managing your paid ad campaigns, we’ve got all aspects of digital marketing covered."],
+        },
+        {
+          headings: ["Ready to Take Your Business to the Next Level?", ""],
+          texts: ["Choosing the <b>best digital marketing agency</b> is the first step toward achieving your online marketing goals. Whether you're in need of <b>best digital marketing services</b> or want to work with the <b>best digital marketing company near me</b>, our team is ready to help.", "Get in touch with the <b>best digital marketing agency</b> today and let's discuss how we can help your business grow. We’ll work with you to develop a strategy that drives results, improves your digital footprint, and helps you reach your target audience."],
+        },
+        {
+          headings: ["Services We Offer", ""],
+          list: ["<a href='/website-design-and-development-services' ><b>Website Design & Development Services</b></a>", "<a href='/Performance-marketing-agency' ><b>Performance Marketing Agency</b></a>", "<a href='/search-engine-optimization-agency' ><b>Search Engine Optimization Agency</b></a>", "<a href='/social-media-marketing-agency' ><b>Social Media Marketing Agency</b></a>", "<a href='/pay-per-click-advertising-agency' ><b>Pay Per Click Advertising Agency</b></a>", "<a href='/branding-and-graphic-design-agency' ><b>Branding and Graphic Design Agency</b></a>", "<a href='/influencer-marketing-agency' ><b>Influencer Marketing Agency</b></a>", "<a href='/analytics-and-reporting-agency' ><b>Analytics and Reporting Agency</b></a>", "<a href='/whatsapp-marketing-agency' ><b>WhatsApp Marketing Agency</b></a>", "<a href='/online-reputation-management-agency' ><b>Online Reputation Management Agency</b></a>", "<a href='/cyber-security-services' ><b>Cyber Security Services</b></a>"],
         },
       ],
     },
   },
+
 ];
 
 export const metadata: Metadata = {
