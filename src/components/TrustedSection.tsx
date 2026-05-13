@@ -108,7 +108,7 @@ const TrustedSection = () => {
               }}
             />
 
-            {/* Orbit Wrapper */}
+            {/* Orbit Wrapper //*/}
             <div
               className="relative flex items-center justify-center"
               style={{ width: size, height: size }}
