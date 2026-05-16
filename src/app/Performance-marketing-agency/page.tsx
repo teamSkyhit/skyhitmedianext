@@ -182,10 +182,17 @@ const faqs = [
 
 ];
 
-export const metadata: Metadata = {
-  title: "#1 Performance Marketing Agency | Skyhit Media Drives Results",
+export const metadata: Metadata = {title: "#1 Performance Marketing Agency | Skyhit Media Drives Results",
   description:
     "Performance Marketing Agency - Skyhit Media boosts ROI with data-driven strategies, driving targeted traffic and increasing conversions. Get started today!",
+  keywords: ["Digital Marketing", "SEO", "PPC", "Web Design", "Skyhit Media", "Hyderabad"],
+  openGraph: {
+    title: "#1 Performance Marketing Agency | Skyhit Media Drives Results",
+    description: "Performance Marketing Agency - Skyhit Media boosts ROI with data-driven strategies, driving targeted traffic and increasing conversions. Get started today!",
+    url: "https://skyhitmedia.com/Performance-marketing-agency",
+    images: ["https://skyhitmedia.com/images/Digital-Marketing-og-.png"],
+  },
+  alternates: { canonical: "https://skyhitmedia.com/Performance-marketing-agency" },
 };
 
 export default function PerformancePage() {

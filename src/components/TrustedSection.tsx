@@ -94,10 +94,10 @@ const TrustedSection = () => {
           <div className="absolute inset-0 bg-white/40 md:bg-transparent" />
 
           {/* Circle Wrapper */}
-          <div
+          <div  
             className="relative z-10 flex items-center justify-center"
             style={{ width: size * 1.4, height: size * 1.4 }}
-          >
+          > 
 
             {/* Background Circle Shadow */}
             <div

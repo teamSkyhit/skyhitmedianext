@@ -167,10 +167,17 @@ const faqs = [
 
 ];
 
-export const metadata: Metadata = {
-  title: "#1 Cyber Security Services for Your Website | Skyhit Media",
+export const metadata: Metadata = {title: "#1 Cyber Security Services for Your Website | Skyhit Media",
   description:
     "Cyber Security Services by Skyhit Media protect your website from online threats. Ensure the safety of your data and users with our expert cyber security solutions.",
+  keywords: ["Digital Marketing", "SEO", "PPC", "Web Design", "Skyhit Media", "Hyderabad"],
+  openGraph: {
+    title: "#1 Cyber Security Services for Your Website | Skyhit Media",
+    description: "Cyber Security Services by Skyhit Media protect your website from online threats. Ensure the safety of your data and users with our expert cyber security solutions.",
+    url: "https://skyhitmedia.com/cyber-security-services",
+    images: ["https://skyhitmedia.com/images/Digital-Marketing-og-.png"],
+  },
+  alternates: { canonical: "https://skyhitmedia.com/cyber-security-services" },
 };
 
 export default function CyberPage() {

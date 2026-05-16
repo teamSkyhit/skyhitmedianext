@@ -166,10 +166,17 @@ const faqs = [
 
 ];
 
-export const metadata: Metadata = {
-  title: "#1 Analytics & Reporting Agency For Your Business - SKYHIT MEDIA",
+export const metadata: Metadata = {title: "#1 Analytics & Reporting Agency For Your Business - SKYHIT MEDIA",
   description:
     "Analytics & Reporting Agency, Skyhit Media, provides data-driven insights, performance tracking, and custom reporting solutions to help grow your business.",
+  keywords: ["Digital Marketing", "SEO", "PPC", "Web Design", "Skyhit Media", "Hyderabad"],
+  openGraph: {
+    title: "#1 Analytics & Reporting Agency For Your Business - SKYHIT MEDIA",
+    description: "Analytics & Reporting Agency, Skyhit Media, provides data-driven insights, performance tracking, and custom reporting solutions to help grow your business.",
+    url: "https://skyhitmedia.com/analytics-and-reporting-agency",
+    images: ["https://skyhitmedia.com/images/Digital-Marketing-og-.png"],
+  },
+  alternates: { canonical: "https://skyhitmedia.com/analytics-and-reporting-agency" },
 };
 
 export default function AnalyticsPage() {

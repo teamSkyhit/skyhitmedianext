@@ -172,10 +172,17 @@ const faqs = [
 
 ];
 
-export const metadata: Metadata = {
-  title: "#1 Influencer Marketing Agency | SkyHit Media Influencer Agency",
+export const metadata: Metadata = {title: "#1 Influencer Marketing Agency | SkyHit Media Influencer Agency",
   description:
     "Influencer Marketing Agency SkyHit Media connects brands with top influencers to boost engagement, enhance reach, and drive measurable business growth.",
+  keywords: ["Digital Marketing", "SEO", "PPC", "Web Design", "Skyhit Media", "Hyderabad"],
+  openGraph: {
+    title: "#1 Influencer Marketing Agency | SkyHit Media Influencer Agency",
+    description: "Influencer Marketing Agency SkyHit Media connects brands with top influencers to boost engagement, enhance reach, and drive measurable business growth.",
+    url: "https://skyhitmedia.com/influencer-marketing-agency",
+    images: ["https://skyhitmedia.com/images/Digital-Marketing-og-.png"],
+  },
+  alternates: { canonical: "https://skyhitmedia.com/influencer-marketing-agency" },
 };
 
 export default function InfluencerPage() {

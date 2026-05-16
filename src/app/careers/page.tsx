@@ -6,10 +6,17 @@ const Careers = dynamic(() => import("@/components/Careers"));
 const CareersForm = dynamic(() => import("@/components/CareersForm"));
 const AboutSection = dynamic(() => import("@/components/Services/AboutSection"));
 
-export const metadata: Metadata = {
-  title: "Careers at Skyhit Media | Join Our Team in Hyderabad",
+export const metadata: Metadata = {title: "Careers at Skyhit Media | Join Our Team in Hyderabad",
   description:
     "Join the Skyhit Media team in Hyderabad. Explore open positions in digital marketing, web development, content creation, and more.",
+  keywords: ["Digital Marketing", "SEO", "PPC", "Web Design", "Skyhit Media", "Hyderabad"],
+  openGraph: {
+    title: "Careers at Skyhit Media | Join Our Team in Hyderabad",
+    description: "Join the Skyhit Media team in Hyderabad. Explore open positions in digital marketing, web development, content creation, and more.",
+    url: "https://skyhitmedia.com/careers",
+    images: ["https://skyhitmedia.com/images/Digital-Marketing-og-.png"],
+  },
+  alternates: { canonical: "https://skyhitmedia.com/careers" },
 };
 
 export default function CareersPage() {

@@ -119,10 +119,17 @@ const testimonials = [
   },
 ];
 
-export const metadata: Metadata = {
-  title: "Our Digital Marketing Services | Skyhit Media Hyderabad",
+export const metadata: Metadata = {title: "Our Digital Marketing Services | Skyhit Media Hyderabad",
   description:
     "Explore Skyhit Media's full range of digital marketing services including SEO, PPC, social media, web design, branding, and more.",
+  keywords: ["Digital Marketing", "SEO", "PPC", "Web Design", "Skyhit Media", "Hyderabad"],
+  openGraph: {
+    title: "Our Digital Marketing Services | Skyhit Media Hyderabad",
+    description: "Explore Skyhit Media's full range of digital marketing services including SEO, PPC, social media, web design, branding, and more.",
+    url: "https://skyhitmedia.com/services",
+    images: ["https://skyhitmedia.com/images/Digital-Marketing-og-.png"],
+  },
+  alternates: { canonical: "https://skyhitmedia.com/services" },
 };
 
 export default function ServicesPage() {

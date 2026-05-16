@@ -43,14 +43,16 @@ export default function Footer() {
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-4 gap-8">
         {/* Logo & description */}
         <div>
-          <Image
-            src="/images/header%20skyhit%20logo%20desktop.png"
-            alt="Skyhit Media Logo"
-            width={155}
-            height={58}
-            className="mb-4"
-            loading="lazy"
-          />
+          <Link href="/">
+            <Image
+              src="/images/header%20skyhit%20logo%20desktop.png"
+              alt="Skyhit Media Logo"
+              width={155}
+              height={58}
+              className="mb-4"
+              loading="lazy"
+            />
+          </Link>
           <p className="text-[18px]">
             Skyhit Media is the top digital marketing agency and web design company in Hyderabad.
             Boost your business with expert services and innovative solutions.
@@ -124,7 +126,7 @@ export default function Footer() {
       </div>
 
       <div className="text-center mt-[3rem] text-[15.4px] text-white/90">
-        © Copyright {new Date().getFullYear()} | All Rights Reserved SKYHIT MEDIA
+        © Copyright {new Date().getFullYear()} | All Rights Reserved <Link href="/" className="hover:text-[#DCBE9E] transition-colors font-medium">SKYHIT MEDIA</Link>
       </div>
     </footer>
   );
