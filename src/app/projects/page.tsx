@@ -40,7 +40,7 @@ export const metadata: Metadata = {title: "Our Projects | Skyhit Media Portfolio
     title: "Our Projects | Skyhit Media Portfolio",
     description: "Explore Skyhit Media's portfolio of successful digital marketing and web design projects for clients across various industries.",
     url: "https://skyhitmedia.com/projects",
-    images: ["https://skyhitmedia.com/images/Digital-Marketing-og-.png"],
+    images: ["/images/og-image-padded.png"],
   },
   alternates: { canonical: "https://skyhitmedia.com/projects" },
 };

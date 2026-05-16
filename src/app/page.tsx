@@ -82,7 +82,7 @@ export const metadata: Metadata = {title: "#1 Top Digital Marketing Agency in Hy
     title: "Top Digital Marketing Agency in Hyderabad | 🚀 SKYHIT MEDIA",
     description:
       "Skyhit Media is the top digital marketing agency and web design company in Hyderabad. Boost your business with expert services and innovative solutions.",
-    images: ["https://skyhitmedia.com/images/Digital-Marketing-og-.png"],
+    images: ["/images/og-image-padded.png"],
     url: "https://skyhitmedia.com/",
   },
   alternates: { canonical: "https://skyhitmedia.com/" },

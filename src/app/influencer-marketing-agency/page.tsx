@@ -180,7 +180,7 @@ export const metadata: Metadata = {title: "#1 Influencer Marketing Agency | SkyH
     title: "#1 Influencer Marketing Agency | SkyHit Media Influencer Agency",
     description: "Influencer Marketing Agency SkyHit Media connects brands with top influencers to boost engagement, enhance reach, and drive measurable business growth.",
     url: "https://skyhitmedia.com/influencer-marketing-agency",
-    images: ["https://skyhitmedia.com/images/Digital-Marketing-og-.png"],
+    images: ["/images/og-image-padded.png"],
   },
   alternates: { canonical: "https://skyhitmedia.com/influencer-marketing-agency" },
 };

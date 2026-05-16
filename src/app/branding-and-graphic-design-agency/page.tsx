@@ -179,7 +179,7 @@ export const metadata: Metadata = {title: "#1 Branding and Graphic Design Agency
     title: "#1 Branding and Graphic Design Agency | Skyhit Media",
     description: "Branding and Graphic Design Agency Skyhit Media offers creative solutions to boost your brand's identity with innovative design and effective strategies.",
     url: "https://skyhitmedia.com/branding-and-graphic-design-agency",
-    images: ["https://skyhitmedia.com/images/Digital-Marketing-og-.png"],
+    images: ["/images/og-image-padded.png"],
   },
   alternates: { canonical: "https://skyhitmedia.com/branding-and-graphic-design-agency" },
 };

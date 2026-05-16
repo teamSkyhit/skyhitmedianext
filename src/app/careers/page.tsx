@@ -14,7 +14,7 @@ export const metadata: Metadata = {title: "Careers at Skyhit Media | Join Our Te
     title: "Careers at Skyhit Media | Join Our Team in Hyderabad",
     description: "Join the Skyhit Media team in Hyderabad. Explore open positions in digital marketing, web development, content creation, and more.",
     url: "https://skyhitmedia.com/careers",
-    images: ["https://skyhitmedia.com/images/Digital-Marketing-og-.png"],
+    images: ["/images/og-image-padded.png"],
   },
   alternates: { canonical: "https://skyhitmedia.com/careers" },
 };

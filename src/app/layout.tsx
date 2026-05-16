@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     siteName: "Skyhit Media",
     images: [
       {
-        url: "https://skyhitmedia.com/images/Digital-Marketing-og-.png",
+        url: "/images/og-image-padded.png",
         width: 1200,
         height: 630,
         alt: "Skyhit Media - Digital Marketing Agency",

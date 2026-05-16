@@ -174,7 +174,7 @@ export const metadata: Metadata = {title: "#1 Online Reputation Management Agenc
     title: "#1 Online Reputation Management Agency - Skyhit Media Services",
     description: "Online Reputation Management Agency, Skyhit Media, specializes in improving brand reputation, boosting online presence, and building trust with audiences.",
     url: "https://skyhitmedia.com/online-reputation-management-agency",
-    images: ["https://skyhitmedia.com/images/Digital-Marketing-og-.png"],
+    images: ["/images/og-image-padded.png"],
   },
   alternates: { canonical: "https://skyhitmedia.com/online-reputation-management-agency" },
 };

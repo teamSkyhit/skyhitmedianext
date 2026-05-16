@@ -180,7 +180,7 @@ export const metadata: Metadata = {title: "#1 Website Design and Development Ser
     title: "#1 Website Design and Development Services | Skyhit Media",
     description: "Website Design and Development Services by Skyhit Media offer custom, responsive & user-friendly websites that enhance your online presence and drive success.",
     url: "https://skyhitmedia.com/website-design-and-development-services",
-    images: ["https://skyhitmedia.com/images/Digital-Marketing-og-.png"],
+    images: ["/images/og-image-padded.png"],
   },
   alternates: { canonical: "https://skyhitmedia.com/website-design-and-development-services" },
 };

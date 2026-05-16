@@ -175,7 +175,7 @@ export const metadata: Metadata = {title: "#1 Pay Per Click Advertising Agency |
     title: "#1 Pay Per Click Advertising Agency | Skyhit Media Boost ROI",
     description: "Pay Per Click Advertising Agency Skyhit Media offers expert PPC services to increase your online visibility, drive targeted traffic, and maximize your ROI.",
     url: "https://skyhitmedia.com/pay-per-click-advertising-agency",
-    images: ["https://skyhitmedia.com/images/Digital-Marketing-og-.png"],
+    images: ["/images/og-image-padded.png"],
   },
   alternates: { canonical: "https://skyhitmedia.com/pay-per-click-advertising-agency" },
 };
