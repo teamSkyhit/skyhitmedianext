@@ -190,7 +190,6 @@ export const metadata: Metadata = {title: "#1 Performance Marketing Agency | Sky
     title: "#1 Performance Marketing Agency | Skyhit Media Drives Results",
     description: "Performance Marketing Agency - Skyhit Media boosts ROI with data-driven strategies, driving targeted traffic and increasing conversions. Get started today!",
     url: "https://skyhitmedia.com/Performance-marketing-agency",
-    images: ["/images/og-image-padded.png"],
   },
   alternates: { canonical: "https://skyhitmedia.com/Performance-marketing-agency" },
 };

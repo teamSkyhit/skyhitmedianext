@@ -127,7 +127,6 @@ export const metadata: Metadata = {title: "Our Digital Marketing Services | Skyh
     title: "Our Digital Marketing Services | Skyhit Media Hyderabad",
     description: "Explore Skyhit Media's full range of digital marketing services including SEO, PPC, social media, web design, branding, and more.",
     url: "https://skyhitmedia.com/services",
-    images: ["/images/og-image-padded.png"],
   },
   alternates: { canonical: "https://skyhitmedia.com/services" },
 };

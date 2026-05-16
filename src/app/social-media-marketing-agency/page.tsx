@@ -192,7 +192,6 @@ export const metadata: Metadata = {title: "#1 Social Media Marketing Agency | Sk
     title: "#1 Social Media Marketing Agency | Skyhit Media Drives Growth",
     description: "Skyhit Media, a top social media marketing agency, helps businesses grow with expert strategies, increasing engagement, and driving conversions. Start today!",
     url: "https://skyhitmedia.com/social-media-marketing-agency",
-    images: ["/images/og-image-padded.png"],
   },
   alternates: { canonical: "https://skyhitmedia.com/social-media-marketing-agency" },
 };

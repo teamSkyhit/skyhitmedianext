@@ -10,7 +10,6 @@ export const metadata: Metadata = {title: "Digital Marketing Blog | Skyhit Media
     title: "Digital Marketing Blog | Skyhit Media Insights",
     description: "Read the latest insights, tips, and strategies on digital marketing, SEO, social media, and web design from the Skyhit Media team.",
     url: "https://skyhitmedia.com/blogs",
-    images: ["/images/og-image-padded.png"],
   },
   alternates: { canonical: "https://skyhitmedia.com/blogs" },
 };

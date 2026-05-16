@@ -175,7 +175,6 @@ export const metadata: Metadata = {title: "#1 WhatsApp Marketing Agency | Skyhit
     title: "#1 WhatsApp Marketing Agency | Skyhit Media Boost Customer Engagement",
     description: "WhatsApp Marketing Agency Skyhit Media offers tailored WhatsApp marketing strategies to enhance customer engagement, increase sales, and grow your business.",
     url: "https://skyhitmedia.com/whatsapp-marketing-agency",
-    images: ["/images/og-image-padded.png"],
   },
   alternates: { canonical: "https://skyhitmedia.com/whatsapp-marketing-agency" },
 };

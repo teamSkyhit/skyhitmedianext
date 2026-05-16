@@ -200,7 +200,6 @@ export const metadata: Metadata = {title: "#1 Best Digital Marketing Agency for 
     title: "#1 Best Digital Marketing Agency for Business – SKYHIT MEDIA",
     description: "Discover the best digital marketing agency to boost your online presence. Get expert SEO, PPC, and social media strategies for guaranteed growth and success.",
     url: "https://skyhitmedia.com/best-digital-marketing-agency",
-    images: ["/images/og-image-padded.png"],
   },
   alternates: { canonical: "https://skyhitmedia.com/best-digital-marketing-agency" },
 };
