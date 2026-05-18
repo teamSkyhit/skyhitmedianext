@@ -36,6 +36,14 @@ export const metadata: Metadata = {title: "Contact Skyhit Media | Digital Market
     "Get in touch with Skyhit Media, the top digital marketing agency in Hyderabad. We're here to help you grow your business online.",
   keywords: ["Digital Marketing", "SEO", "PPC", "Web Design", "Skyhit Media", "Hyderabad"],
   openGraph: {
+    images: [
+      {
+        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        width: 630,
+        height: 630,
+        alt: "Skyhit Media",
+      }
+    ],
     title: "Contact Skyhit Media | Digital Marketing Agency Hyderabad",
     description: "Get in touch with Skyhit Media, the top digital marketing agency in Hyderabad. We're here to help you grow your business online.",
     url: "https://skyhitmedia.com/contact",

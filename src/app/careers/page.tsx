@@ -11,6 +11,14 @@ export const metadata: Metadata = {title: "Careers at Skyhit Media | Join Our Te
     "Join the Skyhit Media team in Hyderabad. Explore open positions in digital marketing, web development, content creation, and more.",
   keywords: ["Digital Marketing", "SEO", "PPC", "Web Design", "Skyhit Media", "Hyderabad"],
   openGraph: {
+    images: [
+      {
+        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        width: 630,
+        height: 630,
+        alt: "Skyhit Media",
+      }
+    ],
     title: "Careers at Skyhit Media | Join Our Team in Hyderabad",
     description: "Join the Skyhit Media team in Hyderabad. Explore open positions in digital marketing, web development, content creation, and more.",
     url: "https://skyhitmedia.com/careers",

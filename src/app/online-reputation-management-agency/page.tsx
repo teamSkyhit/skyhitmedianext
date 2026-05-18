@@ -171,6 +171,14 @@ export const metadata: Metadata = {title: "#1 Online Reputation Management Agenc
     "Online Reputation Management Agency, Skyhit Media, specializes in improving brand reputation, boosting online presence, and building trust with audiences.",
   keywords: ["Digital Marketing", "SEO", "PPC", "Web Design", "Skyhit Media", "Hyderabad"],
   openGraph: {
+    images: [
+      {
+        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        width: 630,
+        height: 630,
+        alt: "Skyhit Media",
+      }
+    ],
     title: "#1 Online Reputation Management Agency - Skyhit Media Services",
     description: "Online Reputation Management Agency, Skyhit Media, specializes in improving brand reputation, boosting online presence, and building trust with audiences.",
     url: "https://skyhitmedia.com/online-reputation-management-agency",

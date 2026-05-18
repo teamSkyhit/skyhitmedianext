@@ -171,6 +171,14 @@ export const metadata: Metadata = {title: "#1 Analytics & Reporting Agency For Y
     "Analytics & Reporting Agency, Skyhit Media, provides data-driven insights, performance tracking, and custom reporting solutions to help grow your business.",
   keywords: ["Digital Marketing", "SEO", "PPC", "Web Design", "Skyhit Media", "Hyderabad"],
   openGraph: {
+    images: [
+      {
+        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        width: 630,
+        height: 630,
+        alt: "Skyhit Media",
+      }
+    ],
     title: "#1 Analytics & Reporting Agency For Your Business - SKYHIT MEDIA",
     description: "Analytics & Reporting Agency, Skyhit Media, provides data-driven insights, performance tracking, and custom reporting solutions to help grow your business.",
     url: "https://skyhitmedia.com/analytics-and-reporting-agency",

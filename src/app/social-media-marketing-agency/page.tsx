@@ -189,6 +189,14 @@ export const metadata: Metadata = {title: "#1 Social Media Marketing Agency | Sk
     "Skyhit Media, a top social media marketing agency, helps businesses grow with expert strategies, increasing engagement, and driving conversions. Start today!",
   keywords: ["Digital Marketing", "SEO", "PPC", "Web Design", "Skyhit Media", "Hyderabad"],
   openGraph: {
+    images: [
+      {
+        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        width: 630,
+        height: 630,
+        alt: "Skyhit Media",
+      }
+    ],
     title: "#1 Social Media Marketing Agency | Skyhit Media Drives Growth",
     description: "Skyhit Media, a top social media marketing agency, helps businesses grow with expert strategies, increasing engagement, and driving conversions. Start today!",
     url: "https://skyhitmedia.com/social-media-marketing-agency",
