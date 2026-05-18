@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     siteName: "Skyhit Media",
     images: [
       {
-        url: "https://skyhitmedia.com/images/Digital-Marketing-og-padded.png",
+        url: "https://skyhitmedia.com/images/Digital-Marketing-og-.png",
         width: 1200,
         height: 630,
         alt: "Skyhit Media - Digital Marketing Agency",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Skyhit Media | Top Digital Marketing Agency in Hyderabad",
     description: "Skyhit Media is the top digital marketing agency and web design company in Hyderabad. Boost your business with expert services and innovative solutions.",
-    images: ["https://skyhitmedia.com/images/Digital-Marketing-og-padded.png"],
+    images: ["https://skyhitmedia.com/images/Digital-Marketing-og-.png"],
   },
   robots: {
     index: true,
