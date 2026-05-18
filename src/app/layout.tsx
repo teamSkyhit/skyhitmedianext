@@ -38,6 +38,12 @@ export const metadata: Metadata = {
     siteName: "Skyhit Media",
     images: [
       {
+        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        width: 630,
+        height: 630,
+        alt: "Skyhit Media - Digital Marketing Agency",
+      },
+      {
         url: "https://skyhitmedia.com/images/Digital-Marketing-og-.png",
         width: 1200,
         height: 630,
