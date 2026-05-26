@@ -20,19 +20,46 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.skyhitmedia.com"),
   title: "Skyhit Media | Top Digital Marketing Agency in Hyderabad",
   description:
     "Skyhit Media is the top digital marketing agency and web design company in Hyderabad. Boost your business with expert services and innovative solutions.",
+  keywords: ["Digital Marketing Agency Hyderabad", "SEO services", "Web Design Company", "PPC Advertising", "Skyhit Media"],
+  icons: {
+    icon: "https://skyhitmedia.com/images/favicon.ico",
+    shortcut: "https://skyhitmedia.com/images/favicon.ico",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: "/",
+    title: "Skyhit Media | Top Digital Marketing Agency in Hyderabad",
+    description: "Skyhit Media is the top digital marketing agency and web design company in Hyderabad. Boost your business with expert services and innovative solutions.",
+    siteName: "Skyhit Media",
+    images: [
+      {
+        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        width: 630,
+        height: 630,
+        alt: "Skyhit Media - Digital Marketing Agency",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Skyhit Media | Top Digital Marketing Agency in Hyderabad",
+    description: "Skyhit Media is the top digital marketing agency and web design company in Hyderabad. Boost your business with expert services and innovative solutions.",
+    images: ["https://skyhitmedia.com/images/Digital-Marketing-og-.png"],
+  },
   robots: {
-    index: false,
-    follow: false,
-    nocache: true,
+    index: true,
+    follow: true,
     googleBot: {
-      index: false,
-      follow: false,
-      noarchive: true,
-      noimageindex: true,
-      nosnippet: true,
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   verification: {

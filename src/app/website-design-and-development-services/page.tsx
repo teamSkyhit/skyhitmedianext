@@ -172,10 +172,24 @@ const faqs = [
 
 ];
 
-export const metadata: Metadata = {
-  title: "#1 Website Design and Development Services | Skyhit Media",
+export const metadata: Metadata = {title: "#1 Website Design and Development Services | Skyhit Media",
   description:
     "Website Design and Development Services by Skyhit Media offer custom, responsive & user-friendly websites that enhance your online presence and drive success.",
+  keywords: ["Digital Marketing", "SEO", "PPC", "Web Design", "Skyhit Media", "Hyderabad"],
+  openGraph: {
+    images: [
+      {
+        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        width: 630,
+        height: 630,
+        alt: "Skyhit Media",
+      }
+    ],
+    title: "#1 Website Design and Development Services | Skyhit Media",
+    description: "Website Design and Development Services by Skyhit Media offer custom, responsive & user-friendly websites that enhance your online presence and drive success.",
+    url: "https://skyhitmedia.com/website-design-and-development-services",
+  },
+  alternates: { canonical: "https://skyhitmedia.com/website-design-and-development-services" },
 };
 
 export default function WebServicePage() {

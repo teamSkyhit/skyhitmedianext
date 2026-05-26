@@ -167,10 +167,24 @@ const faqs = [
 
 ];
 
-export const metadata: Metadata = {
-  title: "#1 Pay Per Click Advertising Agency | Skyhit Media Boost ROI",
+export const metadata: Metadata = {title: "#1 Pay Per Click Advertising Agency | Skyhit Media Boost ROI",
   description:
     "Pay Per Click Advertising Agency Skyhit Media offers expert PPC services to increase your online visibility, drive targeted traffic, and maximize your ROI.",
+  keywords: ["Digital Marketing", "SEO", "PPC", "Web Design", "Skyhit Media", "Hyderabad"],
+  openGraph: {
+    images: [
+      {
+        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        width: 630,
+        height: 630,
+        alt: "Skyhit Media",
+      }
+    ],
+    title: "#1 Pay Per Click Advertising Agency | Skyhit Media Boost ROI",
+    description: "Pay Per Click Advertising Agency Skyhit Media offers expert PPC services to increase your online visibility, drive targeted traffic, and maximize your ROI.",
+    url: "https://skyhitmedia.com/pay-per-click-advertising-agency",
+  },
+  alternates: { canonical: "https://skyhitmedia.com/pay-per-click-advertising-agency" },
 };
 
 export default function PpcPage() {

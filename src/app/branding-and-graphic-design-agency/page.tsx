@@ -171,10 +171,24 @@ const faqs = [
 
 ];
 
-export const metadata: Metadata = {
-  title: "#1 Branding and Graphic Design Agency | Skyhit Media",
+export const metadata: Metadata = {title: "#1 Branding and Graphic Design Agency | Skyhit Media",
   description:
     "Branding and Graphic Design Agency Skyhit Media offers creative solutions to boost your brand's identity with innovative design and effective strategies.",
+  keywords: ["Digital Marketing", "SEO", "PPC", "Web Design", "Skyhit Media", "Hyderabad"],
+  openGraph: {
+    images: [
+      {
+        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        width: 630,
+        height: 630,
+        alt: "Skyhit Media",
+      }
+    ],
+    title: "#1 Branding and Graphic Design Agency | Skyhit Media",
+    description: "Branding and Graphic Design Agency Skyhit Media offers creative solutions to boost your brand's identity with innovative design and effective strategies.",
+    url: "https://skyhitmedia.com/branding-and-graphic-design-agency",
+  },
+  alternates: { canonical: "https://skyhitmedia.com/branding-and-graphic-design-agency" },
 };
 
 export default function DesignPage() {
