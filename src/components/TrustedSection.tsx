@@ -5,11 +5,11 @@ import Image from "next/image";
 import ArrowHeader from "./ArrowHeader";
 
 const logos = [
-  { img: "/images/skyhit-meta-business-partner.png", link: "#" },
-  { img: "/images/skyhit-shopify.png", link: "#" },
-  { img: "/images/skyhit-jio-hotstar.png", link: "#" },
-  { img: "/images/skyhit-wati-partner.png", link: "#" },
-  { img: "/images/skyhit-google-partner.png", link: "https://www.google.com/partners/agency?id=7441878234" },
+  { img: "/images/skyhit-meta-business-partner.webp", link: "#" },
+  { img: "/images/skyhit-shopify.webp", link: "#" },
+  { img: "/images/skyhit-jio-hotstar.webp", link: "#" },
+  { img: "/images/skyhit-wati-partner.webp", link: "#" },
+  { img: "/images/skyhit-google-partner.webp", link: "https://www.google.com/partners/agency?id=7441878234" },
 ];
 
 const bubbleColors = ["#c7a48c", "#b88972", "#9f6f58", "#d8b5a2"];
@@ -202,7 +202,7 @@ const TrustedSection = () => {
                 }}
               >
                 <Image
-                  src="/images/skyhitmedia-middle-logo.png"
+                  src="/images/skyhitmedia-middle-logo.webp"
                   alt="Skyhit Media"
                   width={150}
                   height={150}

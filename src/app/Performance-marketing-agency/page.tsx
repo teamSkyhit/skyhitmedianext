@@ -189,7 +189,7 @@ export const metadata: Metadata = {title: "#1 Performance Marketing Agency | Sky
   openGraph: {
     images: [
       {
-        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        url: "https://www.skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
         width: 630,
         height: 630,
         alt: "Skyhit Media",
@@ -197,9 +197,9 @@ export const metadata: Metadata = {title: "#1 Performance Marketing Agency | Sky
     ],
     title: "#1 Performance Marketing Agency | Skyhit Media Drives Results",
     description: "Performance Marketing Agency - Skyhit Media boosts ROI with data-driven strategies, driving targeted traffic and increasing conversions. Get started today!",
-    url: "https://skyhitmedia.com/Performance-marketing-agency",
+    url: "https://www.skyhitmedia.com/Performance-marketing-agency",
   },
-  alternates: { canonical: "https://skyhitmedia.com/Performance-marketing-agency" },
+  alternates: { canonical: "https://www.skyhitmedia.com/Performance-marketing-agency" },
 };
 
 export default function PerformancePage() {

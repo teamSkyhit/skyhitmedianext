@@ -28,7 +28,7 @@ const WhyChooseUsSection = () => {
       <div className="container mx-auto px-6">
         <div
           className="absolute inset-0 bg-cover bg-no-repeat opacity-10"
-          style={{ backgroundImage: 'url("/images/Clip%20path%20group.png")' }}
+          style={{ backgroundImage: 'url("/images/clip-path-group.webp")' }}
         />
         <div className="text-center mb-4 z-50">
           <ArrowHeader title="Why Choose Us" />

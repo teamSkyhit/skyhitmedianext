@@ -38,7 +38,7 @@ export default function Header() {
     <header
       className="bg-primary shadow-md fixed w-full z-50"
       style={{
-        backgroundImage: 'url("/images/header%20pattern.png")',
+        backgroundImage: 'url("/images/header-pattern.webp")',
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
       }}

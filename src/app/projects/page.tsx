@@ -39,7 +39,7 @@ export const metadata: Metadata = {title: "Our Projects | Skyhit Media Portfolio
   openGraph: {
     images: [
       {
-        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        url: "https://www.skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
         width: 630,
         height: 630,
         alt: "Skyhit Media",
@@ -47,9 +47,9 @@ export const metadata: Metadata = {title: "Our Projects | Skyhit Media Portfolio
     ],
     title: "Our Projects | Skyhit Media Portfolio",
     description: "Explore Skyhit Media's portfolio of successful digital marketing and web design projects for clients across various industries.",
-    url: "https://skyhitmedia.com/projects",
+    url: "https://www.skyhitmedia.com/projects",
   },
-  alternates: { canonical: "https://skyhitmedia.com/projects" },
+  alternates: { canonical: "https://www.skyhitmedia.com/projects" },
 };
 
 export default function ProjectsPage() {

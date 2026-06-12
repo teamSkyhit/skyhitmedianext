@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import EmailLink from "./EmailLink";
 import {
   MapPin,
   Phone,
@@ -119,7 +120,7 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-2">
               <Mail className="text-[#DCBE9E] h-6 w-6 shrink-0" />
-              <a href="mailto:contact@skyhitmedia.com" className="hover:text-[#DCBE9E] transition text-[18px]">contact@skyhitmedia.com</a>
+              <EmailLink encoded="Y29udGFjdEBza3loaXRtZWRpYS5jb20=" className="hover:text-[#DCBE9E] transition text-[18px]" />
             </li>
           </ul>
         </div>

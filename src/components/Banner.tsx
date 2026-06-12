@@ -15,6 +15,7 @@ const Banner: React.FC<BannerProps> = ({ title, imgSrc }) => {
         className="absolute inset-0 w-full h-full object-cover object-left -z-10"
         priority
         unoptimized
+        aria-hidden="true"
       />
       <div className="mx-auto max-w-screen-xl pt-40 px-4 py-24 lg:flex lg:pt-48 lg:items-center relative z-10">
         <div className="mx-auto max-w-xl text-center">

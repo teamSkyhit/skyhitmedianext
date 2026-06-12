@@ -191,7 +191,7 @@ export const metadata: Metadata = {title: "#1 Social Media Marketing Agency | Sk
   openGraph: {
     images: [
       {
-        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        url: "https://www.skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
         width: 630,
         height: 630,
         alt: "Skyhit Media",
@@ -199,9 +199,9 @@ export const metadata: Metadata = {title: "#1 Social Media Marketing Agency | Sk
     ],
     title: "#1 Social Media Marketing Agency | Skyhit Media Drives Growth",
     description: "Skyhit Media, a top social media marketing agency, helps businesses grow with expert strategies, increasing engagement, and driving conversions. Start today!",
-    url: "https://skyhitmedia.com/social-media-marketing-agency",
+    url: "https://www.skyhitmedia.com/social-media-marketing-agency",
   },
-  alternates: { canonical: "https://skyhitmedia.com/social-media-marketing-agency" },
+  alternates: { canonical: "https://www.skyhitmedia.com/social-media-marketing-agency" },
 };
 
 export default function SmmPage() {

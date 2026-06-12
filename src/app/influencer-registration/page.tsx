@@ -10,7 +10,7 @@ export const metadata: Metadata = {title: "Join the Skyhit Creator Community | I
   openGraph: {
     images: [
       {
-        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        url: "https://www.skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
         width: 630,
         height: 630,
         alt: "Skyhit Media",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {title: "Join the Skyhit Creator Community | I
     description:
       "Join Skyhit Media's influencer network to access paid brand campaigns, fair payouts, and transparent influencer collaborations across India.",
   },
-  alternates: { canonical: "https://skyhitmedia.com/influencer-registration" },
+  alternates: { canonical: "https://www.skyhitmedia.com/influencer-registration" },
   keywords: ["Digital Marketing", "SEO", "PPC", "Web Design", "Skyhit Media", "Hyderabad"],
 };
 

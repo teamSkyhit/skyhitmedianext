@@ -126,7 +126,7 @@ export const metadata: Metadata = {title: "Our Digital Marketing Services | Skyh
   openGraph: {
     images: [
       {
-        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        url: "https://www.skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
         width: 630,
         height: 630,
         alt: "Skyhit Media",
@@ -134,9 +134,9 @@ export const metadata: Metadata = {title: "Our Digital Marketing Services | Skyh
     ],
     title: "Our Digital Marketing Services | Skyhit Media Hyderabad",
     description: "Explore Skyhit Media's full range of digital marketing services including SEO, PPC, social media, web design, branding, and more.",
-    url: "https://skyhitmedia.com/services",
+    url: "https://www.skyhitmedia.com/services",
   },
-  alternates: { canonical: "https://skyhitmedia.com/services" },
+  alternates: { canonical: "https://www.skyhitmedia.com/services" },
 };
 
 export default function ServicesPage() {

@@ -8,12 +8,12 @@ import ArrowHeader from "./ArrowHeader";
 const Carousel = dynamic(() => import("./Carousel"), { ssr: false });
 
 const projects = [
-  { title: "Bakelore", desktop: "/images/bakelore-skyhitmedia.png" },
+  { title: "Bakelore", desktop: "/images/bakelore-skyhitmedia.webp" },
   { title: "Signova", desktop: "/images/signova-group-skyhitmedia.webp" },
   { title: "Hp Def", desktop: "/images/promea-skyhitmedia.webp" },
   { title: "Prospera", desktop: "/images/prospera-kia-skyhitmedia.webp" },
   { title: "Vastra Suka", desktop: "/images/aix-investment-skyhitmedia 1.webp" },
-  { title: "Venket Fitness", desktop: "/images/happy-living-skyhitmedia.png" },
+  { title: "Venket Fitness", desktop: "/images/happy-living-skyhitmedia.webp" },
 ];
 
 const RecentWorks: React.FC = () => {

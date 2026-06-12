@@ -13,7 +13,7 @@ export const metadata: Metadata = {title: "Careers at Skyhit Media | Join Our Te
   openGraph: {
     images: [
       {
-        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        url: "https://www.skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
         width: 630,
         height: 630,
         alt: "Skyhit Media",
@@ -21,9 +21,9 @@ export const metadata: Metadata = {title: "Careers at Skyhit Media | Join Our Te
     ],
     title: "Careers at Skyhit Media | Join Our Team in Hyderabad",
     description: "Join the Skyhit Media team in Hyderabad. Explore open positions in digital marketing, web development, content creation, and more.",
-    url: "https://skyhitmedia.com/careers",
+    url: "https://www.skyhitmedia.com/careers",
   },
-  alternates: { canonical: "https://skyhitmedia.com/careers" },
+  alternates: { canonical: "https://www.skyhitmedia.com/careers" },
 };
 
 export default function CareersPage() {

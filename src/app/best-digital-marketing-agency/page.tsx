@@ -199,17 +199,17 @@ export const metadata: Metadata = {title: "#1 Best Digital Marketing Agency for 
   openGraph: {
     title: "#1 Best Digital Marketing Agency for Business – SKYHIT MEDIA",
     description: "Discover the best digital marketing agency to boost your online presence. Get expert SEO, PPC, and social media strategies for guaranteed growth and success.",
-    url: "https://skyhitmedia.com/best-digital-marketing-agency",
+    url: "https://www.skyhitmedia.com/best-digital-marketing-agency",
     images: [
       {
-        url: "https://skyhitmedia.com/images/whatsapp-best-digital-marketing-skyhitmedia.png",
+        url: "https://www.skyhitmedia.com/images/whatsapp-best-digital-marketing-skyhitmedia.png",
         width: 630,
         height: 630,
         alt: "Best Digital Marketing Agency - Skyhit Media",
       },
     ],
   },
-  alternates: { canonical: "https://skyhitmedia.com/best-digital-marketing-agency" },
+  alternates: { canonical: "https://www.skyhitmedia.com/best-digital-marketing-agency" },
 };
 
 export default function DigitalMarketingPage() {

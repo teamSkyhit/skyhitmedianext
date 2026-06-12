@@ -68,7 +68,7 @@
 //                 Digital
 //                 <span className="inline-block mx-2">
 //                   <Image
-//                     src="/images/traingle-icon.png"
+//                     src="/images/traingle-icon.webp"
 //                     alt=""
 //                     aria-hidden="true"
 //                     className="w-8 lg:w-16 h-auto relative top-2 inline-block"
@@ -121,12 +121,6 @@
 
 import { memo } from "react";
 import Image from "next/image";
-import { Playfair_Display } from "next/font/google";
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
 
 const clientLogos: string[] = [
   "/images/clients-kia.webp",
@@ -198,13 +192,13 @@ const Hero: React.FC = () => {
           <div className="container mx-auto px-6">
             <div className="text-white relative text-left lg:w-[90%]">
               <h1
-                className={`${playfair.className} text-2xl md:text-[56px] lg:text-7xl xl:text-[88px] font-semibold leading-tight drop-shadow-lg`}
+                className="font-headline text-2xl md:text-[56px] lg:text-7xl xl:text-[88px] font-semibold leading-tight drop-shadow-lg"
               >
-                Digital
+                Digital{" "}
                 <span className="inline-block mx-2">
                   <Image
-                    src="/images/traingle-icon.png"
-                    alt=""
+                    src="/images/traingle-icon.webp"
+                    alt="Decorative triangle icon"
                     aria-hidden="true"
                     className="w-8 lg:w-16 h-auto relative top-2 inline-block"
                     loading="lazy"
@@ -212,9 +206,9 @@ const Hero: React.FC = () => {
                     width={64}
                     height={64}
                   />
-                </span>
+                </span>{" "}
                 <br />
-                Marketing Agency
+                Marketing Agency{" "}
                 <br />
                 in Hyderabad
               </h1>

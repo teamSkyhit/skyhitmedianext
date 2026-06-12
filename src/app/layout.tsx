@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat, Playfair_Display } from "next/font/google";
-// Script import removed since standard HTML script tags are used for static export
+import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./globals.css";
@@ -76,24 +76,63 @@ export default function RootLayout({
       className={`${montserrat.variable} ${playfair.variable}`}
     >
       <head>
+        {/* Structured Data (Schema.org JSON-LD) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService",
+              "name": "Skyhit Media",
+              "image": "https://www.skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+              "@id": "https://www.skyhitmedia.com/#organization",
+              "url": "https://www.skyhitmedia.com/",
+              "telephone": "+919030279661",
+              "priceRange": "$$",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "3rd Floor, Door No:301 Vipra Elite, Patrika Nagar, Street No:1, Madhapur",
+                "addressLocality": "Hyderabad",
+                "addressRegion": "Telangana",
+                "postalCode": "500081",
+                "addressCountry": "IN"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 17.4483,
+                "longitude": 78.3915
+              },
+              "sameAs": [
+                "https://www.facebook.com/skyhitmedia",
+                "https://www.instagram.com/skyhitmedia/",
+                "https://www.linkedin.com/company/skyhit-media/",
+                "https://www.youtube.com/c/SKYHITMEDIA"
+              ]
+            })
+          }}
+        />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://platform.linkedin.com" />
-
+      </head>
+      <body className="min-h-full flex flex-col overflow-x-hidden">
         {/* Google tag (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-1LN33RP1RK"></script>
-        <script dangerouslySetInnerHTML={{
-          __html: `
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-1LN33RP1RK"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-1LN33RP1RK');
-          `
-        }} />
+          `}
+        </Script>
 
         {/* Meta Pixel Code */}
-        <script dangerouslySetInnerHTML={{
-          __html: `
+        <Script id="meta-pixel" strategy="afterInteractive">
+          {`
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
             n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -104,21 +143,20 @@ export default function RootLayout({
             'https://connect.facebook.net/en_US/fbevents.js');
             fbq('init', '2247581162679381');
             fbq('track', 'PageView');
-          `
-        }} />
+          `}
+        </Script>
 
         {/* Google Tag Manager */}
-        <script dangerouslySetInnerHTML={{
-          __html: `
+        <Script id="google-tag-manager" strategy="afterInteractive">
+          {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','GTM-WM5722BB');
-          `
-        }} />
-      </head>
-      <body className="min-h-full flex flex-col overflow-x-hidden">
+          `}
+        </Script>
+
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe

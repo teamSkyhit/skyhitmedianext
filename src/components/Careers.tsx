@@ -1,3 +1,5 @@
+import EmailLink from "./EmailLink";
+
 const DigitalMarketingExecutiveDetails = () => (
   <div className="space-y-3 text-[17px] leading-[30px] text-gray-700 text-left">
     <div><strong>Company:</strong> SKYHIT MEDIA</div>
@@ -27,7 +29,7 @@ const DigitalMarketingExecutiveDetails = () => (
     </div>
 
     <div className="text-[17px] leading-[30px] text-gray-700">
-      Send your resume to <a href="mailto:hr@skyhitmedia.com" className="text-black-400 underline">hr@skyhitmedia.com</a>
+      Send your resume to <EmailLink encoded="aHJAc2t5aGl0bWVkaWEuY29t" className="text-black-400 underline" />
     </div>
   </div>
 );

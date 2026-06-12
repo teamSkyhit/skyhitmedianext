@@ -2,6 +2,7 @@
 
 import { useRef, useState, memo } from "react";
 import { Mail, Phone } from "lucide-react";
+import EmailLink from "./EmailLink";
 
 const GetInTouch: React.FC = () => {
   const form = useRef<HTMLFormElement>(null);
@@ -130,7 +131,7 @@ const GetInTouch: React.FC = () => {
           <h4 className="text-lg md:text-[19.6px] lg:text-2xl font-bold text-[#774635] mb-4">Talk to an expert:</h4>
           <p className="text-base md:text-[19.6px] lg:text-2xl text-gray-600">
             <span className="flex items-center gap-2"><Phone size={18} /> +91 9030279661</span><br />
-            <span className="flex items-center gap-2"><Mail size={18} /> contact@skyhitmedia.com</span>
+            <span className="flex items-center gap-2"><Mail size={18} /> <EmailLink encoded="Y29udGFjdEBza3loaXRtZWRpYS5jb20=" /></span>
           </p>
         </div>
         {/* Right Column */}

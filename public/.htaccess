@@ -11,7 +11,7 @@
     ExpiresByType image/x-icon "access plus 1 year"
     ExpiresByType font/woff2 "access plus 1 year"
     
-    # Cache CSS and JS for 1 Year (Vite hashes filenames, so this is safe)
+    # Cache CSS and JS for 1 Year (Next.js hashes filenames, so this is safe)
     ExpiresByType text/css "access plus 1 year"
     ExpiresByType application/javascript "access plus 1 year"
     
@@ -20,17 +20,34 @@
 </IfModule>
 
 <IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteBase /
+    RewriteEngine On
+    RewriteBase /
 
-  # Serve HTML file directly if it exists (e.g., /about -> /about.html)
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_FILENAME}\.html -f
-  RewriteRule ^(.*)$ $1.html [L]
+    # Redirect HTTP to HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_FILENAME} !-l
-  RewriteRule . /index.html [L]
+    # Redirect non-www to www (Production domain only to avoid breaking staging subdomains)
+    RewriteCond %{HTTP_HOST} ^skyhitmedia\.com$ [NC]
+    RewriteRule ^(.*)$ https://www.skyhitmedia.com/$1 [L,R=301]
+</IfModule>
+
+# Custom 404 error page (Next.js static export generates 404.html)
+ErrorDocument 404 /404.html
+
+<IfModule mod_headers.c>
+    # Enable HSTS (Strict-Transport-Security) - 2 years (63072000 seconds) including subdomains and preload
+    Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+    
+    # Prevent MIME type sniffing
+    Header set X-Content-Type-Options "nosniff"
+    
+    # Prevent Clickjacking (Only allow frames from same origin)
+    Header set X-Frame-Options "SAMEORIGIN"
+    
+    # Cross-Site Scripting (XSS) Protection
+    Header set X-XSS-Protection "1; mode=block"
+    
+    # Referrer Policy
+    Header set Referrer-Policy "no-referrer-when-downgrade"
 </IfModule>
