@@ -16,7 +16,7 @@ const clients1 = [
   "/images/clients-indian-oil.webp",
   "/images/clients-aix-investment.webp",
   "/images/clients-ramee.webp",
-  "/images/credai-logo-skyhitmedia.png",
+  "/images/credai-logo-skyhitmedia.webp",
   "/images/clients-photriya.webp",
   "/images/clients-bakelore.webp",
   "/images/clients-thangedu.webp",

@@ -23,7 +23,7 @@ const ThankYouPage = () => {
       </div>
 
       <Image
-        src="/images/header%20skyhit%20logo%20desktop.png"
+        src="/images/header-skyhit-logo-desktop.webp"
         alt="Logo"
         width={144}
         height={48}

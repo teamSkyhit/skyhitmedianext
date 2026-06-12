@@ -30,6 +30,11 @@
     # Redirect non-www to www (Production domain only to avoid breaking staging subdomains)
     RewriteCond %{HTTP_HOST} ^skyhitmedia\.com$ [NC]
     RewriteRule ^(.*)$ https://www.skyhitmedia.com/$1 [L,R=301]
+
+    # Redirect www to non-www (Staging domain/other subdomains to resolve www tests)
+    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    RewriteCond %{HTTP_HOST} !^www\.skyhitmedia\.com$ [NC]
+    RewriteRule ^(.*)$ https://%1/$1 [L,R=301]
 </IfModule>
 
 # Custom 404 error page (Next.js static export generates 404.html)

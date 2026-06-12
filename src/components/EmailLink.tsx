@@ -19,8 +19,15 @@ export default function EmailLink({ encoded, className }: EmailLinkProps) {
     }
   }, [encoded]);
 
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (email) {
+      window.location.href = `mailto:${email}`;
+    }
+  };
+
   if (!email) {
-    // During server side rendering (Node.js environment), decode and render obfuscated text
+    // Server-side rendering (SSR) fallback
     try {
       const decodedBuild = Buffer.from(encoded, "base64").toString("utf-8");
       const parts = decodedBuild.split("@");
@@ -37,9 +44,23 @@ export default function EmailLink({ encoded, className }: EmailLinkProps) {
     return <span className={className}>contact [at] skyhitmedia [dot] com</span>;
   }
 
+  // To prevent headless crawlers that execute JS from scanning the email address,
+  // we reverse the email string in the DOM and use CSS bidi-override to render it
+  // visually correct for human users. We launch the mailto: protocol on click.
+  const reversedEmail = email.split("").reverse().join("");
+
   return (
-    <a href={`mailto:${email}`} className={className}>
-      {email}
-    </a>
+    <span
+      onClick={handleClick}
+      style={{
+        direction: "rtl",
+        unicodeBidi: "bidi-override",
+        cursor: "pointer",
+      }}
+      className={`${className} hover:underline`}
+      title="Click to send email"
+    >
+      {reversedEmail}
+    </span>
   );
 }

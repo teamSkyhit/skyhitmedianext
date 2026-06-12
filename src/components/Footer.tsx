@@ -46,7 +46,7 @@ export default function Footer() {
         <div>
           <Link href="/">
             <Image
-              src="/images/header%20skyhit%20logo%20desktop.png"
+              src="/images/header-skyhit-logo-desktop.webp"
               alt="Skyhit Media Logo"
               width={155}
               height={58}

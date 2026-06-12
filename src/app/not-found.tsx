@@ -9,7 +9,7 @@ export default function NotFound() {
         {/* Logo */}
         <Link href="/" className="mb-8">
           <Image
-            src="/images/header%20skyhit%20logo%20desktop.png"
+            src="/images/header-skyhit-logo-desktop.webp"
             alt="Skyhit Media Logo"
             width={172}
             height={64}
