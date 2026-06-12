@@ -118,10 +118,10 @@ const ClientSection: React.FC = () => {
                 ref={(el) => { containerRefs.current[rowIndex] = el; }}
               >
                 <div className="flex items-center space-x-4 px-4">
-                  {[...rowClients, ...rowClients, ...rowClients, ...rowClients].map((client, index) => (
+                  {[...rowClients, ...rowClients].map((client, index) => (
                     <div
                       key={index}
-                      className="flex-shrink-0 w-32 h-24 md:w-40 md:h-32 bg-white rounded-lg shadow-sm border border-gray-100 p-4"
+                      className="flex-shrink-0 w-32 h-24 md:w-40 md:h-32 bg-white rounded-lg shadow-sm border border-gray-100 p-4 flex items-center justify-center"
                       style={{
                         willChange: "transform",
                       }}
@@ -131,7 +131,7 @@ const ClientSection: React.FC = () => {
                         alt="Client logo"
                         width={200}
                         height={100}
-                        className="w-full h-full object-contain"
+                        className="max-w-full max-h-full w-auto h-auto object-contain"
                         loading="lazy"
                         unoptimized
                       />

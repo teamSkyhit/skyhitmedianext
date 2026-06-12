@@ -12,15 +12,15 @@ export const metadata: Metadata = {
     "Hyderabad"
   ],
   alternates: {
-    canonical: "https://www.skyhitmedia.com/website-design-and-development-company-in-hyderabad/",
+    canonical: "https://skyhitmedia.com/website-design-and-development-company-in-hyderabad/",
   },
   openGraph: {
     title: "Website Design and Development Company in Hyderabad | Skyhit Media",
     description: "Skyhit Media is the top web design and development company in Hyderabad. Get custom, responsive, and SEO-friendly website design services.",
-    url: "https://www.skyhitmedia.com/website-design-and-development-company-in-hyderabad/",
+    url: "https://skyhitmedia.com/website-design-and-development-company-in-hyderabad/",
     images: [
       {
-        url: "https://www.skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
         width: 630,
         height: 630,
         alt: "Website Design and Development Company in Hyderabad - Skyhit Media",

@@ -5,11 +5,11 @@ import Image from "next/image";
 import ArrowHeader from "./ArrowHeader";
 
 const logos = [
-  { img: "/images/skyhit-meta-business-partner.webp", link: "#" },
-  { img: "/images/skyhit-shopify.webp", link: "#" },
-  { img: "/images/skyhit-jio-hotstar.webp", link: "#" },
-  { img: "/images/skyhit-wati-partner.webp", link: "#" },
-  { img: "/images/skyhit-google-partner.webp", link: "https://www.google.com/partners/agency?id=7441878234" },
+  { img: "/images/skyhit-meta-business-partner.webp", alt: "Meta Business Partner", link: "#" },
+  { img: "/images/skyhit-shopify.webp", alt: "Shopify partner", link: "#" },
+  { img: "/images/skyhit-jio-hotstar.webp", alt: "JioHotstar partner", link: "#" },
+  { img: "/images/skyhit-wati-partner.webp", alt: "Wati partner", link: "#" },
+  { img: "/images/skyhit-google-partner.webp", alt: "Google Partner", link: "https://www.google.com/partners/agency?id=7441878234" },
 ];
 
 const bubbleColors = ["#c7a48c", "#b88972", "#9f6f58", "#d8b5a2"];
@@ -82,8 +82,7 @@ const TrustedSection = () => {
           {/* Full Width Background Image */}
           <Image
             src="/images/2nd-section-skyhit-01.webp"
-            alt=""
-            aria-hidden="true"
+            alt="Skyhit Media digital marketing team"
             fill
             className="object-cover object-center"
             loading="lazy"
@@ -177,13 +176,13 @@ const TrustedSection = () => {
                         >
                           <Image
                             src={logo.img}
-                            alt="Partner Logo"
+                            alt={logo.alt}
                             width={100}
                             height={100}
                             sizes="(max-width: 768px) 70px, 100px"
                             loading="lazy"
                             decoding="async"
-                            className="max-w-[70%] object-contain"
+                            className="max-w-[70%] h-auto object-contain"
                           />
                         </a>
                       </div>

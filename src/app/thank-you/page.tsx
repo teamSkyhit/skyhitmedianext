@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Thank You | Skyhit Media",
   description: "Thank you for contacting Skyhit Media. We have received your inquiry and our team will get in touch with you shortly.",
   alternates: {
-    canonical: "https://www.skyhitmedia.com/thank-you/",
+    canonical: "https://skyhitmedia.com/thank-you/",
   },
   openGraph: {
     title: "Thank You | Skyhit Media",
     description: "Thank you for contacting Skyhit Media. We have received your inquiry and our team will get in touch with you shortly.",
-    url: "https://www.skyhitmedia.com/thank-you/",
-    images: ["https://www.skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png"],
+    url: "https://skyhitmedia.com/thank-you/",
+    images: ["https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png"],
   },
   robots: {
     index: false,

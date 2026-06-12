@@ -122,8 +122,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ serviceData }) => {
           <source media="(min-width: 768px)" srcSet={serviceData.deskImgLink} />
           <img
             src={serviceData.mobImgLink}
-            alt=""
-            aria-hidden="true"
+            alt={`${serviceData.title} hero background`}
             className="absolute inset-0 w-full h-full object-cover object-center md:object-top -z-10"
             width={1920}
             height={900}

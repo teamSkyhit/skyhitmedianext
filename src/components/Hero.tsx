@@ -133,17 +133,22 @@ const clientLogos: string[] = [
   "/images/clients-ramee.webp",
 ];
 
+const marqueeLogos = [
+  ...clientLogos.slice(0, 5),
+  ...clientLogos.slice(0, 5),
+];
+
 const MarqueeClients = memo(() => (
   <div className="overflow-hidden relative w-full py-2">
     <div
       className="flex animate-marquee whitespace-nowrap"
       style={{ animationDuration: "20s" }}
     >
-      {Array.from({ length: 20 }, (_, i) => (
+      {marqueeLogos.map((logo, i) => (
         <Image
           key={i}
-          src={clientLogos[i % clientLogos.length]}
-          alt={`Client ${i % clientLogos.length + 1}`}
+          src={logo}
+          alt={`Skyhit Media client logo ${(i % 5) + 1}`}
           width={248}
           height={100}
           className="h-8 md:h-12 w-auto object-cover mx-4 shrink-0"
@@ -176,8 +181,7 @@ const Hero: React.FC = () => {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/images/1st-2.webp"
-          alt=""
-          aria-hidden="true"
+          alt="Skyhit Media digital marketing agency team"
           fetchPriority="high"
           decoding="sync"
           className="absolute inset-0 w-full h-[432px] md:h-full object-cover object-center md:object-top"
@@ -198,8 +202,7 @@ const Hero: React.FC = () => {
                 <span className="inline-block mx-2">
                   <Image
                     src="/images/traingle-icon.webp"
-                    alt="Decorative triangle icon"
-                    aria-hidden="true"
+                    alt="Skyhit Media accent icon"
                     className="w-8 lg:w-16 h-auto relative top-2 inline-block"
                     loading="lazy"
                     decoding="async"

@@ -174,7 +174,7 @@ export const metadata: Metadata = {title: "#1 WhatsApp Marketing Agency | Skyhit
   openGraph: {
     images: [
       {
-        url: "https://www.skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
         width: 630,
         height: 630,
         alt: "Skyhit Media",
@@ -182,9 +182,9 @@ export const metadata: Metadata = {title: "#1 WhatsApp Marketing Agency | Skyhit
     ],
     title: "#1 WhatsApp Marketing Agency | Skyhit Media Boost Customer Engagement",
     description: "WhatsApp Marketing Agency Skyhit Media offers tailored WhatsApp marketing strategies to enhance customer engagement, increase sales, and grow your business.",
-    url: "https://www.skyhitmedia.com/whatsapp-marketing-agency",
+    url: "https://skyhitmedia.com/whatsapp-marketing-agency",
   },
-  alternates: { canonical: "https://www.skyhitmedia.com/whatsapp-marketing-agency" },
+  alternates: { canonical: "https://skyhitmedia.com/whatsapp-marketing-agency" },
 };
 
 export default function WhatsappPage() {

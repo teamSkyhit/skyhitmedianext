@@ -84,7 +84,7 @@ const ServicesSection = () => {
                 <Link href={service.link} className="flex items-center font-medium text-sm" aria-label={`Read more about ${service.title}`}>
                   <span className="sr-only">{service.title}: </span>
                   Read More
-                  <Image src="/images/logo-element-1.webp" alt="" aria-hidden={true} className="w-4 h-4 ml-1" loading="lazy" width={16} height={16} unoptimized />
+                  <Image src="/images/logo-element-1.webp" alt="Read more arrow" className="w-4 h-4 ml-1" loading="lazy" width={16} height={16} unoptimized />
                 </Link>
               </div>
             </div>

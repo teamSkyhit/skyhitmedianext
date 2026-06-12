@@ -24,7 +24,7 @@ const RecentWorks: React.FC = () => {
         alt={`${project.title} desktop view`}
         width={650}
         height={600}
-        className="w-[275px] md:w-[600px] lg:w-[650px] lg:h-[600px] m-auto object-fill"
+        className="w-[275px] md:w-[600px] lg:w-[650px] h-auto m-auto object-contain"
         loading="lazy"
         decoding="async"
         unoptimized

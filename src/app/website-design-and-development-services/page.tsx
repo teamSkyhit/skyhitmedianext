@@ -179,7 +179,7 @@ export const metadata: Metadata = {title: "#1 Website Design and Development Ser
   openGraph: {
     images: [
       {
-        url: "https://www.skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
         width: 630,
         height: 630,
         alt: "Skyhit Media",
@@ -187,9 +187,9 @@ export const metadata: Metadata = {title: "#1 Website Design and Development Ser
     ],
     title: "#1 Website Design and Development Services | Skyhit Media",
     description: "Website Design and Development Services by Skyhit Media offer custom, responsive & user-friendly websites that enhance your online presence and drive success.",
-    url: "https://www.skyhitmedia.com/website-design-and-development-services",
+    url: "https://skyhitmedia.com/website-design-and-development-services",
   },
-  alternates: { canonical: "https://www.skyhitmedia.com/website-design-and-development-services" },
+  alternates: { canonical: "https://skyhitmedia.com/website-design-and-development-services" },
 };
 
 export default function WebServicePage() {

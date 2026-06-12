@@ -36,7 +36,26 @@ const testimonials = [
   },
 ];
 
+const practicalFaqs = [
+  {
+    question: "How much do digital marketing services cost in Hyderabad?",
+    answer:
+      "Pricing depends on the channels, campaign goals, ad spend, and reporting depth. Skyhit Media shares a custom proposal after reviewing your current website, target audience, and growth goals.",
+  },
+  {
+    question: "How long does it take to see results from digital marketing?",
+    answer:
+      "Paid campaigns can start generating enquiries after launch, while SEO and organic growth usually need consistent optimization over several months. Every plan includes tracking, reporting, and regular improvements.",
+  },
+  {
+    question: "What results can Skyhit Media help a business improve?",
+    answer:
+      "Skyhit Media focuses on measurable growth signals such as qualified leads, search visibility, website engagement, conversion rate, brand reach, and campaign return on investment.",
+  },
+];
+
 const faqs = [
+  ...practicalFaqs,
   {
     question: "Welcome to Skyhit Media – Your Trusted Digital Marketing Agency in Hyderabad",
     answer: {
@@ -71,34 +90,83 @@ const faqs = [
 
 ];
 
+const homeJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://skyhitmedia.com/#webpage",
+      url: "https://skyhitmedia.com/",
+      name: "Top Digital Marketing Agency in Hyderabad | Skyhit Media",
+      description:
+        "Skyhit Media is the top digital marketing agency and web design company in Hyderabad. Boost your business with expert services and innovative solutions.",
+      isPartOf: { "@id": "https://skyhitmedia.com/#website" },
+      about: { "@id": "https://skyhitmedia.com/#organization" },
+      datePublished: "2026-06-12",
+      dateModified: "2026-06-12",
+      inLanguage: "en-IN",
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://skyhitmedia.com/#faq",
+      mainEntity: practicalFaqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    },
+  ],
+};
+
 const FreeQuote = dynamic(() => import("@/components/FreeQuote"));
 const ContactCta = dynamic(() => import("@/components/ContactCta"));
 const GetInTouch = dynamic(() => import("@/components/GetInTouch"));
 
-export const metadata: Metadata = {title: "#1 Top Digital Marketing Agency in Hyderabad | 🚀 SKYHIT MEDIA",
+export const metadata: Metadata = {
+  title: "Top Digital Marketing Agency in Hyderabad | Skyhit Media",
   description:
     "Skyhit Media is the top digital marketing agency and web design company in Hyderabad. Boost your business with expert services and innovative solutions.",
   openGraph: {
     images: [
       {
-        url: "https://www.skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
         width: 630,
         height: 630,
         alt: "Skyhit Media",
       }
     ],
-    title: "Top Digital Marketing Agency in Hyderabad | 🚀 SKYHIT MEDIA",
+    title: "Top Digital Marketing Agency in Hyderabad | Skyhit Media",
     description:
       "Skyhit Media is the top digital marketing agency and web design company in Hyderabad. Boost your business with expert services and innovative solutions.",
-    url: "https://www.skyhitmedia.com/",
+    url: "https://skyhitmedia.com/",
   },
-  alternates: { canonical: "https://www.skyhitmedia.com/" },
+  alternates: { canonical: "https://skyhitmedia.com/" },
   keywords: ["Digital Marketing", "SEO", "PPC", "Web Design", "Skyhit Media", "Hyderabad"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(homeJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       <HeroPreload />
       <Hero />
       <TrustedSection />

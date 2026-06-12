@@ -23,22 +23,21 @@
     RewriteEngine On
     RewriteBase /
 
-    # Redirect HTTP to HTTPS
+    # Canonical URL: https://skyhitmedia.com/
     RewriteCond %{HTTPS} off
-    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    RewriteRule ^(.*)$ https://skyhitmedia.com/$1 [L,R=301]
 
-    # Redirect non-www to www (Production domain only to avoid breaking staging subdomains)
-    RewriteCond %{HTTP_HOST} ^skyhitmedia\.com$ [NC]
-    RewriteRule ^(.*)$ https://www.skyhitmedia.com/$1 [L,R=301]
-
-    # Redirect www to non-www (Staging domain/other subdomains to resolve www tests)
-    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-    RewriteCond %{HTTP_HOST} !^www\.skyhitmedia\.com$ [NC]
-    RewriteRule ^(.*)$ https://%1/$1 [L,R=301]
+    RewriteCond %{HTTP_HOST} ^www\.skyhitmedia\.com$ [NC]
+    RewriteRule ^(.*)$ https://skyhitmedia.com/$1 [L,R=301]
 </IfModule>
 
 # Custom 404 error page (Next.js static export generates 404.html)
 ErrorDocument 404 /404.html
+
+<IfModule mod_mime.c>
+    AddType text/plain .txt
+    AddType image/webp .webp
+</IfModule>
 
 <IfModule mod_headers.c>
     # Enable HSTS (Strict-Transport-Security) - 2 years (63072000 seconds) including subdomains and preload
@@ -55,4 +54,8 @@ ErrorDocument 404 /404.html
     
     # Referrer Policy
     Header set Referrer-Policy "no-referrer-when-downgrade"
+
+    <Files "ads.txt">
+        Header set Content-Type "text/plain; charset=utf-8"
+    </Files>
 </IfModule>

@@ -1,2 +1,2 @@
-# Ads.txt for Skyhit Media
-# No ads displayed on this agency website
+# ads.txt for skyhitmedia.com
+# Skyhit Media does not authorize digital ad sellers for this domain.

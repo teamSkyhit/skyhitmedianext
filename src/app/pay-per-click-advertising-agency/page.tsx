@@ -174,7 +174,7 @@ export const metadata: Metadata = {title: "#1 Pay Per Click Advertising Agency |
   openGraph: {
     images: [
       {
-        url: "https://www.skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
         width: 630,
         height: 630,
         alt: "Skyhit Media",
@@ -182,9 +182,9 @@ export const metadata: Metadata = {title: "#1 Pay Per Click Advertising Agency |
     ],
     title: "#1 Pay Per Click Advertising Agency | Skyhit Media Boost ROI",
     description: "Pay Per Click Advertising Agency Skyhit Media offers expert PPC services to increase your online visibility, drive targeted traffic, and maximize your ROI.",
-    url: "https://www.skyhitmedia.com/pay-per-click-advertising-agency",
+    url: "https://skyhitmedia.com/pay-per-click-advertising-agency",
   },
-  alternates: { canonical: "https://www.skyhitmedia.com/pay-per-click-advertising-agency" },
+  alternates: { canonical: "https://skyhitmedia.com/pay-per-click-advertising-agency" },
 };
 
 export default function PpcPage() {

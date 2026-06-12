@@ -14,7 +14,7 @@ export default function NotFound() {
             width={172}
             height={64}
             className="h-16 w-auto"
-            priority
+            preload
           />
         </Link>
 

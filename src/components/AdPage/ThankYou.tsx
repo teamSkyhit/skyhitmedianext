@@ -24,11 +24,11 @@ const ThankYouPage = () => {
 
       <Image
         src="/images/header-skyhit-logo-desktop.webp"
-        alt="Logo"
+        alt="Skyhit Media Logo"
         width={144}
         height={48}
         className="w-36 h-auto"
-        priority
+        preload
         unoptimized
       />
 

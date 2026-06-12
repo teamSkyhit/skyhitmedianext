@@ -9,8 +9,7 @@ const QuoteSection: React.FC = () => {
     <section className="relative w-full md:h-[200px] flex items-center overflow-hidden h-[81px]">
       <Image
         src="/images/3rd-section-1.webp"
-        alt=""
-        aria-hidden="true"
+        alt="Digital marketing growth consultation"
         fill
         className="object-cover object-center"
         loading="lazy"
