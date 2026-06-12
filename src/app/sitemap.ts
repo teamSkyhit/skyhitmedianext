@@ -1,5 +1,7 @@
 import { MetadataRoute } from "next";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.skyhitmedia.com";
 
@@ -22,6 +24,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/search-engine-optimization-agency",
     "/services",
     "/social-media-marketing-agency",
+    "/thank-you",
+    "/website-design-and-development-company-in-hyderabad",
     "/website-design-and-development-services",
     "/whatsapp-marketing-agency",
   ];

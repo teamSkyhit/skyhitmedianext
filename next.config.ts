@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: "export",
+  trailingSlash: true,
   images: {
+    unoptimized: true,
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
       { hostname: "images.pexels.com" },
@@ -13,7 +16,9 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["lucide-react", "swiper", "framer-motion"],
   },
-  // PR-004: CDN cache headers — min 5 min TTL for public pages
+  // Note: static HTML export does not support custom headers or routing redirects at Next.js build config level.
+  // These should be configured in the Hostinger web server (e.g., .htaccess for Apache).
+  /*
   async headers() {
     return [
       {
@@ -44,6 +49,7 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  */
 };
 
 export default nextConfig;

@@ -7,8 +7,8 @@ const CareersForm: React.FC = () => {
   const form = useRef<HTMLFormElement>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [resumeFile, setResumeFile] = useState<File | null>(null);
-  const [resumePreview, setResumePreview] = useState<string | null>(null);
   const [showFollowPopup, setShowFollowPopup] = useState(false);
+  const isSubmittingRef = useRef(false);
 
   // Handle PDF selection
   const handleResumeSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,7 +28,6 @@ const CareersForm: React.FC = () => {
     }
 
     setResumeFile(file);
-    setResumePreview(URL.createObjectURL(file));
   };
 
   // Upload PDF to your server
@@ -39,8 +38,11 @@ const CareersForm: React.FC = () => {
     uploadData.append("file", resumeFile);
 
     try {
+      const isDev = typeof window !== "undefined" && (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1");
+      const uploadUrl = isDev ? "/api/upload-resume" : "/media/uploads/uploads.php";
+
       const res = await fetch(
-        "/images/uploads/uploads.php",
+        uploadUrl,
         {
           method: "POST",
           body: uploadData,
@@ -51,7 +53,20 @@ const CareersForm: React.FC = () => {
       console.log("Upload response:", data);
 
       if (data.fileUrl) {
-        return data.fileUrl;
+        let url = data.fileUrl;
+        if (!url.startsWith("http")) {
+          if (url.startsWith("/")) {
+            // Use current origin if available, fallback to production domain
+            const origin = typeof window !== "undefined" ? window.location.origin : "https://skyhitmedia.com";
+            url = `${origin}${url}`;
+          } else {
+            const uploadPath = isDev ? "/images/uploads/" : "/media/uploads/";
+            const origin = typeof window !== "undefined" ? window.location.origin : "https://skyhitmedia.com";
+            url = `${origin}${uploadPath}${url}`;
+          }
+        }
+        console.log("Formatted Absolute Resume URL:", url);
+        return url;
       } else {
         throw new Error("Upload failed: no fileUrl returned");
       }
@@ -70,6 +85,15 @@ const CareersForm: React.FC = () => {
       return;
     }
 
+    const formData = new FormData(form.current!);
+    const numberCleaned = (formData.get("number") as string || "").trim();
+    if (!/^[6-9]\d{9}$/.test(numberCleaned)) {
+      alert("Please enter a valid 10-digit phone number starting with 6-9.");
+      return;
+    }
+
+    if (isSubmittingRef.current) return;
+    isSubmittingRef.current = true;
     setIsLoading(true);
 
     const resumeUrl = await handleResumeUpload();
@@ -80,36 +104,81 @@ const CareersForm: React.FC = () => {
       return;
     }
 
-    const formData = new FormData(form.current!);
-    const templateParams: Record<string, any> = {
-      to_name: formData.get("to_name"),
-      email: formData.get("email"),
-      number: formData.get("number"),
-      gender: formData.get("gender"),
-      position: formData.get("position"),
-      linkedin: formData.get("linkedin"),
-      to_message: formData.get("to_message"),
-      resume_link: resumeUrl,
+    const templateParams: Record<string, unknown> = {
+      from_name: "Skyhit Media Team",
+      to_name: formData.get("to_name") || "",
+      email: formData.get("email") || "",
+      number: formData.get("number") || "",
+      gender: formData.get("gender") || "",
+      position: formData.get("position") || "",
+      linkedin: formData.get("linkedin") || "N/A",
+      message: formData.get("to_message") || "",
+      msg: formData.get("to_message") || "",
+      resume_link: resumeUrl || "",
       attachment: resumeFile,
+      page: "Careers",
+      subject: `Job Application for ${formData.get("position") || "Careers"}`,
     };
 
     try {
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_i2h82eb";
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_v4fu3u7";
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "hjLXq5MC66R977QFn";
+
       await emailjs.send(
-        "service_i2h82eb",
-        "template_v4fu3u7",
+        serviceId,
+        templateId,
         templateParams,
-        "hjLXq5MC66R977QFn"
+        { publicKey }
       );
+
+      // Submit external career lead
+      try {
+        const fullName = (formData.get("to_name") as string) || "";
+        const nameParts = fullName.trim().split(" ");
+        const firstName = nameParts[0] || "Website";
+        const lastName = nameParts.slice(1).join(" ") || "Applicant";
+
+        const response = await fetch("/api/external-leads", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            first_name: firstName,
+            last_name: lastName,
+            email: formData.get("email"),
+            phone: formData.get("number"),
+            company: "Skyhit Media Career Application",
+            source: "website",
+            status: "new",
+            metadata: {
+              page: "Careers",
+              gender: formData.get("gender"),
+              position: formData.get("position"),
+              linkedin: formData.get("linkedin") || "",
+              resume_link: resumeUrl,
+              message: formData.get("to_message")
+            }
+          })
+        });
+
+        const data = await response.json();
+        console.log("External career lead created:", data);
+      } catch (leadError) {
+        console.error("Failed to submit external career lead:", leadError);
+      }
 
       setIsLoading(false);
       setShowFollowPopup(true);
       form.current?.reset();
       setResumeFile(null);
-      setResumePreview(null);
     } catch (error) {
       console.error("Failed to send email:", error);
       alert("Failed to send your application. Please try again.");
       setIsLoading(false);
+    } finally {
+      isSubmittingRef.current = false;
     }
   };
 
@@ -150,10 +219,15 @@ const CareersForm: React.FC = () => {
         </div>
 
         <input
-          type="text"
+          type="tel"
           name="number"
           placeholder="Enter your phone number"
           className="border border-gray-400 p-2 rounded w-full"
+          maxLength={10}
+          onInput={(e) => {
+            const target = e.target as HTMLInputElement;
+            target.value = target.value.replace(/\D/g, "");
+          }}
           required
         />
 
