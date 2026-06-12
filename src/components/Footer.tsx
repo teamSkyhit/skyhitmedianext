@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import EmailLink from "./EmailLink";
 import {
   MapPin,
   Phone,
@@ -14,9 +15,9 @@ const FacebookIcon = ({ className }: { className?: string }) => (
 );
 
 const YoutubeIcon = ({ className }: { className?: string }) => (
-  <svg className={className} fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
-    <polygon fill="white" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
+  <svg className={className} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M2.5 7.1c.3-1.6 1.6-2.9 3.2-3.1C9.4 3.7 12 3.7 12 3.7s2.6 0 6.3.3c1.6.2 2.9 1.5 3.2 3.1.3 1.9.3 4.9.3 4.9s0 3-.3 4.9c-.3 1.6-1.6 2.9-3.2 3.1-3.7.3-6.3.3-6.3.3s-2.6 0-6.3-.3c-1.6-.2-2.9-1.5-3.2-3.1C2.2 15 2.2 12 2.2 12s0-3 .3-4.9z"/>
+    <polygon points="10 15 15 12 10 9 10 15"/>
   </svg>
 );
 
@@ -43,14 +44,16 @@ export default function Footer() {
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-4 gap-8">
         {/* Logo & description */}
         <div>
-          <Image
-            src="/images/header%20skyhit%20logo%20desktop.png"
-            alt="Skyhit Media Logo"
-            width={155}
-            height={58}
-            className="mb-4"
-            loading="lazy"
-          />
+          <Link href="/">
+            <Image
+              src="/images/header-skyhit-logo-desktop.webp"
+              alt="Skyhit Media Logo"
+              width={155}
+              height={58}
+              className="mb-4"
+              loading="lazy"
+            />
+          </Link>
           <p className="text-[18px]">
             Skyhit Media is the top digital marketing agency and web design company in Hyderabad.
             Boost your business with expert services and innovative solutions.
@@ -117,14 +120,14 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-2">
               <Mail className="text-[#DCBE9E] h-6 w-6 shrink-0" />
-              <a href="mailto:contact@skyhitmedia.com" className="hover:text-[#DCBE9E] transition text-[18px]">contact@skyhitmedia.com</a>
+              <EmailLink encoded="Y29udGFjdEBza3loaXRtZWRpYS5jb20=" className="hover:text-[#DCBE9E] transition text-[18px]" />
             </li>
           </ul>
         </div>
       </div>
 
       <div className="text-center mt-[3rem] text-[15.4px] text-white/90">
-        © Copyright {new Date().getFullYear()} | All Rights Reserved SKYHIT MEDIA
+        © Copyright {new Date().getFullYear()} | All Rights Reserved <Link href="/" className="hover:text-[#DCBE9E] transition-colors font-medium">SKYHIT MEDIA</Link>
       </div>
     </footer>
   );

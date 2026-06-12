@@ -13,30 +13,44 @@ const testimonials = [
   {
     name: "Shreya",
     position: "",
-    image: "/images/review-image-services-1.png",
+    image: "/images/review-image-services-1.webp",
     stars: 5,
     quote: "Skyhit Media is the best Digital Marketing Agency! Their strategies improved our online presence, boosted traffic, and increased sales. Highly professional and results-driven team!",
   },
   {
     name: "Satish Varma",
     position: "",
-    image: "/images/review-image-services-2.png",
+    image: "/images/review-image-services-2.webp",
     stars: 5,
     quote: "Skyhit Media transformed our business with their expert digital marketing services. More leads, better engagement, and increased revenue. Highly recommend this agency!",
   },
   {
     name: "Rohan",
     position: "",
-    image: "/images/review-image-services-3.png",
+    image: "/images/review-image-services-3.webp",
     stars: 5,
     quote: "Professional and innovative Digital Marketing Agency! Skyhit Media's data-driven strategies helped us rank higher on Google and attract more customers. Truly impressive!",
   },
 ];
 
-export const metadata: Metadata = {
-  title: "About Skyhit Media | Top Digital Marketing Agency in Hyderabad",
+export const metadata: Metadata = {title: "About Skyhit Media | Top Digital Marketing Agency in Hyderabad",
   description:
     "Learn about Skyhit Media, the top digital marketing agency in Hyderabad. Our team delivers expert SEO, PPC, social media, and web development services.",
+  keywords: ["Digital Marketing", "SEO", "PPC", "Web Design", "Skyhit Media", "Hyderabad"],
+  openGraph: {
+    images: [
+      {
+        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        width: 630,
+        height: 630,
+        alt: "Skyhit Media",
+      }
+    ],
+    title: "About Skyhit Media | Top Digital Marketing Agency in Hyderabad",
+    description: "Learn about Skyhit Media, the top digital marketing agency in Hyderabad. Our team delivers expert SEO, PPC, social media, and web development services.",
+    url: "https://skyhitmedia.com/about",
+  },
+  alternates: { canonical: "https://skyhitmedia.com/about" },
 };
 
 export default function AboutPage() {

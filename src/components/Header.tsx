@@ -38,7 +38,7 @@ export default function Header() {
     <header
       className="bg-primary shadow-md fixed w-full z-50"
       style={{
-        backgroundImage: 'url("/images/header%20pattern.png")',
+        backgroundImage: 'url("/images/header-pattern.webp")',
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
       }}
@@ -50,7 +50,7 @@ export default function Header() {
             {/* Plain img — avoids next/image auto-preloading the logo which competes with hero LCP */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/header%20skyhit%20logo%20desktop.png"
+              src="/images/header-skyhit-logo-desktop.webp"
               alt="Skyhit Media Logo"
               width={172}
               height={64}

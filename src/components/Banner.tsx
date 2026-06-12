@@ -10,10 +10,10 @@ const Banner: React.FC<BannerProps> = ({ title, imgSrc }) => {
     <section className="relative overflow-hidden min-h-[400px] md:min-h-[500px] flex items-center justify-center">
       <Image
         src={imgSrc}
-        alt=""
+        alt={`${title} banner`}
         fill
         className="absolute inset-0 w-full h-full object-cover object-left -z-10"
-        priority
+        preload
         unoptimized
       />
       <div className="mx-auto max-w-screen-xl pt-40 px-4 py-24 lg:flex lg:pt-48 lg:items-center relative z-10">

@@ -111,21 +111,21 @@ const testimonials = [
   {
     name: "Myna",
     position: "",
-    image: "/images/review-image-services-1.png",
+    image: "/images/review-image-services-1.webp",
     stars: 5,
     quote: "Professional and talented designers! They delivered high-quality branding materials that perfectly matched our brand's personality. Loved working with them!",
   },
   {
     name: "Sharma",
     position: "",
-    image: "/images/review-image-services-2.png",
+    image: "/images/review-image-services-2.webp",
     stars: 5,
     quote: "Their graphic design work is top-notch! Skyhit Media transformed our branding with eye-catching logos, brochures, and social media visuals. Amazing team!",
   },
   {
     name: "Smith",
     position: "",
-    image: "/images/review-image-services-3.png",
+    image: "/images/review-image-services-3.webp",
     stars: 5,
     quote: "Skyhit Media's branding services gave our business a fresh, modern look. Their attention to detail and creativity are exceptional!",
   },
@@ -171,10 +171,24 @@ const faqs = [
 
 ];
 
-export const metadata: Metadata = {
-  title: "#1 Branding and Graphic Design Agency | Skyhit Media",
+export const metadata: Metadata = {title: "#1 Branding and Graphic Design Agency | Skyhit Media",
   description:
     "Branding and Graphic Design Agency Skyhit Media offers creative solutions to boost your brand's identity with innovative design and effective strategies.",
+  keywords: ["Digital Marketing", "SEO", "PPC", "Web Design", "Skyhit Media", "Hyderabad"],
+  openGraph: {
+    images: [
+      {
+        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        width: 630,
+        height: 630,
+        alt: "Skyhit Media",
+      }
+    ],
+    title: "#1 Branding and Graphic Design Agency | Skyhit Media",
+    description: "Branding and Graphic Design Agency Skyhit Media offers creative solutions to boost your brand's identity with innovative design and effective strategies.",
+    url: "https://skyhitmedia.com/branding-and-graphic-design-agency",
+  },
+  alternates: { canonical: "https://skyhitmedia.com/branding-and-graphic-design-agency" },
 };
 
 export default function DesignPage() {

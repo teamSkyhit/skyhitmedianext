@@ -111,21 +111,21 @@ const testimonials = [
   {
     name: "Ritika Sharma",
     position: "",
-    image: "/images/review-image-services-1.png",
+    image: "/images/review-image-services-1.webp",
     stars: 5,
     quote: "Exceptional service! Their targeted ads improved our ROI significantly. Skyhit Media truly understands digital marketing and delivers outstanding performance-driven campaigns.",
   },
   {
     name: "Vikram Patel",
     position: "",
-    image: "/images/review-image-services-2.png",
+    image: "/images/review-image-services-2.webp",
     stars: 5,
     quote: "Skyhit Media helped us scale our business with precise ad campaigns. Great optimization, better leads, and fantastic customer support!",
   },
   {
     name: "Rohan Malhotra",
     position: "",
-    image: "/images/review-image-services-3.png",
+    image: "/images/review-image-services-3.webp",
     stars: 5,
     quote: "Brilliant results! Skyhit Media's expertise in performance marketing helped us reach the right audience and increase revenue. Highly recommended!",
   },
@@ -182,10 +182,24 @@ const faqs = [
 
 ];
 
-export const metadata: Metadata = {
-  title: "#1 Performance Marketing Agency | Skyhit Media Drives Results",
+export const metadata: Metadata = {title: "#1 Performance Marketing Agency | Skyhit Media Drives Results",
   description:
     "Performance Marketing Agency - Skyhit Media boosts ROI with data-driven strategies, driving targeted traffic and increasing conversions. Get started today!",
+  keywords: ["Digital Marketing", "SEO", "PPC", "Web Design", "Skyhit Media", "Hyderabad"],
+  openGraph: {
+    images: [
+      {
+        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        width: 630,
+        height: 630,
+        alt: "Skyhit Media",
+      }
+    ],
+    title: "#1 Performance Marketing Agency | Skyhit Media Drives Results",
+    description: "Performance Marketing Agency - Skyhit Media boosts ROI with data-driven strategies, driving targeted traffic and increasing conversions. Get started today!",
+    url: "https://skyhitmedia.com/Performance-marketing-agency",
+  },
+  alternates: { canonical: "https://skyhitmedia.com/Performance-marketing-agency" },
 };
 
 export default function PerformancePage() {

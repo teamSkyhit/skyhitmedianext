@@ -2,12 +2,14 @@
 
 import { useRef, useState, memo } from "react";
 import { Mail, Phone } from "lucide-react";
+import EmailLink from "./EmailLink";
 
 const GetInTouch: React.FC = () => {
   const form = useRef<HTMLFormElement>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [currentPage, setCurrentPage] = useState("Home");
+  const isSubmittingRef = useRef(false);
 
   if (typeof window !== "undefined") {
     const pathname = window.location.pathname;
@@ -17,25 +19,91 @@ const GetInTouch: React.FC = () => {
 
   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsLoading(true);
-    setIsSubmitted(false);
-    if (form.current) {
+    const formElement = e.currentTarget;
+    if (formElement) {
+      const formData = new FormData(formElement);
+      const numberCleaned = (formData.get("number") as string || "").trim();
+      if (!/^[6-9]\d{9}$/.test(numberCleaned)) {
+        alert("Please enter a valid 10-digit phone number starting with 6-9.");
+        return;
+      }
+
+      if (isSubmittingRef.current) return;
+      isSubmittingRef.current = true;
+      setIsLoading(true);
+      setIsSubmitted(false);
       try {
-        const emailjs = await import("@emailjs/browser");
-        await emailjs.sendForm(
+        console.log("DEBUG - EmailJS Keys loaded in browser:", {
+          serviceId: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+          templateId: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+        });
+        const emailjsModule = await import("@emailjs/browser");
+        const emailjs = emailjsModule.default || emailjsModule;
+        await emailjs.send(
           process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
           process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-          form.current,
-          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+          {
+            from_name: "Skyhit Media Team",
+            to_name: formData.get("to_name") || "",
+            email: formData.get("email") || "",
+            number: formData.get("number") || "",
+            message: formData.get("message") || "",
+            msg: formData.get("message") || "",
+            page: currentPage || "Contact",
+            subject: "New Free Proposal Request",
+            position: "N/A",
+            gender: "N/A",
+            resume_link: "N/A",
+            linkedin: "N/A"
+          },
+          { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY! }
         );
+
+        // Submit external lead
+        try {
+          const formData = new FormData(formElement);
+          const fullName = (formData.get("to_name") as string) || "";
+          const nameParts = fullName.trim().split(" ");
+          const firstName = nameParts[0] || "Website";
+          const lastName = nameParts.slice(1).join(" ") || "Lead";
+
+          const response = await fetch("/api/external-leads", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              first_name: firstName,
+              last_name: lastName,
+              email: formData.get("email"),
+              phone: formData.get("number"),
+              company: "Skyhit Media Lead",
+              source: "website",
+              status: "new",
+              metadata: {
+                page: currentPage,
+                message: formData.get("message")
+              }
+            })
+          });
+
+          const data = await response.json();
+          console.log("Lead created:", data);
+        } catch (leadError) {
+          console.error("Failed to submit external lead:", leadError);
+        }
+
         setIsLoading(false);
         setIsSubmitted(true);
-        form.current?.reset();
+        formElement.reset();
         setTimeout(() => setIsSubmitted(false), 5000);
       } catch (error) {
         setIsLoading(false);
         console.error("Failed to send email:", error);
         alert("Failed to send your message. Please try again.");
+      } finally {
+        isSubmittingRef.current = false;
       }
     }
   };
@@ -63,7 +131,7 @@ const GetInTouch: React.FC = () => {
           <h4 className="text-lg md:text-[19.6px] lg:text-2xl font-bold text-[#774635] mb-4">Talk to an expert:</h4>
           <p className="text-base md:text-[19.6px] lg:text-2xl text-gray-600">
             <span className="flex items-center gap-2"><Phone size={18} /> +91 9030279661</span><br />
-            <span className="flex items-center gap-2"><Mail size={18} /> contact@skyhitmedia.com</span>
+            <span className="flex items-center gap-2"><Mail size={18} /> <EmailLink encoded="Y29udGFjdEBza3loaXRtZWRpYS5jb20=" /></span>
           </p>
         </div>
         {/* Right Column */}
@@ -73,24 +141,29 @@ const GetInTouch: React.FC = () => {
           <p className="text-sm md:text-[11.2px] lg:text-base text-gray-600 mb-6">
             We prioritize responding to your inquiries promptly to ensure you receive the assistance you need in a timely manner.
           </p>
-          {isLoading ? (
-            <div>
-              <span id="ProgressLabel" className="sr-only">Loading</span>
-              <span role="progressbar" aria-labelledby="ProgressLabel" aria-valuenow={75} className="block rounded-full bg-gray-200 h-3">
-                <span className="block h-3 rounded-full bg-secondary" style={{ width: "75%" }} />
-              </span>
-            </div>
-          ) : isSubmitted ? (
+          {isSubmitted ? (
             <div className="text-green-600 text-lg font-semibold">Thank you for reaching us!</div>
           ) : (
             <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-4">
-              <input type="text" name="to_name" placeholder="Name" required className="border border-gray-300 rounded-md py-3 px-4 focus:ring-2 focus:ring-secondary outline-none" />
-              <input type="tel" name="number" placeholder="Phone Number" required className="border border-gray-300 rounded-md py-3 px-4 focus:ring-2 focus:ring-secondary outline-none" />
-              <input type="email" name="email" placeholder="Email" required className="border border-gray-300 rounded-md py-3 px-4 focus:ring-2 focus:ring-secondary outline-none" />
-              <textarea placeholder="Message" name="message" rows={4} required className="border border-gray-300 rounded-md py-3 px-4 focus:ring-2 focus:ring-secondary outline-none" />
+              <input type="text" name="to_name" placeholder="Name" required disabled={isLoading} className="border border-gray-300 rounded-md py-3 px-4 focus:ring-2 focus:ring-secondary outline-none disabled:opacity-50" />
+              <input
+                type="tel"
+                name="number"
+                placeholder="Phone Number"
+                required
+                disabled={isLoading}
+                maxLength={10}
+                onInput={(e) => {
+                  const target = e.target as HTMLInputElement;
+                  target.value = target.value.replace(/\D/g, "");
+                }}
+                className="border border-gray-300 rounded-md py-3 px-4 focus:ring-2 focus:ring-secondary outline-none disabled:opacity-50"
+              />
+              <input type="email" name="email" placeholder="Email" required disabled={isLoading} className="border border-gray-300 rounded-md py-3 px-4 focus:ring-2 focus:ring-secondary outline-none disabled:opacity-50" />
+              <textarea placeholder="Message" name="message" rows={4} required disabled={isLoading} className="border border-gray-300 rounded-md py-3 px-4 focus:ring-2 focus:ring-secondary outline-none disabled:opacity-50" />
               <input type="hidden" name="page" value={currentPage} />
-              <button type="submit" className="bg-[#9B5E35] lg:text-xs xl:text-lg lg:w-1/2 text-white py-3 lg:px-1 xl:px-6 rounded-2xl hover:bg-[#7D4E28] transition duration-300">
-                Send My Free Proposal
+              <button type="submit" disabled={isLoading} className="bg-[#9B5E35] lg:text-xs xl:text-lg lg:w-1/2 text-white py-3 lg:px-1 xl:px-6 rounded-2xl hover:bg-[#7D4E28] transition duration-300 disabled:opacity-50">
+                {isLoading ? "Sending..." : "Send My Free Proposal"}
               </button>
             </form>
           )}

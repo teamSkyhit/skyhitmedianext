@@ -111,21 +111,21 @@ const testimonials = [
   {
     name: "Joe",
     position: "",
-    image: "/images/review-image-services-1.png",
+    image: "/images/review-image-services-1.webp",
     stars: 5,
     quote: "Skyhit Media's WhatsApp marketing boosted our customer engagement and sales. Their targeted messaging strategy delivered great results. Highly recommended!",
   },
   {
     name: "Vamsi",
     position: "",
-    image: "/images/review-image-services-2.png",
+    image: "/images/review-image-services-2.webp",
     stars: 5,
     quote: "Their WhatsApp campaigns helped us connect with customers instantly. Higher response rates and better conversions. Fantastic service!",
   },
   {
     name: "Rohith",
     position: "",
-    image: "/images/review-image-services-3.png",
+    image: "/images/review-image-services-3.webp",
     stars: 5,
     quote: "Skyhit Media's WhatsApp marketing is highly effective! Personalized messages increased our customer retention and lead generation.",
   },
@@ -167,10 +167,24 @@ const faqs = [
 
 ];
 
-export const metadata: Metadata = {
-  title: "#1 WhatsApp Marketing Agency | Skyhit Media Boost Customer Engagement",
+export const metadata: Metadata = {title: "#1 WhatsApp Marketing Agency | Skyhit Media Boost Customer Engagement",
   description:
     "WhatsApp Marketing Agency Skyhit Media offers tailored WhatsApp marketing strategies to enhance customer engagement, increase sales, and grow your business.",
+  keywords: ["Digital Marketing", "SEO", "PPC", "Web Design", "Skyhit Media", "Hyderabad"],
+  openGraph: {
+    images: [
+      {
+        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        width: 630,
+        height: 630,
+        alt: "Skyhit Media",
+      }
+    ],
+    title: "#1 WhatsApp Marketing Agency | Skyhit Media Boost Customer Engagement",
+    description: "WhatsApp Marketing Agency Skyhit Media offers tailored WhatsApp marketing strategies to enhance customer engagement, increase sales, and grow your business.",
+    url: "https://skyhitmedia.com/whatsapp-marketing-agency",
+  },
+  alternates: { canonical: "https://skyhitmedia.com/whatsapp-marketing-agency" },
 };
 
 export default function WhatsappPage() {

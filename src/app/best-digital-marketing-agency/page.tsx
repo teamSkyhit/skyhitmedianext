@@ -123,7 +123,7 @@ const testimonials = [
   {
     name: "Neha Verma",
     position: "",
-    image: "/images/review-image-services-1.png",
+    image: "/images/review-image-services-1.webp",
     stars: 5,
     quote:
       "Skyhit Media transformed our online presence with expert SEO and social media marketing. Their strategies boosted our engagement and ROI significantly.",
@@ -131,7 +131,7 @@ const testimonials = [
   {
     name: "Rahul Sharma",
     position: "",
-    image: "/images/review-image-services-2.png",
+    image: "/images/review-image-services-2.webp",
     stars: 5,
     quote:
       "Highly professional team! They delivered on time and provided excellent digital marketing solutions. Our website traffic and leads have increased tremendously.",
@@ -139,7 +139,7 @@ const testimonials = [
   {
     name: "Amit Rao",
     position: "",
-    image: "/images/review-image-services-3.png",
+    image: "/images/review-image-services-3.webp",
     stars: 5,
     quote:
       "Great experience with Skyhit Media! Their web development team built a sleek, high-performing website that improved our online presence. Very satisfied!",
@@ -192,10 +192,24 @@ const faqs = [
 
 ];
 
-export const metadata: Metadata = {
-  title: "#1 Best Digital Marketing Agency for Business – SKYHIT MEDIA",
+export const metadata: Metadata = {title: "#1 Best Digital Marketing Agency for Business – SKYHIT MEDIA",
   description:
     "Discover the best digital marketing agency to boost your online presence. Get expert SEO, PPC, and social media strategies for guaranteed growth and success.",
+  keywords: ["Digital Marketing", "SEO", "PPC", "Web Design", "Skyhit Media", "Hyderabad"],
+  openGraph: {
+    title: "#1 Best Digital Marketing Agency for Business – SKYHIT MEDIA",
+    description: "Discover the best digital marketing agency to boost your online presence. Get expert SEO, PPC, and social media strategies for guaranteed growth and success.",
+    url: "https://skyhitmedia.com/best-digital-marketing-agency",
+    images: [
+      {
+        url: "https://skyhitmedia.com/images/whatsapp-best-digital-marketing-skyhitmedia.png",
+        width: 630,
+        height: 630,
+        alt: "Best Digital Marketing Agency - Skyhit Media",
+      },
+    ],
+  },
+  alternates: { canonical: "https://skyhitmedia.com/best-digital-marketing-agency" },
 };
 
 export default function DigitalMarketingPage() {

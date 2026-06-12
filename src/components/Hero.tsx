@@ -68,7 +68,7 @@
 //                 Digital
 //                 <span className="inline-block mx-2">
 //                   <Image
-//                     src="/images/traingle-icon.png"
+//                     src="/images/traingle-icon.webp"
 //                     alt=""
 //                     aria-hidden="true"
 //                     className="w-8 lg:w-16 h-auto relative top-2 inline-block"
@@ -121,12 +121,6 @@
 
 import { memo } from "react";
 import Image from "next/image";
-import { Playfair_Display } from "next/font/google";
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
 
 const clientLogos: string[] = [
   "/images/clients-kia.webp",
@@ -139,17 +133,22 @@ const clientLogos: string[] = [
   "/images/clients-ramee.webp",
 ];
 
+const marqueeLogos = [
+  ...clientLogos.slice(0, 5),
+  ...clientLogos.slice(0, 5),
+];
+
 const MarqueeClients = memo(() => (
   <div className="overflow-hidden relative w-full py-2">
     <div
       className="flex animate-marquee whitespace-nowrap"
       style={{ animationDuration: "20s" }}
     >
-      {Array.from({ length: 20 }, (_, i) => (
+      {marqueeLogos.map((logo, i) => (
         <Image
           key={i}
-          src={clientLogos[i % clientLogos.length]}
-          alt={`Client ${i % clientLogos.length + 1}`}
+          src={logo}
+          alt={`Skyhit Media client logo ${(i % 5) + 1}`}
           width={248}
           height={100}
           className="h-8 md:h-12 w-auto object-cover mx-4 shrink-0"
@@ -182,8 +181,7 @@ const Hero: React.FC = () => {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/images/1st-2.webp"
-          alt=""
-          aria-hidden="true"
+          alt="Skyhit Media digital marketing agency team"
           fetchPriority="high"
           decoding="sync"
           className="absolute inset-0 w-full h-[432px] md:h-full object-cover object-center md:object-top"
@@ -198,23 +196,22 @@ const Hero: React.FC = () => {
           <div className="container mx-auto px-6">
             <div className="text-white relative text-left lg:w-[90%]">
               <h1
-                className={`${playfair.className} text-2xl md:text-[56px] lg:text-7xl xl:text-[88px] font-semibold leading-tight drop-shadow-lg`}
+                className="font-headline text-2xl md:text-[56px] lg:text-7xl xl:text-[88px] font-semibold leading-tight drop-shadow-lg"
               >
-                Digital
+                Digital{" "}
                 <span className="inline-block mx-2">
                   <Image
-                    src="/images/traingle-icon.png"
-                    alt=""
-                    aria-hidden="true"
+                    src="/images/traingle-icon.webp"
+                    alt="Skyhit Media accent icon"
                     className="w-8 lg:w-16 h-auto relative top-2 inline-block"
                     loading="lazy"
                     decoding="async"
                     width={64}
                     height={64}
                   />
-                </span>
+                </span>{" "}
                 <br />
-                Marketing Agency
+                Marketing Agency{" "}
                 <br />
                 in Hyderabad
               </h1>

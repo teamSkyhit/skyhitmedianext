@@ -111,21 +111,21 @@ const testimonials = [
   {
     name: "Neha Kapoor",
     position: "",
-    image: "/images/review-image-services-1.png",
+    image: "/images/review-image-services-1.webp",
     stars: 5,
     quote: "Professional and result-driven! Skyhit Media improved our search rankings significantly. We now get more inquiries and quality website traffic.",
   },
   {
     name: "Rohan Verma",
     position: "",
-    image: "/images/review-image-services-2.png",
+    image: "/images/review-image-services-2.webp",
     stars: 5,
     quote: "Their SEO services are top-notch! Our website went from invisible to page one on Google. Great team and excellent support!",
   },
   {
     name: "Vikram Malhotra",
     position: "",
-    image: "/images/review-image-services-3.png",
+    image: "/images/review-image-services-3.webp",
     stars: 5,
     quote: "Highly recommend Skyhit Media for SEO! Their techniques increased our brand visibility and helped us attract more customers online.",
   },
@@ -170,10 +170,24 @@ const faqs = [
 
 ];
 
-export const metadata: Metadata = {
-  title: "#1 Search Engine Optimization Agency | Skyhit Media Boost Your SEO",
+export const metadata: Metadata = {title: "#1 Search Engine Optimization Agency | Skyhit Media Boost Your SEO",
   description:
     "Search Engine Optimization Agency Skyhit Media helps improve your website's ranking and visibility. Drive more traffic with our expert SEO strategies and solutions.",
+  keywords: ["Digital Marketing", "SEO", "PPC", "Web Design", "Skyhit Media", "Hyderabad"],
+  openGraph: {
+    images: [
+      {
+        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        width: 630,
+        height: 630,
+        alt: "Skyhit Media",
+      }
+    ],
+    title: "#1 Search Engine Optimization Agency | Skyhit Media Boost Your SEO",
+    description: "Search Engine Optimization Agency Skyhit Media helps improve your website's ranking and visibility. Drive more traffic with our expert SEO strategies and solutions.",
+    url: "https://skyhitmedia.com/search-engine-optimization-agency",
+  },
+  alternates: { canonical: "https://skyhitmedia.com/search-engine-optimization-agency" },
 };
 
 export default function SeoPage() {

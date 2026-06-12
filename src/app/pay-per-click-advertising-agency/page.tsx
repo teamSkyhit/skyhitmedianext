@@ -111,21 +111,21 @@ const testimonials = [
   {
     name: "Pooja",
     position: "",
-    image: "/images/review-image-services-1.png",
+    image: "/images/review-image-services-1.webp",
     stars: 5,
     quote: "Skyhit Media's targeted PPC ads helped us reach the right audience. Excellent strategy, great execution, and impressive results!",
   },
   {
     name: "Vikram Shah",
     position: "",
-    image: "/images/review-image-services-2.png",
+    image: "/images/review-image-services-2.webp",
     stars: 5,
     quote: "Highly recommend Skyhit Media for PPC! Their expertise in Google Ads and social media ads delivered great returns. Outstanding service!",
   },
   {
     name: "Amit Khanna",
     position: "",
-    image: "/images/review-image-services-3.png",
+    image: "/images/review-image-services-3.webp",
     stars: 5,
     quote: "Skyhit Media's PPC campaigns delivered amazing results! Higher conversions, lower costs, and better ROI. A truly professional and data-driven team!",
   },
@@ -167,10 +167,24 @@ const faqs = [
 
 ];
 
-export const metadata: Metadata = {
-  title: "#1 Pay Per Click Advertising Agency | Skyhit Media Boost ROI",
+export const metadata: Metadata = {title: "#1 Pay Per Click Advertising Agency | Skyhit Media Boost ROI",
   description:
     "Pay Per Click Advertising Agency Skyhit Media offers expert PPC services to increase your online visibility, drive targeted traffic, and maximize your ROI.",
+  keywords: ["Digital Marketing", "SEO", "PPC", "Web Design", "Skyhit Media", "Hyderabad"],
+  openGraph: {
+    images: [
+      {
+        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        width: 630,
+        height: 630,
+        alt: "Skyhit Media",
+      }
+    ],
+    title: "#1 Pay Per Click Advertising Agency | Skyhit Media Boost ROI",
+    description: "Pay Per Click Advertising Agency Skyhit Media offers expert PPC services to increase your online visibility, drive targeted traffic, and maximize your ROI.",
+    url: "https://skyhitmedia.com/pay-per-click-advertising-agency",
+  },
+  alternates: { canonical: "https://skyhitmedia.com/pay-per-click-advertising-agency" },
 };
 
 export default function PpcPage() {

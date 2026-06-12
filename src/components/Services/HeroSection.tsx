@@ -19,34 +19,88 @@ const HeroSection: React.FC<HeroSectionProps> = ({ serviceData }) => {
   const pathname = usePathname();
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const isSubmittingRef = useRef(false);
 
   const currentPage = pathname === "/" ? "Home" : pathname.slice(1);
 
   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsLoading(true);
-    setIsSubmitted(false);
+    const formElement = e.currentTarget;
 
-    if (form.current) {
-      const formData = new FormData(form.current);
+    if (formElement) {
+      const formData = new FormData(formElement);
 
       if (!formData.get("to_name") || !formData.get("email") || !formData.get("number") || !formData.get("to_message")) {
         alert("Please fill in all fields.");
-        setIsLoading(false);
         return;
       }
 
+      const numberCleaned = (formData.get("number") as string || "").trim();
+      if (!/^[6-9]\d{9}$/.test(numberCleaned)) {
+        alert("Please enter a valid 10-digit phone number starting with 6-9.");
+        return;
+      }
+
+      if (isSubmittingRef.current) return;
+      isSubmittingRef.current = true;
+      setIsLoading(true);
+      setIsSubmitted(false);
+
       try {
         const emailjs = await import("@emailjs/browser");
-        await emailjs.sendForm(
+        await emailjs.send(
           process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
           "template_v4fu3u7",
-          form.current,
-          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+          {
+            from_name: "Skyhit Media Team",
+            to_name: formData.get("to_name") || "",
+            email: formData.get("email") || "",
+            number: formData.get("number") || "",
+            message: formData.get("to_message") || "",
+            msg: formData.get("to_message") || "",
+            page: currentPage || "Services",
+            subject: `New Proposal Request (${currentPage})`,
+            position: "N/A",
+            gender: "N/A",
+            resume_link: "N/A",
+            linkedin: "N/A"
+          },
+          { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY! }
         );
+
+        // Submit external lead
+        try {
+          const fullName = (formData.get("to_name") as string) || "";
+          const nameParts = fullName.trim().split(" ");
+          const firstName = nameParts[0] || "Website";
+          const lastName = nameParts.slice(1).join(" ") || "Lead";
+
+          await fetch("/api/external-leads", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              first_name: firstName,
+              last_name: lastName,
+              email: formData.get("email"),
+              phone: formData.get("number"),
+              company: "Skyhit Media Lead",
+              source: "website",
+              status: "new",
+              metadata: {
+                page: currentPage,
+                message: formData.get("to_message")
+              }
+            })
+          });
+        } catch (leadError) {
+          console.error("Failed to submit external lead:", leadError);
+        }
+
         setIsLoading(false);
         setIsSubmitted(true);
-        form.current?.reset();
+        formElement.reset();
         setTimeout(() => {
           setIsSubmitted(false);
         }, 5000);
@@ -54,6 +108,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ serviceData }) => {
         setIsLoading(false);
         console.error("Failed to send email:", error);
         alert("Failed to send your message. Please try again.");
+      } finally {
+        isSubmittingRef.current = false;
       }
     }
   };
@@ -66,8 +122,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ serviceData }) => {
           <source media="(min-width: 768px)" srcSet={serviceData.deskImgLink} />
           <img
             src={serviceData.mobImgLink}
-            alt=""
-            aria-hidden="true"
+            alt={`${serviceData.title} hero background`}
             className="absolute inset-0 w-full h-full object-cover object-center md:object-top -z-10"
             width={1920}
             height={900}
@@ -119,6 +174,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({ serviceData }) => {
                 name="number"
                 placeholder="+91 0000000000"
                 className="w-full border border-gray-300 rounded-full p-3 mb-4"
+                maxLength={10}
+                onInput={(e) => {
+                  const target = e.target as HTMLInputElement;
+                  target.value = target.value.replace(/\D/g, "");
+                }}
                 required
               />
               <input

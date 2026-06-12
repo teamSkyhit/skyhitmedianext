@@ -10,16 +10,14 @@ export default function ServiceHeroPreload({ deskImg, mobImg }: ServiceHeroPrelo
       <link
         rel="preload"
         as="image"
-        // @ts-expect-error — fetchpriority is valid HTML but not in React types yet
-        fetchpriority="high"
+        fetchPriority="high"
         href={deskImg}
         media="(min-width: 768px)"
       />
       <link
         rel="preload"
         as="image"
-        // @ts-expect-error — fetchpriority is valid HTML but not in React types yet
-        fetchpriority="high"
+        fetchPriority="high"
         href={mobImg}
         media="(max-width: 767px)"
       />

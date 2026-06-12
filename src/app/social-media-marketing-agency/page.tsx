@@ -111,21 +111,21 @@ const testimonials = [
   {
     name: "Pooja Desai ",
     position: "",
-    image: "/images/review-image-services-1.png",
+    image: "/images/review-image-services-1.webp",
     stars: 5,
     quote: "Highly professional and creative! Their social media marketing boosted our brand awareness and brought in quality leads. Fantastic service!",
   },
   {
     name: "Vikram Shah",
     position: "",
-    image: "/images/review-image-services-2.png",
+    image: "/images/review-image-services-2.webp",
     stars: 5,
     quote: "Our social media engagement skyrocketed with Skyhit Media. They managed our campaigns efficiently and delivered great ROI. Excellent agency!",
   },
   {
     name: "Rohan Malhotra",
     position: "",
-    image: "/images/review-image-services-3.png",
+    image: "/images/review-image-services-3.webp",
     stars: 5,
     quote: "Skyhit Media transformed our social media presence. More engagement, better reach, and increased sales! Their expertise is outstanding.",
   },
@@ -184,10 +184,24 @@ const faqs = [
 
 ];
 
-export const metadata: Metadata = {
-  title: "#1 Social Media Marketing Agency | Skyhit Media Drives Growth",
+export const metadata: Metadata = {title: "#1 Social Media Marketing Agency | Skyhit Media Drives Growth",
   description:
     "Skyhit Media, a top social media marketing agency, helps businesses grow with expert strategies, increasing engagement, and driving conversions. Start today!",
+  keywords: ["Digital Marketing", "SEO", "PPC", "Web Design", "Skyhit Media", "Hyderabad"],
+  openGraph: {
+    images: [
+      {
+        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        width: 630,
+        height: 630,
+        alt: "Skyhit Media",
+      }
+    ],
+    title: "#1 Social Media Marketing Agency | Skyhit Media Drives Growth",
+    description: "Skyhit Media, a top social media marketing agency, helps businesses grow with expert strategies, increasing engagement, and driving conversions. Start today!",
+    url: "https://skyhitmedia.com/social-media-marketing-agency",
+  },
+  alternates: { canonical: "https://skyhitmedia.com/social-media-marketing-agency" },
 };
 
 export default function SmmPage() {

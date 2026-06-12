@@ -23,12 +23,12 @@ const ThankYouPage = () => {
       </div>
 
       <Image
-        src="/images/header%20skyhit%20logo%20desktop.png"
-        alt="Logo"
+        src="/images/header-skyhit-logo-desktop.webp"
+        alt="Skyhit Media Logo"
         width={144}
         height={48}
         className="w-36 h-auto"
-        priority
+        preload
         unoptimized
       />
 
@@ -42,7 +42,7 @@ const ThankYouPage = () => {
       </div>
 
       <div className="flex gap-6 justify-center text-white text-2xl">
-        <Link href="https://www.facebook.com/skyhitmedia1" target="_blank" rel="noopener noreferrer">
+        <Link href="https://www.facebook.com/skyhitmedia" target="_blank" rel="noopener noreferrer">
           <FacebookIcon className="w-7 h-7 hover:text-blue-400 transition-colors" />
         </Link>
         <Link href="https://www.instagram.com/skyhitmedia/" target="_blank" rel="noopener noreferrer">

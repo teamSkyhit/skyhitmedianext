@@ -29,7 +29,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
   return (
     <section
       className="relative bg-contain bg-center bg-no-repeat py-2 px-8 md:px-16"
-      style={{ backgroundImage: `url("/images/testimonials%20bg.png")` }}
+      style={{ backgroundImage: `url("/images/testimonials-bg.webp")` }}
     >
       <div className="container mx-auto">
         <div className="text-center mb-2 md:mb-6">

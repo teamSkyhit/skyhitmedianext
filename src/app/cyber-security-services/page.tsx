@@ -111,21 +111,21 @@ const testimonials = [
   {
     name: "Meghana",
     position: "",
-    image: "/images/review-image-services-1.png",
+    image: "/images/review-image-services-1.webp",
     stars: 5,
     quote: "Excellent cybersecurity solutions! They protected our website from attacks and improved our overall security. Great service!",
   },
   {
     name: "Rakesh",
     position: "",
-    image: "/images/review-image-services-2.png",
+    image: "/images/review-image-services-2.webp",
     stars: 5,
     quote: "Skyhit Media's security measures gave us peace of mind. Our systems are now safe from hackers and data breaches!",
   },
   {
     name: "Santhosh",
     position: "",
-    image: "/images/review-image-services-3.png",
+    image: "/images/review-image-services-3.webp",
     stars: 5,
     quote: "Their cybersecurity expertise is top-notch! Skyhit Media helped us prevent threats and strengthen our digital defenses. Excellent support!",
   },
@@ -171,6 +171,21 @@ export const metadata: Metadata = {
   title: "#1 Cyber Security Services for Your Website | Skyhit Media",
   description:
     "Cyber Security Services by Skyhit Media protect your website from online threats. Ensure the safety of your data and users with our expert cyber security solutions.",
+  keywords: ["Digital Marketing", "SEO", "PPC", "Web Design", "Skyhit Media", "Hyderabad"],
+  openGraph: {
+    images: [
+      {
+        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        width: 630,
+        height: 630,
+        alt: "Skyhit Media",
+      }
+    ],
+    title: "#1 Cyber Security Services for Your Website | Skyhit Media",
+    description: "Cyber Security Services by Skyhit Media protect your website from online threats. Ensure the safety of your data and users with our expert cyber security solutions.",
+    url: "https://skyhitmedia.com/cyber-security-services",
+  },
+  alternates: { canonical: "https://skyhitmedia.com/cyber-security-services" },
 };
 
 export default function CyberPage() {

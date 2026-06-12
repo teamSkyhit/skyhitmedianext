@@ -111,21 +111,21 @@ const testimonials = [
   {
     name: "Swetha",
     position: "",
-    image: "/images/review-image-services-1.png",
+    image: "/images/review-image-services-1.webp",
     stars: 5,
     quote: "Skyhit Media connected us with the right influencers, boosting our brand awareness and sales. Their influencer marketing strategies work wonders!",
   },
   {
     name: "Mohan",
     position: "",
-    image: "/images/review-image-services-2.png",
+    image: "/images/review-image-services-2.webp",
     stars: 5,
     quote: "Amazing results! Their influencer partnerships helped us reach a wider audience and increased engagement. Highly professional team!",
   },
   {
     name: "Varma",
     position: "",
-    image: "/images/review-image-services-3.png",
+    image: "/images/review-image-services-3.webp",
     stars: 5,
     quote: "Skyhit Media made influencer marketing easy and effective! Great connections, excellent execution, and impressive ROI. Highly recommend!",
   },
@@ -172,10 +172,24 @@ const faqs = [
 
 ];
 
-export const metadata: Metadata = {
-  title: "#1 Influencer Marketing Agency | SkyHit Media Influencer Agency",
+export const metadata: Metadata = {title: "#1 Influencer Marketing Agency | SkyHit Media Influencer Agency",
   description:
     "Influencer Marketing Agency SkyHit Media connects brands with top influencers to boost engagement, enhance reach, and drive measurable business growth.",
+  keywords: ["Digital Marketing", "SEO", "PPC", "Web Design", "Skyhit Media", "Hyderabad"],
+  openGraph: {
+    images: [
+      {
+        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        width: 630,
+        height: 630,
+        alt: "Skyhit Media",
+      }
+    ],
+    title: "#1 Influencer Marketing Agency | SkyHit Media Influencer Agency",
+    description: "Influencer Marketing Agency SkyHit Media connects brands with top influencers to boost engagement, enhance reach, and drive measurable business growth.",
+    url: "https://skyhitmedia.com/influencer-marketing-agency",
+  },
+  alternates: { canonical: "https://skyhitmedia.com/influencer-marketing-agency" },
 };
 
 export default function InfluencerPage() {

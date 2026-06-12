@@ -111,21 +111,21 @@ const testimonials = [
   {
     name: "Sneha",
     position: "",
-    image: "/images/review-image-services-1.png",
+    image: "/images/review-image-services-1.webp",
     stars: 5,
     quote: "Skyhit Media designed a stunning, user-friendly website for our business. Their team was professional, creative, and delivered on time. Highly recommended for web development!",
   },
   {
     name: "Arjun",
     position: "",
-    image: "/images/review-image-services-2.png",
+    image: "/images/review-image-services-2.webp",
     stars: 5,
     quote: "Great experience with Skyhit Media! Their web development team built a sleek, high-performing website that improved our online presence. Very satisfied!",
   },
   {
     name: "Vikram",
     position: "",
-    image: "/images/review-image-services-3.png",
+    image: "/images/review-image-services-3.webp",
     stars: 5,
     quote: "Skyhit Media transformed our outdated site into a modern masterpiece. Their design and development skills are top-notch. Traffic and engagement have increased significantly!",
   },
@@ -172,10 +172,24 @@ const faqs = [
 
 ];
 
-export const metadata: Metadata = {
-  title: "#1 Website Design and Development Services | Skyhit Media",
+export const metadata: Metadata = {title: "#1 Website Design and Development Services | Skyhit Media",
   description:
     "Website Design and Development Services by Skyhit Media offer custom, responsive & user-friendly websites that enhance your online presence and drive success.",
+  keywords: ["Digital Marketing", "SEO", "PPC", "Web Design", "Skyhit Media", "Hyderabad"],
+  openGraph: {
+    images: [
+      {
+        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        width: 630,
+        height: 630,
+        alt: "Skyhit Media",
+      }
+    ],
+    title: "#1 Website Design and Development Services | Skyhit Media",
+    description: "Website Design and Development Services by Skyhit Media offer custom, responsive & user-friendly websites that enhance your online presence and drive success.",
+    url: "https://skyhitmedia.com/website-design-and-development-services",
+  },
+  alternates: { canonical: "https://skyhitmedia.com/website-design-and-development-services" },
 };
 
 export default function WebServicePage() {

@@ -24,8 +24,8 @@ const AgencyExcitedSection: React.FC = () => {
         <div className="absolute top-0 right-0 h-full">
           <div className="relative h-full">
             <Image
-              src="/images/side%20vec.png"
-              alt="Vector design"
+              src="/images/side-vec.webp"
+              alt="Business growth graphic"
               width={500}
               height={600}
               className="h-full w-auto object-cover"

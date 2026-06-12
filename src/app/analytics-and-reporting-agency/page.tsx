@@ -111,21 +111,21 @@ const testimonials = [
   {
     name: "Sophia",
     position: "",
-    image: "/images/review-image-services-1.png",
+    image: "/images/review-image-services-1.webp",
     stars: 5,
     quote: "Skyhit Media is the most dependable Analytics & Reporting Agency we've worked with. Their real-time reports and valuable data insights helped us improve our marketing and increase profits.",
   },
   {
     name: "Michael",
     position: "",
-    image: "/images/review-image-services-2.png",
+    image: "/images/review-image-services-2.webp",
     stars: 5,
     quote: "Working with Skyhit Media, the best Analytics & Reporting Agency, has completely changed how we use data. Their reports gave us a clearer understanding of our customers, helping us make better marketing decisions.",
   },
   {
     name: "Smith",
     position: "",
-    image: "/images/review-image-services-3.png",
+    image: "/images/review-image-services-3.webp",
     stars: 5,
     quote: "Skyhit Media, a top Analytics & Reporting Agency, doesn't just give us reports—they provide helpful advice. Their expertise helped us improve how we work and get better results from our campaigns.",
   },
@@ -166,10 +166,24 @@ const faqs = [
 
 ];
 
-export const metadata: Metadata = {
-  title: "#1 Analytics & Reporting Agency For Your Business - SKYHIT MEDIA",
+export const metadata: Metadata = {title: "#1 Analytics & Reporting Agency For Your Business - SKYHIT MEDIA",
   description:
     "Analytics & Reporting Agency, Skyhit Media, provides data-driven insights, performance tracking, and custom reporting solutions to help grow your business.",
+  keywords: ["Digital Marketing", "SEO", "PPC", "Web Design", "Skyhit Media", "Hyderabad"],
+  openGraph: {
+    images: [
+      {
+        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        width: 630,
+        height: 630,
+        alt: "Skyhit Media",
+      }
+    ],
+    title: "#1 Analytics & Reporting Agency For Your Business - SKYHIT MEDIA",
+    description: "Analytics & Reporting Agency, Skyhit Media, provides data-driven insights, performance tracking, and custom reporting solutions to help grow your business.",
+    url: "https://skyhitmedia.com/analytics-and-reporting-agency",
+  },
+  alternates: { canonical: "https://skyhitmedia.com/analytics-and-reporting-agency" },
 };
 
 export default function AnalyticsPage() {

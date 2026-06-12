@@ -12,30 +12,44 @@ const testimonials = [
   {
     name: "Shreya",
     position: "",
-    image: "/images/review-image-services-1.png",
+    image: "/images/review-image-services-1.webp",
     stars: 5,
     quote: "Skyhit Media is the best Digital Marketing Agency! Their strategies improved our online presence, boosted traffic, and increased sales. Highly professional and results-driven team!",
   },
   {
     name: "Satish Varma",
     position: "",
-    image: "/images/review-image-services-2.png",
+    image: "/images/review-image-services-2.webp",
     stars: 5,
     quote: "Skyhit Media transformed our business with their expert digital marketing services. More leads, better engagement, and increased revenue. Highly recommend this agency!",
   },
   {
     name: "Rohan",
     position: "",
-    image: "/images/review-image-services-3.png",
+    image: "/images/review-image-services-3.webp",
     stars: 5,
     quote: "Professional and innovative Digital Marketing Agency! Skyhit Media's data-driven strategies helped us rank higher on Google and attract more customers. Truly impressive!",
   },
 ];
 
-export const metadata: Metadata = {
-  title: "Our Projects | Skyhit Media Portfolio",
+export const metadata: Metadata = {title: "Our Projects | Skyhit Media Portfolio",
   description:
     "Explore Skyhit Media's portfolio of successful digital marketing and web design projects for clients across various industries.",
+  keywords: ["Digital Marketing", "SEO", "PPC", "Web Design", "Skyhit Media", "Hyderabad"],
+  openGraph: {
+    images: [
+      {
+        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        width: 630,
+        height: 630,
+        alt: "Skyhit Media",
+      }
+    ],
+    title: "Our Projects | Skyhit Media Portfolio",
+    description: "Explore Skyhit Media's portfolio of successful digital marketing and web design projects for clients across various industries.",
+    url: "https://skyhitmedia.com/projects",
+  },
+  alternates: { canonical: "https://skyhitmedia.com/projects" },
 };
 
 export default function ProjectsPage() {
