@@ -32,10 +32,24 @@ const testimonials = [
   },
 ];
 
-export const metadata: Metadata = {
-  title: "Our Projects | Skyhit Media Portfolio",
+export const metadata: Metadata = {title: "Our Projects | Skyhit Media Portfolio",
   description:
     "Explore Skyhit Media's portfolio of successful digital marketing and web design projects for clients across various industries.",
+  keywords: ["Digital Marketing", "SEO", "PPC", "Web Design", "Skyhit Media", "Hyderabad"],
+  openGraph: {
+    images: [
+      {
+        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        width: 630,
+        height: 630,
+        alt: "Skyhit Media",
+      }
+    ],
+    title: "Our Projects | Skyhit Media Portfolio",
+    description: "Explore Skyhit Media's portfolio of successful digital marketing and web design projects for clients across various industries.",
+    url: "https://skyhitmedia.com/projects",
+  },
+  alternates: { canonical: "https://skyhitmedia.com/projects" },
 };
 
 export default function ProjectsPage() {

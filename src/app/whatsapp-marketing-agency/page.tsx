@@ -167,10 +167,24 @@ const faqs = [
 
 ];
 
-export const metadata: Metadata = {
-  title: "#1 WhatsApp Marketing Agency | Skyhit Media Boost Customer Engagement",
+export const metadata: Metadata = {title: "#1 WhatsApp Marketing Agency | Skyhit Media Boost Customer Engagement",
   description:
     "WhatsApp Marketing Agency Skyhit Media offers tailored WhatsApp marketing strategies to enhance customer engagement, increase sales, and grow your business.",
+  keywords: ["Digital Marketing", "SEO", "PPC", "Web Design", "Skyhit Media", "Hyderabad"],
+  openGraph: {
+    images: [
+      {
+        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        width: 630,
+        height: 630,
+        alt: "Skyhit Media",
+      }
+    ],
+    title: "#1 WhatsApp Marketing Agency | Skyhit Media Boost Customer Engagement",
+    description: "WhatsApp Marketing Agency Skyhit Media offers tailored WhatsApp marketing strategies to enhance customer engagement, increase sales, and grow your business.",
+    url: "https://skyhitmedia.com/whatsapp-marketing-agency",
+  },
+  alternates: { canonical: "https://skyhitmedia.com/whatsapp-marketing-agency" },
 };
 
 export default function WhatsappPage() {

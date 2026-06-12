@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useEffect, useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { useRouter } from "next/navigation";
 import "./InfluencerSignup.css";
@@ -15,9 +15,11 @@ const InfluencerSignup: React.FC = () => {
   const [pageUrl, setPageUrl] = useState("");
   const [phoneError, setPhoneError] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const isSubmittingRef = useRef(false);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setPageUrl(window.location.href);
     }
   }, []);
@@ -50,6 +52,9 @@ const InfluencerSignup: React.FC = () => {
       return;
     }
 
+    if (isSubmittingRef.current) return;
+    isSubmittingRef.current = true;
+
     setPhoneError("");
     setLoading(true);
 
@@ -76,8 +81,45 @@ const InfluencerSignup: React.FC = () => {
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
         "template_nrsiw6m",
         form,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
+        { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY! },
       );
+
+      // Submit external influencer lead
+      try {
+        const fullName = nameInput.value.trim();
+        const nameParts = fullName.split(" ");
+        const firstName = nameParts[0] || "Website";
+        const lastName = nameParts.slice(1).join(" ") || "Influencer";
+        const emailFallback = `${firstName.toLowerCase()}.${lastName.toLowerCase()}@influencer-skyhit.com`;
+
+        const response = await fetch("/api/external-leads", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            first_name: firstName,
+            last_name: lastName,
+            email: emailFallback,
+            phone: mobile,
+            company: "Skyhit Media Influencer Sign up",
+            source: "website",
+            status: "new",
+            metadata: {
+              page: "Influencer Registration",
+              instagram: instagramInput.value,
+              youtube: youtubeInput.value || "",
+              location: locationInput.value,
+              language: languageInput.value
+            }
+          })
+        });
+
+        const data = await response.json();
+        console.log("External influencer lead created:", data);
+      } catch (leadError) {
+        console.error("Failed to submit external influencer lead:", leadError);
+      }
 
       setLoading(false);
       setSubmitted(true);
@@ -88,6 +130,8 @@ const InfluencerSignup: React.FC = () => {
       console.error(error);
       setLoading(false);
       alert("Submission failed. Please try again.");
+    } finally {
+      isSubmittingRef.current = false;
     }
   };
 

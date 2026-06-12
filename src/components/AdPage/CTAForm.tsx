@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { AlertTriangle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { useRouter } from 'next/navigation';
@@ -24,28 +24,57 @@ interface CTAFormProps {
 const CTAForm: React.FC<CTAFormProps> = ({ formData, handleInputChange }) => {
   const formRef = useRef<HTMLFormElement>(null);
   const router = useRouter(); // For redirect
+  const [isLoading, setIsLoading] = useState(false);
+  const isSubmittingRef = useRef(false);
 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!formRef.current) return;
 
+    const phoneCleaned = formData.phone.trim();
+    if (!/^[6-9]\d{9}$/.test(phoneCleaned)) {
+      alert("Please enter a valid 10-digit phone number starting with 6-9.");
+      return;
+    }
+
+    if (isSubmittingRef.current) return;
+    isSubmittingRef.current = true;
+    setIsLoading(true);
+
     emailjs
-      .sendForm(
+      .send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        formRef.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+        {
+          from_name: "Skyhit Media Team",
+          to_name: formData.name || "",
+          email: formData.email || "",
+          number: phoneCleaned,
+          position: formData.projectType || "",
+          message: formData.requirements || "",
+          msg: formData.requirements || "",
+          page: "Ad Page CTA Form",
+          subject: "New Quote Inquiry (CTA Form)",
+          gender: "N/A",
+          resume_link: "N/A",
+          linkedin: "N/A"
+        },
+        { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY! }
       )
       .then(
         () => {
           router.push('/thank-you'); // Redirect on success
         },
         (error) => {
-          console.error('❌ Email send error:', error.text);
+          console.error('❌ Email send error:', error);
           alert('Something went wrong. Please try again later.');
         }
-      );
+      )
+      .finally(() => {
+        isSubmittingRef.current = false;
+        setIsLoading(false);
+      });
   };
 
   return (
@@ -98,7 +127,11 @@ const CTAForm: React.FC<CTAFormProps> = ({ formData, handleInputChange }) => {
               name="phone"
               placeholder="Phone Number"
               value={formData.phone}
-              onChange={handleInputChange}
+              onChange={(e) => {
+                e.target.value = e.target.value.replace(/\D/g, "");
+                handleInputChange(e);
+              }}
+              maxLength={10}
               className="p-4 border-2 border-gray-200 rounded-lg focus:border-champagne-400 focus:outline-none transition-colors"
               required
             />
@@ -136,9 +169,10 @@ const CTAForm: React.FC<CTAFormProps> = ({ formData, handleInputChange }) => {
           </div>
           <button
             type="submit"
-            className="w-full bg-champagne-500 hover:bg-champagne-600 text-white font-bold py-4 px-8 rounded-lg text-xl transition-colors transform hover:scale-105 animate-pulse"
+            disabled={isLoading}
+            className="w-full bg-champagne-500 hover:bg-champagne-600 text-white font-bold py-4 px-8 rounded-lg text-xl transition-colors transform hover:scale-105 animate-pulse disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            📩 Get My Free Quote Now
+            {isLoading ? "📩 Sending..." : "📩 Get My Free Quote Now"}
           </button>
           <div className="flex flex-wrap justify-center gap-6 mt-6 text-sm text-slate-500">
             <span>🔒 100% Free</span>

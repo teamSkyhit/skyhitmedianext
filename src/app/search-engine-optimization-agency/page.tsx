@@ -170,10 +170,24 @@ const faqs = [
 
 ];
 
-export const metadata: Metadata = {
-  title: "#1 Search Engine Optimization Agency | Skyhit Media Boost Your SEO",
+export const metadata: Metadata = {title: "#1 Search Engine Optimization Agency | Skyhit Media Boost Your SEO",
   description:
     "Search Engine Optimization Agency Skyhit Media helps improve your website's ranking and visibility. Drive more traffic with our expert SEO strategies and solutions.",
+  keywords: ["Digital Marketing", "SEO", "PPC", "Web Design", "Skyhit Media", "Hyderabad"],
+  openGraph: {
+    images: [
+      {
+        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        width: 630,
+        height: 630,
+        alt: "Skyhit Media",
+      }
+    ],
+    title: "#1 Search Engine Optimization Agency | Skyhit Media Boost Your SEO",
+    description: "Search Engine Optimization Agency Skyhit Media helps improve your website's ranking and visibility. Drive more traffic with our expert SEO strategies and solutions.",
+    url: "https://skyhitmedia.com/search-engine-optimization-agency",
+  },
+  alternates: { canonical: "https://skyhitmedia.com/search-engine-optimization-agency" },
 };
 
 export default function SeoPage() {
