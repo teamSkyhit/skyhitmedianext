@@ -1,12 +1,14 @@
 "use client";
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { useRouter } from 'next/navigation';
 
 const PopupForm = ({ open, onClose }: { open: boolean; onClose: () => void }) => {
   const formRef = useRef<HTMLFormElement>(null);
   const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
+  const isSubmittingRef = useRef(false);
 
   if (!open) return null;
 
@@ -14,12 +16,23 @@ const PopupForm = ({ open, onClose }: { open: boolean; onClose: () => void }) =>
     e.preventDefault();
     if (!formRef.current) return;
 
+    const formData = new FormData(formRef.current);
+    const phoneCleaned = (formData.get("phone") as string || "").trim();
+    if (!/^[6-9]\d{9}$/.test(phoneCleaned)) {
+      alert("Please enter a valid 10-digit phone number starting with 6-9.");
+      return;
+    }
+
+    if (isSubmittingRef.current) return;
+    isSubmittingRef.current = true;
+    setIsLoading(true);
+
     emailjs
       .sendForm(
-        'service_i2h82eb',
-        'template_4crdzlz',
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
         formRef.current,
-        'hjLXq5MC66R977QFn'
+        { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY! }
       )
       .then(() => {
         router.push('/thank-you');
@@ -27,6 +40,10 @@ const PopupForm = ({ open, onClose }: { open: boolean; onClose: () => void }) =>
       .catch((err) => {
         console.error('Email send error:', err);
         alert('Something went wrong. Please try again later.');
+      })
+      .finally(() => {
+        isSubmittingRef.current = false;
+        setIsLoading(false);
       });
   };
 
@@ -64,6 +81,11 @@ const PopupForm = ({ open, onClose }: { open: boolean; onClose: () => void }) =>
               type="tel"
               name="phone"
               placeholder="Phone Number"
+              maxLength={10}
+              onInput={(e) => {
+                const target = e.target as HTMLInputElement;
+                target.value = target.value.replace(/\D/g, "");
+              }}
               className="p-4 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-[#be7f51]"
               required
             />
@@ -93,9 +115,10 @@ const PopupForm = ({ open, onClose }: { open: boolean; onClose: () => void }) =>
           </label>
           <button
             type="submit"
-            className="w-full bg-[#be7f51] hover:bg-[#a46741] text-white font-bold py-3 px-8 rounded-md text-lg transition-all"
+            disabled={isLoading}
+            className="w-full bg-[#be7f51] hover:bg-[#a46741] text-white font-bold py-3 px-8 rounded-md text-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            📩 Get My Free Quote Now
+            {isLoading ? "Sending..." : "📩 Get My Free Quote Now"}
           </button>
         </form>
       </div>

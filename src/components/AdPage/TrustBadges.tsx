@@ -1,6 +1,6 @@
 const TrustBadges: React.FC = () => {
   const badges = [
-    { icon: '🏆', text: 'Google Partner Certified' },
+    { icon: '🏆', text: 'Google Certified Partner' },
     { icon: '🔒', text: 'SSL Secured' },
     { icon: '⚡', text: '99.9% Uptime' },
     { icon: '📱', text: 'Mobile First' },

@@ -32,7 +32,7 @@ const WhyChoose: React.FC = () => {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-center text-slate-800 mb-16">
-          Why 500+ Businesses Choose SkyHit Media
+          Why 200+ Businesses Choose SkyHit Media
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (

@@ -1,11 +1,9 @@
 @import "tailwindcss";
 
-/* ── Custom theme (migrated from Vite tailwind.config.js) ── */
 @theme inline {
-  /* Font families */
-  --font-headline: "Playfair Display", serif;
+  --font-headline: var(--font-playfair), serif;
   --font-base: "Orbitron", sans-serif;
-  --font-content: "Montserrat", sans-serif;
+  --font-content: var(--font-content), sans-serif;
 
   /* Brand colors */
   --color-primary: #5F6B70;
@@ -16,6 +14,22 @@
   --animate-infinite-scroll: infinite-scroll 15s linear infinite;
   --animate-wave: wave 2s infinite ease-in-out;
   --animate-marquee: marquee linear infinite;
+  --animate-blob: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
 }
 
 @keyframes infinite-scroll {
@@ -43,9 +57,14 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
 /* ── Base styles ── */
 * {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-content), sans-serif;
 }
 
 html,
@@ -60,6 +79,18 @@ body {
 
 .animate-marquee {
   animation: marquee linear infinite;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
 
 /* ── Hero height ── */

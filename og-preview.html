@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WhatsApp OG Preview Simulator</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #efeae2; /* WhatsApp Web background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    margin: 0;
+    gap: 30px;
+  }
+  h2 {
+    color: #444;
+  }
+  
+  /* Large Top-Image Preview */
+  .whatsapp-bubble-large {
+    background: #dcf8c6; /* Sender bubble color */
+    border-radius: 8px;
+    padding: 4px;
+    width: 350px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  }
+  .whatsapp-link-preview {
+    background: #f0f2f5;
+    border-radius: 8px;
+    overflow: hidden;
+    text-decoration: none;
+    display: block;
+  }
+  .whatsapp-image-large {
+    width: 100%;
+    height: 180px; 
+    /* THIS IS THE CRITICAL PART: WhatsApp center-crops to a specific ratio */
+    background-image: url('./public/images/Digital-Marketing-og-padded.png');
+    background-size: cover;
+    background-position: center; 
+  }
+  
+  /* Small Left-Image Preview (What you saw in your screenshot) */
+  .whatsapp-bubble-small {
+    background: #ffffff; 
+    border-radius: 8px;
+    width: 500px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+  }
+  .whatsapp-small-inner {
+    display: flex;
+    background: #f0f2f5;
+  }
+  .whatsapp-image-small {
+    width: 120px;
+    height: 120px;
+    /* Center square crop */
+    background-image: url('./public/images/Digital-Marketing-og-padded.png');
+    background-size: cover;
+    background-position: center; 
+    flex-shrink: 0;
+  }
+
+  /* Content Styles */
+  .whatsapp-content {
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .whatsapp-title {
+    font-weight: 600;
+    font-size: 15px;
+    color: #111;
+    margin-bottom: 2px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .whatsapp-desc {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 4px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.4;
+  }
+  .whatsapp-url {
+    font-size: 12px;
+    color: #888;
+    text-transform: lowercase;
+  }
+</style>
+</head>
+<body>
+
+  <h2>WhatsApp Preview Simulator</h2>
+  <p style="color: #666; max-width: 500px; text-align: center;">
+    This shows how WhatsApp automatically crops images using <code>background-position: center</code>. 
+    Because we padded the image, your logo is now safe inside the central square!
+  </p>
+
+  <!-- Small Square Preview (Matches your screenshot) -->
+  <div class="whatsapp-bubble-small">
+    <div class="whatsapp-small-inner">
+      <div class="whatsapp-image-small"></div>
+      <div class="whatsapp-content">
+        <div class="whatsapp-title">Top Digital Marketing Agency in Hyderabad | SKYHIT MEDIA</div>
+        <div class="whatsapp-desc">Skyhit Media is the top digital marketing agency and web design company in Hyderabad. Boost your business with expert services...</div>
+        <div class="whatsapp-url">skyhitmedia.com</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Standard Large Preview -->
+  <div class="whatsapp-bubble-large">
+    <div class="whatsapp-link-preview">
+      <div class="whatsapp-image-large"></div>
+      <div class="whatsapp-content">
+        <div class="whatsapp-title">Top Digital Marketing Agency in Hyderabad</div>
+        <div class="whatsapp-desc">Skyhit Media is the top digital marketing agency...</div>
+        <div class="whatsapp-url">skyhitmedia.com</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

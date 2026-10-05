@@ -1,6 +1,7 @@
 "use client";
 
-import { Star, Check, AlertTriangle, CheckCircle, Award } from 'lucide-react';
+import React, { useState, useRef } from 'react';
+import { Star, Check, CheckCircle, Award } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { useRouter } from 'next/navigation';
 
@@ -23,25 +24,47 @@ interface HeroSectionProps {
 const HeroSection: React.FC<HeroSectionProps> = ({
   formData,
   handleInputChange,
-  handleFormSubmit,
 }) => {
   const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
+  const isSubmittingRef = useRef(false);
 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
 
+    const phoneCleaned = formData.phone.trim();
+    if (!/^[6-9]\d{9}$/.test(phoneCleaned)) {
+      alert("Please enter a valid 10-digit phone number starting with 6-9.");
+      return;
+    }
+
+    if (isSubmittingRef.current) return;
+    isSubmittingRef.current = true;
+    setIsLoading(true);
+
     emailjs
       .send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_i2h82eb",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_4crdzlz",
         {
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          projectType: formData.projectType,
-          requirements: formData.requirements,
+          from_name: "Skyhit Media Team",
+          to_name: formData.name || "",
+          name: formData.name || "",
+          email: formData.email || "",
+          number: phoneCleaned,
+          phone: phoneCleaned,
+          position: formData.projectType || "",
+          projectType: formData.projectType || "",
+          message: formData.requirements || "",
+          msg: formData.requirements || "",
+          requirements: formData.requirements || "",
+          page: "Ad Page Hero Form",
+          subject: "New Free Quote Inquiry",
+          gender: "N/A",
+          resume_link: "N/A",
+          linkedin: "N/A"
         },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+        { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "hjLXq5MC66R977QFn" }
       )
       .then(
         () => {
@@ -51,7 +74,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           console.error('EmailJS error:', error.text);
           alert('Failed to send email.');
         }
-      );
+      )
+      .finally(() => {
+        isSubmittingRef.current = false;
+        setIsLoading(false);
+      });
   };
 
   return (
@@ -80,7 +107,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             <div className="flex flex-wrap gap-4">
               <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-lg border border-gray-200 shadow-sm">
                 <Star className="text-yellow-500" size={20} />
-                <span className="font-semibold text-slate-700">Google Partner Certified</span>
+                <span className="font-semibold text-slate-700">Google Certified Partner</span>
               </div>
               <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-lg border border-gray-200 shadow-sm">
                 <Award className="text-yellow-500" size={20} />
@@ -132,7 +159,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                   name="phone"
                   placeholder="Phone Number"
                   value={formData.phone}
-                  onChange={handleInputChange}
+                  onChange={(e) => {
+                    e.target.value = e.target.value.replace(/\D/g, "");
+                    handleInputChange(e);
+                  }}
+                  maxLength={10}
                   className="w-full p-4 border-2 border-gray-200 rounded-lg focus:border-champagne-400 focus:outline-none transition-colors"
                   required
                 />
@@ -161,9 +192,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 />
                 <button
                   type="submit"
-                  className="w-full bg-champagne-500 hover:bg-champagne-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors transform hover:scale-105"
+                  disabled={isLoading}
+                  className="w-full bg-champagne-500 hover:bg-champagne-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  📩 Get My Free Quote Now
+                  {isLoading ? "📩 Sending..." : "📩 Get My Free Quote Now"}
                 </button>
                 <p className="text-center text-sm text-slate-500">
                   🔒 100% Free • No Spam • 24h Response

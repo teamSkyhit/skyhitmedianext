@@ -3,9 +3,13 @@ import dynamic from "next/dynamic";
 import Banner from "@/components/Banner";
 
 const GetInTouch = dynamic(() => import("@/components/GetInTouch"));
-const ClientSection = dynamic(() => import("@/components/ClientSection"));
-const TestimonialsSection = dynamic(() => import("@/components/TestimonialsSection"));
-const RecentWorksSection = dynamic(() => import("@/components/RecentWorksSection"));
+import ClientSection from "@/components/ClientSection";
+const TestimonialsSection = dynamic(
+  () => import("@/components/TestimonialsSection"),
+);
+const RecentWorksSection = dynamic(
+  () => import("@/components/RecentWorksSection"),
+);
 const LazySection = dynamic(() => import("@/components/LazySection"));
 
 const testimonials = [
@@ -14,21 +18,24 @@ const testimonials = [
     position: "",
     image: "/images/review-image-services-1.png",
     stars: 5,
-    quote: "Skyhit Media is the best Digital Marketing Agency! Their strategies improved our online presence, boosted traffic, and increased sales. Highly professional and results-driven team!",
+    quote:
+      "Skyhit Media is the best Digital Marketing Agency! Their strategies improved our online presence, boosted traffic, and increased sales. Highly professional and results-driven team!",
   },
   {
     name: "Satish Varma",
     position: "",
     image: "/images/review-image-services-2.png",
     stars: 5,
-    quote: "Skyhit Media transformed our business with their expert digital marketing services. More leads, better engagement, and increased revenue. Highly recommend this agency!",
+    quote:
+      "Skyhit Media transformed our business with their expert digital marketing services. More leads, better engagement, and increased revenue. Highly recommend this agency!",
   },
   {
     name: "Rohan",
     position: "",
     image: "/images/review-image-services-3.png",
     stars: 5,
-    quote: "Professional and innovative Digital Marketing Agency! Skyhit Media's data-driven strategies helped us rank higher on Google and attract more customers. Truly impressive!",
+    quote:
+      "Professional and innovative Digital Marketing Agency! Skyhit Media's data-driven strategies helped us rank higher on Google and attract more customers. Truly impressive!",
   },
 ];
 
@@ -36,12 +43,38 @@ export const metadata: Metadata = {
   title: "Our Projects | Skyhit Media Portfolio",
   description:
     "Explore Skyhit Media's portfolio of successful digital marketing and web design projects for clients across various industries.",
+  keywords: [
+    "Digital Marketing",
+    "SEO",
+    "PPC",
+    "Web Design",
+    "Skyhit Media",
+    "Hyderabad",
+  ],
+  openGraph: {
+    images: [
+      {
+        url: "https://skyhitmedia.com/images/whatsapp-Digital-Marketing-og.png",
+        width: 630,
+        height: 630,
+        alt: "Skyhit Media",
+      },
+    ],
+    title: "Our Projects | Skyhit Media Portfolio",
+    description:
+      "Explore Skyhit Media's portfolio of successful digital marketing and web design projects for clients across various industries.",
+    url: "https://skyhitmedia.com/projects",
+  },
+  alternates: { canonical: "https://skyhitmedia.com/projects" },
 };
 
 export default function ProjectsPage() {
   return (
     <>
-      <Banner title="Our Projects" imgSrc="/images/our-projects-hero-section.webp" />
+      <Banner
+        title="Our Projects"
+        imgSrc="/images/our-projects-hero-section.webp"
+      />
       <LazySection>
         <RecentWorksSection />
         <ClientSection />
