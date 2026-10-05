@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, Phone, ChevronDown, ChevronRight } from "lucide-react";
@@ -22,6 +21,7 @@ const services = [
   { path: "/online-reputation-management-agency", label: "Online Reputation Management (ORM)" },
   { path: "/cyber-security-services", label: "Cyber Security" },
 ];
+import Image from "next/image";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,19 +35,23 @@ export default function Header() {
   };
 
   return (
-    <header
-      className="bg-primary shadow-md fixed w-full z-50"
-      style={{
-        backgroundImage: 'url("/images/header%20pattern.png")',
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
-    >
-      <div className="container h-[65px] md:h-auto mx-auto flex justify-between items-center py-4 px-6 gap-6">
+    <header className="bg-primary shadow-md fixed w-full z-50">
+      {/* Background Pattern using next/image for automatic LCP preloading */}
+      <div className="absolute inset-0 z-[-1] overflow-hidden">
+        <Image 
+          src="/images/header pattern.png" 
+          alt="" 
+          fill 
+          priority 
+          className="object-cover"
+        />
+      </div>
+
+      <div className="container h-[65px] md:h-auto mx-auto flex justify-between items-center py-4 px-6 gap-6 relative">
         {/* Logo */}
         <div className="text-2xl font-bold text-white">
           <Link href="/" className="flex items-center">
-            {/* Plain img — avoids next/image auto-preloading the logo which competes with hero LCP */}
+            {/* Plain img, but eagerly loaded since it's in the header */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/header%20skyhit%20logo%20desktop.png"
@@ -55,7 +59,8 @@ export default function Header() {
               width={172}
               height={64}
               className="h-12 w-[129px] md:h-16 md:w-[172px]"
-              loading="lazy"
+              loading="eager"
+              fetchPriority="high"
               decoding="async"
             />
           </Link>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, memo } from "react";
+import { memo } from "react";
 import Image from "next/image";
 
 const clients = [
@@ -33,53 +33,6 @@ const clients2 = [
 
 const ClientSection: React.FC = () => {
   const clientRows = [clients, clients1, clients2];
-  const containerRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    const scrollSpeed = 1;
-
-    const startScrolling = (container: HTMLDivElement, isReverse: boolean) => {
-      let scrollPosition = container.scrollLeft;
-
-      const scroll = () => {
-        const maxScroll = container.scrollWidth - container.clientWidth;
-        scrollPosition = isReverse ? scrollPosition - scrollSpeed : scrollPosition + scrollSpeed;
-
-        if (scrollPosition >= maxScroll) scrollPosition = 0;
-        if (scrollPosition <= 0 && isReverse) scrollPosition = maxScroll;
-
-        container.scrollLeft = scrollPosition;
-        requestAnimationFrame(scroll);
-      };
-
-      requestAnimationFrame(scroll);
-    };
-
-    containerRefs.current.forEach((container, index) => {
-      if (container) {
-        const isReverseScroll = index === 1;
-        startScrolling(container, isReverseScroll);
-      }
-    });
-
-    const handleResize = () => {
-      containerRefs.current.forEach((container) => {
-        if (container) {
-          container.scrollLeft = 0;
-        }
-      });
-    };
-
-    if (typeof window !== 'undefined') {
-      window.addEventListener("resize", handleResize);
-    }
-
-    return () => {
-      if (typeof window !== 'undefined') {
-        window.removeEventListener("resize", handleResize);
-      }
-    };
-  }, []);
 
   return (
     <div className="w-full bg-white">
@@ -87,14 +40,14 @@ const ClientSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-[40%_60%] gap-8">
           <div className="relative flex flex-col items-center px-6 py-12 md:py-24">
             <div className="relative z-10 text-center md:text-left">
-              <h4 className="text-[24px] md:text-[28px] lg:text-[40px] xl:text-[48px] leading-12 font-semibold text-gray-800 mb-6">
+              <h4 className="text-[24px] md:text-[28px] lg:text-[40px] xl:text-[48px] leading-12 font-semibold text-slate-900 mb-6">
                 Just a Few of our Favorite Clients
               </h4>
-              <p className="text-base text-[#666] mb-8">
+              <p className="text-base text-slate-500 mb-8">
                 We pride ourselves on building long-lasting relationships by providing exceptional service and tailored solutions that meet their unique needs.
               </p>
               <a href="/projects" rel="noopener noreferrer">
-                <button className="bg-[#93553B] text-white px-8 py-3 rounded-full hover:bg-primary/90 transition-colors">
+                <button className="bg-slate-600 text-white px-8 py-3 rounded-full hover:bg-slate-700 transition-colors">
                   Our Projects
                 </button>
               </a>
@@ -115,16 +68,14 @@ const ClientSection: React.FC = () => {
               <div
                 key={rowIndex}
                 className="relative overflow-hidden"
-                ref={(el) => { containerRefs.current[rowIndex] = el; }}
               >
-                <div className="flex items-center space-x-4 px-4">
-                  {[...rowClients, ...rowClients, ...rowClients, ...rowClients].map((client, index) => (
+                <div
+                  className={`flex items-center gap-4 px-4 w-max ${rowIndex === 1 ? "animate-logo-marquee-reverse" : "animate-logo-marquee"}`}
+                >
+                  {[...rowClients, ...rowClients].map((client, index) => (
                     <div
                       key={index}
                       className="flex-shrink-0 w-32 h-24 md:w-40 md:h-32 bg-white rounded-lg shadow-sm border border-gray-100 p-4"
-                      style={{
-                        willChange: "transform",
-                      }}
                     >
                       <Image
                         src={client}
@@ -143,6 +94,29 @@ const ClientSection: React.FC = () => {
           </div>
         </div>
       </div>
+      <style jsx>{`
+        @keyframes logo-marquee {
+          from { transform: translate3d(0, 0, 0); }
+          to { transform: translate3d(-50%, 0, 0); }
+        }
+
+        .animate-logo-marquee,
+        .animate-logo-marquee-reverse {
+          animation: logo-marquee 36s linear infinite;
+          will-change: transform;
+        }
+
+        .animate-logo-marquee-reverse {
+          animation-direction: reverse;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .animate-logo-marquee,
+          .animate-logo-marquee-reverse {
+            animation: none;
+          }
+        }
+      `}</style>
     </div>
   );
 };

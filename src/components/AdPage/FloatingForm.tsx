@@ -46,23 +46,27 @@ const FloatingForm: React.FC<FloatingFormProps> = ({
 
     try {
       await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_i2h82eb",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_4crdzlz",
         {
           from_name: "Skyhit Media Team",
           to_name: formData.name || "",
+          name: formData.name || "",
           email: formData.email || "",
           number: phoneCleaned,
+          phone: phoneCleaned,
           position: formData.projectType || "",
+          projectType: formData.projectType || "",
           message: formData.requirements || "",
           msg: formData.requirements || "",
+          requirements: formData.requirements || "",
           page: "Ad Page Floating Form",
           subject: "New Quote Inquiry (Floating Form)",
           gender: "N/A",
           resume_link: "N/A",
           linkedin: "N/A"
         },
-        { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY! }
+        { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "hjLXq5MC66R977QFn" }
       );
 
       // Redirect after success

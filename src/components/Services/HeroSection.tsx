@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 interface HeroSectionProps {
   serviceData: ServiceData;
@@ -17,6 +17,7 @@ interface ServiceData {
 const HeroSection: React.FC<HeroSectionProps> = ({ serviceData }) => {
   const form = useRef<HTMLFormElement>(null);
   const pathname = usePathname();
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const isSubmittingRef = useRef(false);
@@ -63,7 +64,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ serviceData }) => {
             position: "N/A",
             gender: "N/A",
             resume_link: "N/A",
-            linkedin: "N/A"
+            linkedin: "N/A",
+            page_url: typeof window !== 'undefined' ? window.location.href : 'Unknown'
           },
           { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY! }
         );
@@ -99,11 +101,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ serviceData }) => {
         }
 
         setIsLoading(false);
-        setIsSubmitted(true);
         formElement.reset();
-        setTimeout(() => {
-          setIsSubmitted(false);
-        }, 5000);
+        router.push("/thank-you");
       } catch (error) {
         setIsLoading(false);
         console.error("Failed to send email:", error);

@@ -15,15 +15,14 @@ const logos = [
 const bubbleColors = ["#c7a48c", "#b88972", "#9f6f58", "#d8b5a2"];
 
 const TrustedSection = () => {
-  const [size, setSize] = useState(() => {
-    if (typeof window !== "undefined") {
-      if (window.innerWidth < 480) return 230;
-      if (window.innerWidth < 768) return 280;
-    }
-    return 350;
-  });
+  const [size, setSize] = useState(350); // Default for server and initial client render
 
   useEffect(() => {
+    // Set actual size immediately on mount
+    if (window.innerWidth < 480) setSize(230);
+    else if (window.innerWidth < 768) setSize(280);
+    else setSize(350);
+
     let timeoutId: ReturnType<typeof setTimeout>;
     const resize = () => {
       clearTimeout(timeoutId);
@@ -82,7 +81,7 @@ const TrustedSection = () => {
           {/* Full Width Background Image */}
           <Image
             src="/images/2nd-section-skyhit-01.webp"
-            alt=""
+            alt="Skyhit Media Office Background"
             aria-hidden="true"
             fill
             className="object-cover object-center"

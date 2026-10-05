@@ -1,0 +1,14 @@
+ INFO  Accepting connections at http://localhost:62914 HTTP  23/6/2026 5:58:38 pm 127.0.0.1 GET /
+ HTTP  23/6/2026 5:58:38 pm 127.0.0.1 Returned 200 in 76 ms
+ HTTP  23/6/2026 5:59:55 pm 127.0.0.1 GET /
+ HTTP  23/6/2026 5:59:55 pm 127.0.0.1 Returned 200 in 4 ms
+ HTTP  23/6/2026 5:59:55 pm 127.0.0.1 GET /robots.txt
+ HTTP  23/6/2026 5:59:55 pm 127.0.0.1 Returned 200 in 6 ms
+ HTTP  23/6/2026 5:59:55 pm 127.0.0.1 GET /llms.txt
+ HTTP  23/6/2026 5:59:55 pm 127.0.0.1 Returned 200 in 5 ms
+ HTTP  23/6/2026 5:59:55 pm 127.0.0.1 GET /sitemap.xml
+ HTTP  23/6/2026 5:59:55 pm 127.0.0.1 Returned 200 in 6 ms
+ HTTP  23/6/2026 6:01:49 pm 127.0.0.1 GET /
+ HTTP  23/6/2026 6:01:49 pm 127.0.0.1 Returned 200 in 4 ms
+ HTTP  23/6/2026 6:02:16 pm 127.0.0.1 GET /
+ HTTP  23/6/2026 6:02:16 pm 127.0.0.1 Returned 200 in 3 ms

@@ -4,7 +4,8 @@ const nextConfig: NextConfig = {
   output: "export",
   trailingSlash: true,
   images: {
-    unoptimized: true,
+    loader: "custom",
+    loaderFile: "./src/utils/image-loader.ts",
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
       { hostname: "images.pexels.com" },

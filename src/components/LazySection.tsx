@@ -12,42 +12,22 @@ export default function LazySection({ children, minHeight = "300px" }: LazySecti
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    let observer: IntersectionObserver;
-    let initialized = false;
+    if (visible) return;
 
-    const startObserving = () => {
-      if (initialized || visible) return;
-      initialized = true;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
 
-      observer = new IntersectionObserver(
-        (entries) => {
-          if (entries[0].isIntersecting) {
-            setVisible(true);
-            observer.disconnect();
-          }
-        },
-        { rootMargin: "200px" }
-      );
-
-      if (ref.current) observer.observe(ref.current);
-    };
-
-    const events = ['scroll', 'mousemove', 'touchstart', 'keydown'];
-
-    const onInteract = () => {
-      startObserving();
-      events.forEach(ev => window.removeEventListener(ev, onInteract));
-    };
-
-    events.forEach(ev => window.addEventListener(ev, onInteract, { passive: true, once: true }));
-
-    // Fallback: load after 8 seconds anyway if no interaction
-    const fallbackTimer = setTimeout(onInteract, 8000);
+    if (ref.current) observer.observe(ref.current);
 
     return () => {
-      clearTimeout(fallbackTimer);
-      events.forEach(ev => window.removeEventListener(ev, onInteract));
-      if (observer) observer.disconnect();
+      observer.disconnect();
     };
   }, [visible]);
 

@@ -125,7 +125,8 @@ import { Playfair_Display } from "next/font/google";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  display: "swap",
 });
 
 const clientLogos: string[] = [
@@ -165,7 +166,7 @@ MarqueeClients.displayName = "MarqueeClients";
 
 const Hero: React.FC = () => {
   return (
-    <section className="hero relative overflow-hidden h-[360px] md:h-screen">
+    <section className="hero relative overflow-hidden h-[100dvh] md:h-screen">
       {/* Hero Background Image */}
       <picture>
         <source
@@ -186,7 +187,7 @@ const Hero: React.FC = () => {
           aria-hidden="true"
           fetchPriority="high"
           decoding="sync"
-          className="absolute inset-0 w-full h-[432px] md:h-full object-cover object-center md:object-top"
+          className="absolute inset-0 w-full h-full object-cover object-center md:object-top"
           width={1920}
           height={900}
         />
@@ -207,7 +208,7 @@ const Hero: React.FC = () => {
                     alt=""
                     aria-hidden="true"
                     className="w-8 lg:w-16 h-auto relative top-2 inline-block"
-                    loading="lazy"
+                    priority
                     decoding="async"
                     width={64}
                     height={64}

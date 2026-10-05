@@ -52,7 +52,7 @@ const FAQ: React.FC<FAQProps> = ({ faqs }) => {
                   faq.answer.sections.map((section, idx) => (
                     <div key={idx} className="mb-4">
                       {section.headings?.map((heading, hIdx) => (
-                        <h4 key={hIdx} className="font-semibold text-lg mt-4">{heading}</h4>
+                        <h4 key={hIdx} className="font-semibold text-lg mt-4" dangerouslySetInnerHTML={renderHTML(heading)} />
                       ))}
                       {section.texts?.map((text, tIdx) => (
                         <p key={tIdx} dangerouslySetInnerHTML={renderHTML(text)} />

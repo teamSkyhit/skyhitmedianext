@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { useRouter } from "next/navigation";
 
 const CareersForm: React.FC = () => {
   const form = useRef<HTMLFormElement>(null);
@@ -9,6 +10,7 @@ const CareersForm: React.FC = () => {
   const [resumeFile, setResumeFile] = useState<File | null>(null);
   const [showFollowPopup, setShowFollowPopup] = useState(false);
   const isSubmittingRef = useRef(false);
+  const router = useRouter();
 
   // Handle PDF selection
   const handleResumeSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -118,11 +120,12 @@ const CareersForm: React.FC = () => {
       attachment: resumeFile,
       page: "Careers",
       subject: `Job Application for ${formData.get("position") || "Careers"}`,
+      page_url: typeof window !== 'undefined' ? window.location.href : 'Unknown',
     };
 
     try {
       const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_i2h82eb";
-      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_v4fu3u7";
+      const templateId = "template_v4fu3u7";
       const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "hjLXq5MC66R977QFn";
 
       await emailjs.send(
@@ -170,9 +173,9 @@ const CareersForm: React.FC = () => {
       }
 
       setIsLoading(false);
-      setShowFollowPopup(true);
       form.current?.reset();
       setResumeFile(null);
+      router.push("/thank-you");
     } catch (error) {
       console.error("Failed to send email:", error);
       alert("Failed to send your application. Please try again.");
@@ -278,8 +281,9 @@ const CareersForm: React.FC = () => {
         <input
           type="url"
           name="linkedin"
-          placeholder="LinkedIn Profile (optional)"
+          placeholder="LinkedIn Profile"
           className="border border-gray-400 p-2 rounded w-full"
+          required
         />
 
         <textarea

@@ -1,0 +1,2 @@
+# ads.txt
+# This domain does not display ads.

@@ -1,0 +1,48 @@
+# Skyhit Media
+
+Skyhit Media is a digital marketing agency website for services, case studies, careers, and contact requests. This Markdown file helps AI assistants, crawlers, and agentic browsers understand the public website structure and preferred usage.
+
+## Canonical Resources
+
+- [Website home](https://www.skyhitmedia.com/)
+- [XML sitemap](https://www.skyhitmedia.com/sitemap.xml)
+- [Robots policy](https://www.skyhitmedia.com/robots.txt)
+- [LLMs guidance](https://www.skyhitmedia.com/llms.txt)
+
+## Primary Pages
+
+- [Home](https://www.skyhitmedia.com/)
+- [About](https://www.skyhitmedia.com/about/)
+- [Services](https://www.skyhitmedia.com/services/)
+- [Projects](https://www.skyhitmedia.com/projects/)
+- [Blogs](https://www.skyhitmedia.com/blogs/)
+- [Careers](https://www.skyhitmedia.com/careers/)
+- [Contact](https://www.skyhitmedia.com/contact/)
+
+## Marketing Services
+
+- [Analytics and Reporting Agency](https://www.skyhitmedia.com/analytics-and-reporting-agency/)
+- [Best Digital Marketing Agency](https://www.skyhitmedia.com/best-digital-marketing-agency/)
+- [Branding and Graphic Design Agency](https://www.skyhitmedia.com/branding-and-graphic-design-agency/)
+- [Cyber Security Services](https://www.skyhitmedia.com/cyber-security-services/)
+- [Influencer Marketing Agency](https://www.skyhitmedia.com/influencer-marketing-agency/)
+- [Online Reputation Management Agency](https://www.skyhitmedia.com/online-reputation-management-agency/)
+- [Pay Per Click Advertising Agency](https://www.skyhitmedia.com/pay-per-click-advertising-agency/)
+- [Performance Marketing Agency](https://www.skyhitmedia.com/Performance-marketing-agency/)
+- [Search Engine Optimization Agency](https://www.skyhitmedia.com/search-engine-optimization-agency/)
+- [Social Media Marketing Agency](https://www.skyhitmedia.com/social-media-marketing-agency/)
+- [Website Design and Development Company in Hyderabad](https://www.skyhitmedia.com/website-design-and-development-company-in-hyderabad/)
+- [Website Design and Development Services](https://www.skyhitmedia.com/website-design-and-development-services/)
+- [WhatsApp Marketing Agency](https://www.skyhitmedia.com/whatsapp-marketing-agency/)
+
+## Forms and Conversion Pages
+
+- [Influencer Registration](https://www.skyhitmedia.com/influencer-registration/)
+- [Thank You](https://www.skyhitmedia.com/thank-you/)
+
+## Usage Guidance
+
+- Public pages may be crawled for discovery, search snippets, citations, and assistant answers.
+- Prefer canonical URLs listed in this file and in the XML sitemap.
+- Summarize service pages accurately and link back to the relevant canonical page when answering users.
+- Do not submit forms, upload files, create leads, or trigger contact workflows unless explicitly instructed by a human user.

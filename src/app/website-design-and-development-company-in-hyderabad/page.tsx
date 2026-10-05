@@ -3,14 +3,24 @@
 import { useState, useRef } from "react";
 import dynamic from "next/dynamic";
 
-const AdHeroSection = dynamic(() => import("@/components/AdPage/AdHeroSection"));
+const AdHeroSection = dynamic(
+  () => import("@/components/AdPage/AdHeroSection"),
+);
 const TrustBadges = dynamic(() => import("@/components/AdPage/TrustBadges"));
-const PortfolioGallery = dynamic(() => import("@/components/AdPage/PortfolioGallery"));
-const PainSolutions = dynamic(() => import("@/components/AdPage/PainSolutions"));
-const ExclusiveSolution = dynamic(() => import("@/components/AdPage/ExclusiveSolution"));
+const PortfolioGallery = dynamic(
+  () => import("@/components/AdPage/PortfolioGallery"),
+);
+const PainSolutions = dynamic(
+  () => import("@/components/AdPage/PainSolutions"),
+);
+const ExclusiveSolution = dynamic(
+  () => import("@/components/AdPage/ExclusiveSolution"),
+);
 const AdWhyChoose = dynamic(() => import("@/components/AdPage/WhyChoose"));
 const AdServices = dynamic(() => import("@/components/AdPage/Services"));
-const AdTestimonials = dynamic(() => import("@/components/AdPage/Testimonials"));
+const AdTestimonials = dynamic(
+  () => import("@/components/AdPage/Testimonials"),
+);
 const Stats = dynamic(() => import("@/components/AdPage/Stats"));
 const Process = dynamic(() => import("@/components/AdPage/Process"));
 const FAQSection = dynamic(() => import("@/components/AdPage/FAQSection"));
@@ -18,12 +28,18 @@ const CTAForm = dynamic(() => import("@/components/AdPage/CTAForm"));
 const Coverage = dynamic(() => import("@/components/AdPage/Coverage"));
 const FloatingForm = dynamic(() => import("@/components/AdPage/FloatingForm"));
 const FloatingCTA = dynamic(() => import("@/components/AdPage/FloatingCTA"));
-const ClientSection = dynamic(() => import("@/components/ClientSection"));
+import ClientSection from "@/components/ClientSection";
 
 const portfolioImages = [
   { src: "/images/bakelore-skyhitmedia.png", alt: "Modern Website Design" },
-  { src: "/images/aix-investment-skyhitmedia1.webp", alt: "E-commerce Platform" },
-  { src: "/images/signova-group-skyhitmedia.webp", alt: "Mobile App Interface" },
+  {
+    src: "/images/aix-investment-skyhitmedia1.webp",
+    alt: "E-commerce Platform",
+  },
+  {
+    src: "/images/signova-group-skyhitmedia.webp",
+    alt: "Mobile App Interface",
+  },
   { src: "/images/promea-skyhitmedia.webp", alt: "Business Website" },
   { src: "/images/prospera-kia-skyhitmedia.webp", alt: "Landing Page Design" },
   { src: "/images/happy-living-skyhitmedia.png", alt: "Corporate Website" },
@@ -48,7 +64,9 @@ export default function AdPage() {
   const statsRef = useRef<HTMLElement>(null);
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -94,7 +112,7 @@ export default function AdPage() {
       <AdTestimonials />
       <Stats ref={statsRef} stats={stats} />
       <Process />
-      <FAQSection />
+      {/* ── CRO & Conversion ── */}
       <CTAForm
         formData={formData}
         handleInputChange={handleInputChange}

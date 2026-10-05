@@ -2,6 +2,7 @@
 
 import { useRef, useState, memo } from "react";
 import { Mail, Phone } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const GetInTouch: React.FC = () => {
   const form = useRef<HTMLFormElement>(null);
@@ -9,6 +10,7 @@ const GetInTouch: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [currentPage, setCurrentPage] = useState("Home");
   const isSubmittingRef = useRef(false);
+  const router = useRouter();
 
   if (typeof window !== "undefined") {
     const pathname = window.location.pathname;
@@ -40,8 +42,8 @@ const GetInTouch: React.FC = () => {
         const emailjsModule = await import("@emailjs/browser");
         const emailjs = emailjsModule.default || emailjsModule;
         await emailjs.send(
-          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_i2h82eb",
+          "template_v4fu3u7",
           {
             from_name: "Skyhit Media Team",
             to_name: formData.get("to_name") || "",
@@ -54,9 +56,10 @@ const GetInTouch: React.FC = () => {
             position: "N/A",
             gender: "N/A",
             resume_link: "N/A",
-            linkedin: "N/A"
+            linkedin: "N/A",
+            page_url: typeof window !== 'undefined' ? window.location.href : 'Unknown'
           },
-          { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY! }
+          { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "hjLXq5MC66R977QFn" }
         );
 
         // Submit external lead
@@ -94,9 +97,8 @@ const GetInTouch: React.FC = () => {
         }
 
         setIsLoading(false);
-        setIsSubmitted(true);
         formElement.reset();
-        setTimeout(() => setIsSubmitted(false), 5000);
+        router.push("/thank-you");
       } catch (error) {
         setIsLoading(false);
         console.error("Failed to send email:", error);

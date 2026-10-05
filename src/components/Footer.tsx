@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   MapPin,
   Phone,
@@ -36,11 +39,27 @@ const InstagramIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-// Server Component — no state, no client APIs
 export default function Footer() {
+  const pathname = usePathname();
+
+  if (!pathname) return null;
+
+  const isHiddenPage = 
+    pathname.includes("/digital-marketing-agency-") ||
+    pathname.includes("/digital-marketing-services-hyderabad") ||
+    pathname.includes("/digital-marketing-company-hyderabad") ||
+    pathname.includes("/online-marketing-company-hyderabad") ||
+    pathname.includes("/internet-marketing-agency-hyderabad") ||
+    pathname.includes("/performance-marketing-agency-hyderabad");
+
+  if (isHiddenPage) {
+    return null;
+  }
+
   return (
-    <footer className="bg-primary text-white py-12 px-6 lg:px-24">
-      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-4 gap-8">
+    <footer className="relative bg-[#5F6B70] text-white pt-16 pb-8 md:pb-8 px-4 sm:px-12 lg:px-20 font-montserrat z-[2]">
+      
+      <div className="max-w-[1920px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
         {/* Logo & description */}
         <div>
           <Link href="/">

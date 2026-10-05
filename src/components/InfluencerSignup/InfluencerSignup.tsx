@@ -187,7 +187,8 @@ const InfluencerSignup: React.FC = () => {
             <input
               type="url"
               name="youtube"
-              placeholder="YouTube Profile Link (Optional)"
+              placeholder="YouTube Profile Link"
+              required
             />
 
             <input
@@ -202,6 +203,12 @@ const InfluencerSignup: React.FC = () => {
               name="language"
               placeholder="Language"
               required
+            />
+            
+            <input 
+              type="hidden" 
+              name="page_url" 
+              value={typeof window !== 'undefined' ? window.location.href : 'Unknown'} 
             />
 
             <button type="submit" disabled={loading || submitted}>

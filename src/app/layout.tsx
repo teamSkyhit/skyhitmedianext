@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Montserrat, Playfair_Display } from "next/font/google";
-// Script import removed since standard HTML script tags are used for static export
+import Script from "next/script";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import ConditionalFooter from "@/components/ConditionalFooter";
+import DelayedScripts from "@/components/DelayedScripts";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -15,12 +16,12 @@ const montserrat = Montserrat({
 const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["500", "600", "700"],
-  variable: "--font-headline",
+  variable: "--font-playfair",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.skyhitmedia.com"),
+  metadataBase: new URL("https://skyhitmedia.com"),
   title: "Skyhit Media | Top Digital Marketing Agency in Hyderabad",
   description:
     "Skyhit Media is the top digital marketing agency and web design company in Hyderabad. Boost your business with expert services and innovative solutions.",
@@ -74,51 +75,26 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${montserrat.variable} ${playfair.variable}`}
+      suppressHydrationWarning
     >
       <head>
+        <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://platform.linkedin.com" />
-
-        {/* Google tag (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-1LN33RP1RK"></script>
-        <script dangerouslySetInnerHTML={{
-          __html: `
+      </head>
+      <body className="min-h-full flex flex-col overflow-x-hidden">
+        {/* Google Analytics */}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-1LN33RP1RK" strategy="lazyOnload" />
+        <Script id="google-analytics" strategy="lazyOnload">
+          {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-1LN33RP1RK');
-          `
-        }} />
+          `}
+        </Script>
 
-        {/* Meta Pixel Code */}
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '2247581162679381');
-            fbq('track', 'PageView');
-          `
-        }} />
-
-        {/* Google Tag Manager */}
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-WM5722BB');
-          `
-        }} />
-      </head>
-      <body className="min-h-full flex flex-col overflow-x-hidden">
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
@@ -128,6 +104,8 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
+        
+        <DelayedScripts />
 
         {/* Meta Pixel (noscript) */}
         <noscript>
@@ -136,13 +114,13 @@ export default function RootLayout({
             width="1"
             style={{ display: "none" }}
             src="https://www.facebook.com/tr?id=2247581162679381&ev=PageView&noscript=1"
-            alt=""
+            alt="Meta Pixel Tracking"
           />
         </noscript>
 
         <Header />
         <main className="flex-1">{children}</main>
-        <Footer />
+        <ConditionalFooter />
       </body>
     </html>
   );

@@ -4,12 +4,20 @@ import Banner from "@/components/Banner";
 
 const Careers = dynamic(() => import("@/components/Careers"));
 const CareersForm = dynamic(() => import("@/components/CareersForm"));
-const AboutSection = dynamic(() => import("@/components/Services/AboutSection"));
+import AboutSection from "@/components/Services/AboutSection";
 
-export const metadata: Metadata = {title: "Careers at Skyhit Media | Join Our Team in Hyderabad",
+export const metadata: Metadata = {
+  title: "Careers at Skyhit Media | Join Our Team in Hyderabad",
   description:
     "Join the Skyhit Media team in Hyderabad. Explore open positions in digital marketing, web development, content creation, and more.",
-  keywords: ["Digital Marketing", "SEO", "PPC", "Web Design", "Skyhit Media", "Hyderabad"],
+  keywords: [
+    "Digital Marketing",
+    "SEO",
+    "PPC",
+    "Web Design",
+    "Skyhit Media",
+    "Hyderabad",
+  ],
   openGraph: {
     images: [
       {
@@ -17,10 +25,11 @@ export const metadata: Metadata = {title: "Careers at Skyhit Media | Join Our Te
         width: 630,
         height: 630,
         alt: "Skyhit Media",
-      }
+      },
     ],
     title: "Careers at Skyhit Media | Join Our Team in Hyderabad",
-    description: "Join the Skyhit Media team in Hyderabad. Explore open positions in digital marketing, web development, content creation, and more.",
+    description:
+      "Join the Skyhit Media team in Hyderabad. Explore open positions in digital marketing, web development, content creation, and more.",
     url: "https://skyhitmedia.com/careers",
   },
   alternates: { canonical: "https://skyhitmedia.com/careers" },
@@ -29,7 +38,10 @@ export const metadata: Metadata = {title: "Careers at Skyhit Media | Join Our Te
 export default function CareersPage() {
   return (
     <>
-      <Banner title="Our Careers" imgSrc="/images/career-banner-skyhitmedia.webp" />
+      <Banner
+        title="Our Careers"
+        imgSrc="/images/career-banner-skyhitmedia.webp"
+      />
       <AboutSection
         title=""
         subtitle="Take the Next Step in Your Career with SkyHitMedia"
